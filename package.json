@@ -3,11 +3,14 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:web": "turbo dev --filter=web",
     "lint": "turbo lint",
     "clean": "turbo clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "publish-packages": "turbo run publish-packages"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.3",

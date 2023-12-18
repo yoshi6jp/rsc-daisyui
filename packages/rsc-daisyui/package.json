@@ -1,0 +1,55 @@
+{
+  "name": "rsc-daisyui",
+  "version": "0.0.5",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src/",
+    "dev": "tsup --watch",
+    "check-types": "tsc --noEmit",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@storybook/addon-essentials": "^7.6.3",
+    "@storybook/addon-interactions": "^7.6.3",
+    "@storybook/addon-links": "^7.6.3",
+    "@storybook/addon-onboarding": "^1.0.9",
+    "@storybook/addon-storysource": "^7.6.4",
+    "@storybook/blocks": "^7.6.3",
+    "@storybook/react": "^7.6.3",
+    "@storybook/react-vite": "^7.6.3",
+    "@storybook/test": "^7.6.3",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/react": "^18.2.5",
+    "@tw-classed/core": "^1.7.0",
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^4.4.17",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-storybook": "^0.6.15",
+    "postcss": "^8.4.20",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.3",
+    "tailwind-config": "workspace:*",
+    "tailwindcss": "^3.2.4",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.0.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@tw-classed/react": "^1.7.0"
+  }
+}

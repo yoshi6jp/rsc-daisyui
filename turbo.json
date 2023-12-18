@@ -16,6 +16,10 @@
     },
     "clean": {
       "cache": false
+    },
+    "publish-packages": {
+      "cache": false,
+      "persistent": true
     }
   }
 }

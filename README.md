@@ -1,51 +1,138 @@
-# Turborepo Tailwind CSS starter
+# rsc-daisyui
 
-This is an official starter Turborepo.
+- [daisyUI](https://daisyui.com/) components build with React, Typescript, [TailwindCSS](https://tailwindcss.com/) and [TW CLASSED](https://tw-classed.vercel.app/)
+- Simple components available in the React Server Component
+- No `useEffect`, `useState`, etc and used.
 
-## Using this example
+## rsc-daisyui 🌼
 
-Run the following command:
+### Install
 
-```sh
-npx create-turbo@latest -e with-tailwind
+Make sure you've installed [TailwindCSS](https://tailwindcss.com/docs/installation) and [daisyUI](https://daisyui.com/docs/install/).
+
+Install the package with npm or yarn or pnpm:
+
+#### npm
+
+```bash
+npm install rsc-daisyui
 ```
 
-## What's inside?
+#### yarn
 
-This Turborepo includes the following packages/apps:
+```bash
+yarn add rsc-daisyui
+```
 
-### Apps and Packages
+#### pnpm
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+```bash
+pnpm add rsc-daisyui
+```
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+To prevent TailwindCSS from purging your styles, add the following line to your tailwind.config.js:
 
-### Building packages/ui
+```ts
+import type { Config } from "tailwindcss";
 
-This example is setup to build `packages/ui` and output the transpiled source and compiled styles to `dist/`. This was chosen to make sharing one `tailwind.config.js` as easy as possible, and to ensure only the CSS that is used by the current application and its dependencies is generated.
+const config: Config = {
+  content: ["node_modules/rsc-daisyui/dist/**/*.js"],
+  plugins: [require("daisyui")],
+};
+export default config;
+```
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update your `tailwind.config.js` to be aware of your package locations, so it can find all usages of the `tailwindcss` class names.
+### Quick Start
 
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
+Import rsc-daisyui components within your component files:
 
 ```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/**/*.{js,ts,jsx,tsx}",
-  ],
+import { Button } from "rsc-daisyui";
+
+export default (props) => {
+  return <Button color="primary">Click me!</Button>;
+};
 ```
 
-### Utilities
+### Components
 
-This Turborepo has some additional tools already setup for you:
+#### Actions
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [x] Button
+- [ ] Dropdown
+- [ ] Modal
+- [ ] Swap
+- [ ] Theme Controller
+
+#### Data display
+
+- [ ] Accordion
+- [ ] Avatar
+- [ ] Badge
+- [ ] Card
+- [ ] Carousel
+- [ ] Chat bubble
+- [ ] Collapse
+- [ ] Countdown
+- [ ] Diff
+- [ ] Kbd
+- [ ] Stat
+- [ ] Table
+- [ ] Timeline
+
+#### Navigation
+
+- [ ] Breadcrumbs
+- [ ] Bottom navigation
+- [ ] Link
+- [ ] Menu
+- [ ] Navbar
+- [ ] Pagination
+- [ ] Steps
+- [ ] Tab
+
+#### Feedback
+
+- [ ] Alert
+- [ ] Loading
+- [ ] Progress
+- [ ] Radial progress
+- [ ] Skeleton
+- [ ] Toast
+- [ ] Tooltip
+
+#### Data input
+
+- [ ] Checkbox
+- [ ] File input
+- [ ] Radio
+- [ ] Range
+- [ ] Select
+- [ ] Text input
+- [ ] Textarea
+- [ ] Toggle
+
+#### Layout
+
+- [ ] Artboard
+- [ ] Divider
+- [ ] Drawer
+- [ ] Footer
+- [ ] Hero
+- [ ] Indicator
+- [ ] Join (group items)
+- [ ] Mask
+- [ ] Stack
+
+#### Bockup
+
+- [ ] Browser
+- [ ] Code
+- [ ] Phone
+- [ ] Window
+
+---
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
