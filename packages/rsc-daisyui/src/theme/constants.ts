@@ -32,6 +32,7 @@ export const ThemeList = [
   "nord",
   "sunset",
 ] as const;
-export const ThemeVariants = Object.fromEntries(
-  ThemeList.map((item) => [item, item])
+export const ThemeVariants = ThemeList.reduce(
+  (result, item) => ({ ...result, [item]: item }),
+  {}
 );

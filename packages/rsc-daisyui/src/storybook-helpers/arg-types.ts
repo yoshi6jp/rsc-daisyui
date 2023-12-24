@@ -1,15 +1,15 @@
 type IVariantItem = Record<string, string>;
 
-type IVariantConfig = {
+interface InterfaceVariantConfig {
   variants: Record<string, IVariantItem>;
-};
+}
 
 const booleanArgTypes = () => ({
   control: "boolean",
 });
 
-const radioArgTypes = (options: string[], inline: boolean = true) => ({
-  control: inline ? "inline-radio" : "radio",
+const radioArgTypes = (options: string[]) => ({
+  control: "radio",
   options,
 });
 
@@ -36,7 +36,7 @@ const itemToArgTypes = (item: IVariantItem) => {
     return pickArgTypes(Object.keys(item));
   }
 };
-export const toArgTypes = (config: IVariantConfig) => {
+export const toArgTypes = (config: InterfaceVariantConfig) => {
   return Object.fromEntries(
     Object.entries(config.variants).map(([key, item]) => [
       key,
