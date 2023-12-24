@@ -7,7 +7,8 @@
     "lint": "turbo lint",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-packages": "turbo run publish-packages"
+    "publish-packages": "turbo run publish-packages",
+    "build-storybook": "cd packages/rsc-daisyui && pnpm build-storybook"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
