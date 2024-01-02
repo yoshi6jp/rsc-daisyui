@@ -1,3 +1,4 @@
+import type { Variant } from "@tw-classed/core";
 export const ThemeList = [
   "light",
   "dark",
@@ -32,7 +33,7 @@ export const ThemeList = [
   "nord",
   "sunset",
 ] as const;
-export const ThemeVariants = ThemeList.reduce(
+export const ThemeVariants: Variant = ThemeList.reduce(
   (result, item) => ({ ...result, [item]: item }),
   {}
 );

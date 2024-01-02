@@ -1,8 +1,9 @@
 import { classed } from "@tw-classed/react";
-import { ThemeVariants } from "../theme";
+import { configWithThemeFn } from "../config";
 
-export const Button = classed("button", "btn", {
-  variants: {
+export const buttonConfig = {
+  base: "btn",
+  ...configWithThemeFn({
     color: {
       neutral: "btn-neutral",
       primary: "btn-primary",
@@ -46,7 +47,7 @@ export const Button = classed("button", "btn", {
     active: {
       true: "btn-active",
     },
-    theme: ThemeVariants,
-  },
-  dataAttributes: ["theme"],
-});
+  }),
+};
+
+export const Button = classed("button", buttonConfig);

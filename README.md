@@ -1,8 +1,15 @@
 # rsc-daisyui
 
+[![npm version](https://badge.fury.io/js/rsc-daisyui.svg)](https://badge.fury.io/js/rsc-daisyui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 - [daisyUI](https://daisyui.com/) components build with React, Typescript, [TailwindCSS](https://tailwindcss.com/) and [TW CLASSED](https://tw-classed.vercel.app/)
 - Simple components available in the React Server Component
 - No `useEffect`, `useState`, etc and used.
+
+[Storybook](https://yoshi6jp.github.io/rsc-daisyui/)
+
+[Next.js --- Kitchen Sink ---](https://rsc-daisyui-web.vercel.app/)
 
 ## rsc-daisyui 🌼
 
@@ -82,7 +89,7 @@ export default (props) => {
 
 #### Navigation
 
-- [ ] Breadcrumbs
+- [x] Breadcrumbs
 - [ ] Bottom navigation
 - [ ] Link
 - [ ] Menu
@@ -94,7 +101,7 @@ export default (props) => {
 #### Feedback
 
 - [ ] Alert
-- [ ] Loading
+- [x] Loading
 - [ ] Progress
 - [ ] Radial progress
 - [ ] Skeleton

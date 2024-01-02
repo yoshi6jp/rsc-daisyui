@@ -1,8 +1,9 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./button";
-import { getVariantConfig } from "@tw-classed/core";
+import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
+import { Loading } from "../loading";
+import { Button } from "./button";
 
 const meta: Meta<typeof Button> = {
   title: "Actions/Button",
@@ -173,19 +174,25 @@ export const GlassButton: Story = {
 };
 
 export const DifferentHTMLTags: Story = {
-  render: ({ ...args }) => (
+  render: (args) => (
     <>
+      {/* @ts-expect-error: as */}
       <Button {...args} as="a">
         Link
       </Button>
       <Button {...args} type="submit">
         Button
       </Button>
-      <Button {...args} as="input" value="Input" type="button" />
-      <Button {...args} as="input" value="Submit" type="submit" />
-      <Button {...args} as="input" aria-label="Radio" type="radio" />
-      <Button {...args} as="input" aria-label="Checkbox" type="checkbox" />
-      <Button {...args} as="input" value="Reset" type="reset" />
+      {/* @ts-expect-error: as */}
+      <Button {...args} as="input" type="button" value="Input" />
+      {/* @ts-expect-error: as */}
+      <Button {...args} as="input" type="submit" value="Submit" />
+      {/* @ts-expect-error: as */}
+      <Button {...args} aria-label="Radio" as="input" type="radio" />
+      {/* @ts-expect-error: as */}
+      <Button {...args} aria-label="Checkbox" as="input" type="checkbox" />
+      {/* @ts-expect-error: as */}
+      <Button {...args} as="input" type="reset" value="Reset" />
     </>
   ),
   parameters: {
@@ -198,14 +205,14 @@ export const DifferentHTMLTags: Story = {
 export const DisabledButtons: Story = {
   render: ({ ...args }) => (
     <>
-      <Button {...args} disabled={true}>
+      <Button {...args} disabled>
         Disabled using attributes
       </Button>
       <Button
         {...args}
+        aria-disabled="true"
         className="btn-disabled"
         role="button"
-        aria-disabled="true"
       >
         Disabled using class name
       </Button>
@@ -224,33 +231,33 @@ export const SquareButton: Story = {
     <>
       <Button {...args}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
-          viewBox="0 0 24 24"
           stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            d="M6 18L18 6M6 6l12 12"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
           />
         </svg>
       </Button>
       <Button {...args} variant="outline">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
-          viewBox="0 0 24 24"
           stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            d="M6 18L18 6M6 6l12 12"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
           />
         </svg>
       </Button>
@@ -276,17 +283,17 @@ export const IconAtStart: Story = {
   render: ({ ...args }) => (
     <Button {...args}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
         fill="none"
-        viewBox="0 0 24 24"
         stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
+          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
       Button
@@ -299,17 +306,17 @@ export const IconAtEnd: Story = {
     <Button {...args}>
       Button
       <svg
-        xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
         fill="none"
-        viewBox="0 0 24 24"
         stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
+          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
     </Button>
@@ -326,7 +333,7 @@ export const ButtonBlock: Story = {
 export const LoadingSpinner: Story = {
   render: ({ ...args }) => (
     <Button {...args}>
-      <span className="loading loading-spinner" />
+      <Loading />
     </Button>
   ),
   args: {
@@ -337,7 +344,7 @@ export const LoadingSpinner: Story = {
 export const LoadingSpinnerAndText: Story = {
   render: ({ ...args }) => (
     <Button {...args}>
-      <span className="loading loading-spinner" />
+      <Loading />
       loading
     </Button>
   ),

@@ -7,7 +7,7 @@
     "lint": "turbo lint",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-packages": "turbo run publish-packages",
+    "publish-packages": "cp README.md packages/rsc-daisyui && turbo run publish-packages && rm packages/rsc-daisyui/README.md",
     "build-storybook": "cd packages/rsc-daisyui && pnpm build-storybook"
   },
   "devDependencies": {

@@ -25,6 +25,19 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: [
+          "Actions",
+          "Data Display",
+          "Navigation",
+          "Feedback",
+          "Data Input",
+          "Layout",
+          "Mockup",
+        ],
+      },
+    },
   },
   decorators: [
     (Story, context) => {
