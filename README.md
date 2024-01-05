@@ -66,7 +66,7 @@ export default (props) => {
 #### Actions
 
 - [x] Button
-- [ ] Dropdown
+- [x] Dropdown
 - [ ] Modal
 - [ ] Swap
 - [ ] Theme Controller
@@ -75,8 +75,8 @@ export default (props) => {
 
 - [ ] Accordion
 - [ ] Avatar
-- [ ] Badge
-- [ ] Card
+- [x] Badge
+- [x] Card
 - [ ] Carousel
 - [ ] Chat bubble
 - [ ] Collapse

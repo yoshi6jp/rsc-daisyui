@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react";
-import { classed, deriveClassed } from "@tw-classed/react";
+import { deriveClassed } from "@tw-classed/react";
+import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 
 export const breadcrumbsConfig = {

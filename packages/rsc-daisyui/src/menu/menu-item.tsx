@@ -1,26 +1,22 @@
 import type { ComponentProps } from "react";
-import { classed, deriveClassed } from "@tw-classed/react";
-import type { IVarConfWithoutDataAttributes } from "../config";
+import { deriveClassed } from "@tw-classed/react";
+import { classed } from "../classed.config";
+import { activeVariant, disabledVariant } from "../config";
 
-export const menuItemConfig: IVarConfWithoutDataAttributes = {
-  variants: {
-    disabled: {
-      true: "disabled",
-    },
-    active: {
-      true: "active",
-    },
-  },
+export const MenuLi = classed("li", { variants: disabledVariant });
+export const MenuAnchor = classed("a", { variants: activeVariant });
+
+export type MenuItemProps = ComponentProps<typeof MenuAnchor> & {
+  disabled?: boolean;
 };
 
-export const MenuLi = classed("li", menuItemConfig);
-
-export type MenuItemProps = ComponentProps<typeof MenuLi>;
-export const MenuItem = deriveClassed<typeof MenuLi, MenuItemProps>(
-  ({ children, ...rest }, ref) => {
+export const MenuItem = deriveClassed<typeof MenuAnchor, MenuItemProps>(
+  ({ children, disabled, ...rest }, ref) => {
     return (
-      <MenuLi {...rest} ref={ref}>
-        <a>{children}</a>
+      <MenuLi disabled={disabled}>
+        <MenuAnchor {...rest} ref={ref}>
+          {children}
+        </MenuAnchor>
       </MenuLi>
     );
   }

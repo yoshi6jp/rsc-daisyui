@@ -1,4 +1,4 @@
-import { classed } from "@tw-classed/react";
+import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 
 export const buttonConfig = {

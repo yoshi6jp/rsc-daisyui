@@ -1,6 +1,6 @@
 import type { Variants } from "@tw-classed/core";
 
-export const textColorVariant: Variants = {
+export const textColorVariant = {
   color: {
     neutral: "text-neutral",
     primary: "text-primary",
@@ -11,4 +11,4 @@ export const textColorVariant: Variants = {
     warning: "text-warning",
     error: "text-error",
   },
-};
+} satisfies Variants;

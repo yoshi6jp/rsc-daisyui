@@ -1,10 +1,12 @@
 import type { ComponentProps } from "react";
-import { classed, deriveClassed } from "@tw-classed/react";
+import { deriveClassed } from "@tw-classed/react";
+import { classed } from "../classed.config";
 import { ThemeVariants } from "../theme";
 import { configWithThemeFn } from "../config";
 import { MenuItem } from "../menu/menu-item";
 import { DropdownButton } from "./dropdown-button";
 import { DropdownMenu } from "./dropdown-menu";
+import { DropdownCard } from "./dropdown-card";
 
 const commonVariants = {
   horizontal: {
@@ -73,4 +75,5 @@ export default Object.assign(Dropdown, {
   Button: DropdownButton,
   Menu: DropdownMenu,
   Item: MenuItem,
+  Card: DropdownCard,
 });

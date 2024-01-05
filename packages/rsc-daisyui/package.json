@@ -1,6 +1,11 @@
 {
   "name": "rsc-daisyui",
-  "version": "0.0.6",
+  "version": "0.0.7",
+  "description": "daisyUI for React Server Component",
+  "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
+  "bugs": {
+    "url": "https://github.com/yoshi6jp/rsc-daisyui/issues"
+  },
   "sideEffects": [
     "**/*.css"
   ],
@@ -9,6 +14,10 @@
     ".": "./dist"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoshi6jp/rsc-daisyui.git"
+  },
   "scripts": {
     "build": "tsup",
     "lint": "eslint src/",
@@ -50,6 +59,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@tw-classed/react": "^1.7.0"
+    "@tw-classed/react": "^1.7.0",
+    "tailwind-merge": "^2.2.0"
   }
 }
