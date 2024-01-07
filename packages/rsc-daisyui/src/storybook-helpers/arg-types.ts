@@ -1,46 +1,65 @@
+import type { ArgTypes } from "@storybook/react";
+
+type IInputType = ArgTypes[string];
 type IVariantItem = Record<string, string>;
 
 interface InterfaceVariantConfig {
   variants: Record<string, IVariantItem>;
 }
 
-const booleanArgTypes = () => ({
-  control: "boolean",
-});
+function booleanArgTypes(): IInputType {
+  return {
+    control: "boolean",
+  };
+}
 
-const radioArgTypes = (options: string[]) => ({
-  control: "radio",
-  options,
-});
+function radioArgTypes(options: string[]): IInputType {
+  return {
+    control: "radio",
+    options,
+  };
+}
 
-const selectArgTypes = (options: string[]) => ({
-  control: "select",
-  options,
-});
+function selectArgTypes(options: string[]): IInputType {
+  return {
+    control: "select",
+    options,
+  };
+}
 
-const pickArgTypes = (options: string[]) => {
+function pickArgTypes(options: string[]): IInputType {
   if (options.length > 4) {
     return selectArgTypes(options);
-  } else {
-    return radioArgTypes(options);
   }
-};
+  return radioArgTypes(options);
+}
 
-const isBooleanVariants = (item: IVariantItem) =>
-  Object.keys(item).every((v) => ["true", "false"].includes(v));
+function isBooleanVariants(item: IVariantItem): boolean {
+  return Object.keys(item).every((v) => ["true", "false"].includes(v));
+}
 
-const itemToArgTypes = (item: IVariantItem) => {
+function itemToArgTypes(item: IVariantItem): IInputType {
   if (isBooleanVariants(item)) {
     return booleanArgTypes();
-  } else {
-    return pickArgTypes(Object.keys(item));
   }
-};
-export const toArgTypes = (config: InterfaceVariantConfig) => {
-  return Object.fromEntries(
-    Object.entries(config.variants).map(([key, item]) => [
-      key,
-      itemToArgTypes(item),
-    ])
+  return pickArgTypes(Object.keys(item));
+}
+
+type ICustomPropsType = "boolean";
+
+export function toArgTypes<
+  T extends Record<string, unknown> = Record<string, unknown>,
+>(
+  config: InterfaceVariantConfig,
+  props?: Partial<Record<keyof T, ICustomPropsType>>
+): ArgTypes {
+  const configArgs = Object.entries(config.variants).map(
+    ([key, item]) => [key, itemToArgTypes(item)] as const
   );
-};
+
+  const propsArgs = Object.entries(props || {}).map(([key]) => {
+    return [key, booleanArgTypes()] as const;
+  });
+  const args = [...configArgs, ...propsArgs];
+  return Object.fromEntries(args);
+}

@@ -4,9 +4,10 @@ import { CardActions } from "./card-actions";
 import { CardBody } from "./card-body";
 import { CardTitle } from "./card-title";
 
-export const cardConfig = {
-  base: "card bg-base-100 shadow-xl",
-  ...configWithThemeFn({
+export const Card = classed(
+  "div",
+  "card bg-base-100 shadow-xl",
+  configWithThemeFn({
     bordered: {
       true: "card-bordered",
     },
@@ -22,10 +23,8 @@ export const cardConfig = {
     side: {
       true: "card-side",
     },
-  }),
-};
-
-export const Card = classed("div", cardConfig);
+  })
+);
 
 export default Object.assign(Card, {
   Body: CardBody,

@@ -38,5 +38,7 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
   },
 };

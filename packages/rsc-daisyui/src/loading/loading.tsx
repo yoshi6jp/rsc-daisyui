@@ -2,8 +2,10 @@ import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { textColorVariant } from "../color";
 
-export const loadingConfig = {
-  ...configWithThemeFn({
+export const Loading = classed(
+  "span",
+  "loading",
+  configWithThemeFn({
     size: {
       lg: "loading-lg",
       md: "loading-md",
@@ -19,8 +21,5 @@ export const loadingConfig = {
       infinity: "loading-infinity",
     },
     ...textColorVariant,
-  }),
-  base: "loading",
-};
-
-export const Loading = classed("span", loadingConfig);
+  })
+);

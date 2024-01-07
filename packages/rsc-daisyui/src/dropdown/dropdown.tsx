@@ -1,7 +1,5 @@
-import type { ComponentProps } from "react";
-import { deriveClassed } from "@tw-classed/react";
+import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
-import { ThemeVariants } from "../theme";
 import { configWithThemeFn } from "../config";
 import { MenuItem } from "../menu/menu-item";
 import { DropdownButton } from "./dropdown-button";
@@ -25,24 +23,21 @@ const commonVariants = {
   },
 };
 
-export const dropdownConfig = {
-  base: "dropdown",
-  ...configWithThemeFn({
+export const DropdownBase = classed(
+  "div",
+  "dropdown",
+  configWithThemeFn({
     ...commonVariants,
     open: {
       true: "dropdown-open",
     },
-    theme: ThemeVariants,
-  }),
-};
-
-const dropdownDetailsConfig = {
-  base: "dropdown",
-  ...configWithThemeFn(commonVariants),
-};
-
-export const DropdownBase = classed("div", dropdownConfig);
-export const DropdownDetails = classed("details", dropdownDetailsConfig);
+  })
+);
+export const DropdownDetails = classed(
+  "details",
+  "dropdown",
+  configWithThemeFn(commonVariants)
+);
 
 type DropdownBaseProps = ComponentProps<typeof DropdownBase>;
 export type DropdownProps = ComponentProps<typeof DropdownDetails> & {

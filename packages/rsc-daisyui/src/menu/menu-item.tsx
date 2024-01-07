@@ -1,5 +1,4 @@
-import type { ComponentProps } from "react";
-import { deriveClassed } from "@tw-classed/react";
+import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { activeVariant, disabledVariant } from "../config";
 

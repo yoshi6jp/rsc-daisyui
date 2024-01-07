@@ -67,8 +67,8 @@ export default (props) => {
 
 - [x] Button
 - [x] Dropdown
-- [ ] Modal
-- [ ] Swap
+- [x] Modal
+- [x] Swap
 - [ ] Theme Controller
 
 #### Data display

@@ -41,7 +41,7 @@ export const BrandColors: Story = {
       <Button {...args} color="ghost">
         Ghost
       </Button>
-      <Button {...args} variant="link">
+      <Button {...args} color="link">
         Link
       </Button>
     </>
@@ -100,7 +100,7 @@ export const OutlineButtons: Story = {
     </>
   ),
   args: {
-    variant: "outline",
+    outline: true,
   },
   parameters: {
     controls: {
@@ -112,7 +112,7 @@ export const OutlineButtons: Story = {
 export const OutlineButtonsWithStateColors: Story = {
   ...StateColors,
   args: {
-    variant: "outline",
+    outline: true,
   },
 };
 
@@ -245,7 +245,7 @@ export const SquareButton: Story = {
           />
         </svg>
       </Button>
-      <Button {...args} variant="outline">
+      <Button {...args} outline>
         <svg
           className="h-6 w-6"
           fill="none"

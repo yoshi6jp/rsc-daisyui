@@ -1,12 +1,8 @@
-import type { ComponentProps } from "react";
-import { deriveClassed } from "@tw-classed/react";
+import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
-import { buttonConfig } from "../button/button";
+import { Button } from "../button";
 
-const DropdownButtonBase = classed("summary", {
-  ...buttonConfig,
-  base: "btn m-1",
-});
+const DropdownButtonBase = classed("summary", "m-1", Button);
 export type DropdownButtonProps = ComponentProps<typeof DropdownButtonBase>;
 
 export const DropdownButton = deriveClassed<

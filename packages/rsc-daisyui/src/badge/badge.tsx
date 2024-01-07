@@ -1,9 +1,10 @@
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 
-export const badgeConfig = {
-  base: "badge",
-  ...configWithThemeFn({
+export const Badge = classed(
+  "span",
+  "badge",
+  configWithThemeFn({
     outline: {
       true: "badge-outline",
     },
@@ -24,7 +25,5 @@ export const badgeConfig = {
       warning: "badge-warning",
       error: "badge-error",
     },
-  }),
-};
-
-export const Badge = classed("span", badgeConfig);
+  })
+);

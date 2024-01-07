@@ -7,4 +7,6 @@ export * from "./breadcrumbs";
 export * from "./dropdown";
 export * from "./loading";
 export * from "./menu";
+export * from "./modal";
 export * from "./navbar";
+export * from "./swap";

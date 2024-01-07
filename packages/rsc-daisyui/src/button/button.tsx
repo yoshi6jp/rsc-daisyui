@@ -1,9 +1,10 @@
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 
-export const buttonConfig = {
-  base: "btn",
-  ...configWithThemeFn({
+export const Button = classed(
+  "button",
+  "btn",
+  configWithThemeFn({
     color: {
       neutral: "btn-neutral",
       primary: "btn-primary",
@@ -14,10 +15,10 @@ export const buttonConfig = {
       success: "btn-success",
       warning: "btn-warning",
       error: "btn-error",
-    },
-    variant: {
-      outline: "btn-outline",
       link: "btn-link",
+    },
+    outline: {
+      true: "btn-outline",
     },
     size: {
       lg: "btn-lg",
@@ -47,7 +48,5 @@ export const buttonConfig = {
     active: {
       true: "btn-active",
     },
-  }),
-};
-
-export const Button = classed("button", buttonConfig);
+  })
+);
