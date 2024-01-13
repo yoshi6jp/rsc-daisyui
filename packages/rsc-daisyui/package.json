@@ -1,6 +1,7 @@
 {
   "name": "rsc-daisyui",
-  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "version": "0.2.0",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "bugs": {
@@ -10,9 +11,18 @@
     "**/*.css"
   ],
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "exports": {
-    ".": "./dist"
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
   },
+  "module": "./dist/index.mjs",
   "license": "MIT",
   "repository": {
     "type": "git",

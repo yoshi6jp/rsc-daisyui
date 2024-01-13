@@ -33,6 +33,7 @@ export const ThemeList = [
   "nord",
   "sunset",
 ] as const;
+export type ThemeType = (typeof ThemeList)[number];
 export const ThemeVariants: Variant = ThemeList.reduce(
   (result, item) => ({ ...result, [item]: item }),
   {}

@@ -3,14 +3,18 @@ import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { Button } from "../button";
 
+export const SwapEffectConfig = {
+  effect: {
+    rotate: "swap-rotate",
+    flip: "swap-flip",
+  },
+};
+
 export const SwapBase = classed(
   "label",
   "swap",
   configWithThemeFn({
-    effect: {
-      rotate: "swap-rotate",
-      flip: "swap-flip",
-    },
+    ...SwapEffectConfig,
     active: {
       true: "swap-active",
     },

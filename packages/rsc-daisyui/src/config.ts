@@ -1,5 +1,5 @@
 import type { VariantConfig, Variants, Variant } from "@tw-classed/core";
-import { ThemeVariants } from "./theme";
+import { ThemeVariants } from "./theme/constants";
 
 export function configWithThemeFn<T extends Variants>(conf: T) {
   const variants = {

@@ -1,4 +1,5 @@
 import type { ArgTypes } from "@storybook/react";
+import { ThemeList } from "../theme/constants";
 
 type IInputType = ArgTypes[string];
 type IVariantItem = Record<string, string>;
@@ -20,11 +21,15 @@ function radioArgTypes(options: string[]): IInputType {
   };
 }
 
-function selectArgTypes(options: string[]): IInputType {
+function selectArgTypes(options: readonly string[]): IInputType {
   return {
     control: "select",
     options,
   };
+}
+
+function themeArgTypes(): IInputType {
+  return selectArgTypes(ThemeList);
 }
 
 function pickArgTypes(options: string[]): IInputType {
@@ -45,7 +50,16 @@ function itemToArgTypes(item: IVariantItem): IInputType {
   return pickArgTypes(Object.keys(item));
 }
 
-type ICustomPropsType = "boolean";
+type ICustomPropsType = "boolean" | "theme";
+
+function propToArgTypes(type: ICustomPropsType) {
+  switch (type) {
+    case "boolean":
+      return booleanArgTypes();
+    case "theme":
+      return themeArgTypes();
+  }
+}
 
 export function toArgTypes<
   T extends Record<string, unknown> = Record<string, unknown>,
@@ -57,8 +71,8 @@ export function toArgTypes<
     ([key, item]) => [key, itemToArgTypes(item)] as const
   );
 
-  const propsArgs = Object.entries(props || {}).map(([key]) => {
-    return [key, booleanArgTypes()] as const;
+  const propsArgs = Object.entries(props || {}).map(([key, type]) => {
+    return [key, propToArgTypes(type)] as const;
   });
   const args = [...configArgs, ...propsArgs];
   return Object.fromEntries(args);
