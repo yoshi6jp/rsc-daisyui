@@ -50,3 +50,4 @@ export const Button = classed(
     },
   })
 );
+Button.displayName = "Button";

@@ -73,7 +73,7 @@ export default (props) => {
 
 #### Data display
 
-- [ ] Accordion
+- [x] Accordion
 - [ ] Avatar
 - [x] Badge
 - [x] Card

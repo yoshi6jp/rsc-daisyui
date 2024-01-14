@@ -1,9 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
-import { Label, FormControl, Join, Dropdown } from "..";
+import { Label, FormControl, Join, Dropdown, Swap } from "..";
 import { toArgTypes } from "../storybook-helpers";
-import { SwapBase, default as Swap } from "../swap/swap";
 import {
   type ThemeControllerProps,
   default as ThemeController,
@@ -52,12 +51,9 @@ export const UsingCheckbox: StoryObj<typeof ThemeController.Checkbox> = {
 };
 
 export const UsingSwap: StoryObj<typeof ThemeController.Swap> = {
-  argTypes: toArgTypes<ThemeControllerCheckboxProps>(
-    getVariantConfig(SwapBase),
-    {
-      value: "theme",
-    }
-  ),
+  argTypes: toArgTypes<ThemeControllerCheckboxProps>(getVariantConfig(Swap), {
+    value: "theme",
+  }),
   args: {
     value: "synthwave",
     effect: "rotate",

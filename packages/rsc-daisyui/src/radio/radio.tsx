@@ -23,3 +23,4 @@ export const Radio = classed("input", "radio", {
     type: "radio",
   },
 });
+Radio.displayName = "Radio";

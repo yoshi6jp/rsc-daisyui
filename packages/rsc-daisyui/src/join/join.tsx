@@ -13,3 +13,4 @@ export const Join = classed(
     },
   })
 );
+Join.displayName = "Join";

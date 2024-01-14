@@ -6,3 +6,4 @@ export const DropdownCard = classed(
   Card,
   "dropdown-content z-[1] shadow"
 );
+DropdownCard.displayName = "DropdownCard";

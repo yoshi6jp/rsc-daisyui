@@ -10,6 +10,7 @@ export const Navbar = classed(
   configWithThemeFn({})
 );
 
+Navbar.displayName = "Navbar";
 export default Object.assign(Navbar, {
   Start: NavbarStart,
   Center: NavbarCenter,

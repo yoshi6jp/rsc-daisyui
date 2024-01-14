@@ -6,3 +6,4 @@ export const DropdownMenu = classed(
   Menu,
   "p-2 shadow  dropdown-content z-[1] bg-base-100"
 );
+DropdownMenu.displayName = "DropdownMenu";

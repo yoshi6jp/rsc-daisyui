@@ -23,3 +23,4 @@ export const ThemeControllerButton = deriveClassed<
     <ThemeControllerButtonBase ref={ref} value={value} {...rest} type="radio" />
   );
 });
+ThemeControllerButton.displayName = "ThemeControllerButton";

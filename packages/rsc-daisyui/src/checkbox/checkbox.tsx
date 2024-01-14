@@ -23,3 +23,4 @@ export const Checkbox = classed("input", "checkbox", {
     type: "checkbox",
   },
 });
+Checkbox.displayName = "Checkbox";

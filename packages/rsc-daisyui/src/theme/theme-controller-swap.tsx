@@ -1,22 +1,29 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
-import { SwapBase } from "../swap/swap";
+import { Swap } from "../swap";
 import type { ThemeType } from "./constants";
 
 export type ThemeControllerSwapProps = Omit<
-  ComponentProps<typeof SwapBase>,
-  "value" | "active"
+  ComponentProps<typeof Swap>,
+  "value"
 > & {
+  active: boolean;
   value: ThemeType;
 };
 
 export const ThemeControllerSwap = deriveClassed<
-  typeof SwapBase,
+  typeof Swap,
   ThemeControllerSwapProps
->(({ children, value, ...args }, ref) => {
+>(({ children, active, value, ...args }, ref) => {
   return (
-    <SwapBase {...args} ref={ref}>
-      <input className="theme-controller" type="checkbox" value={value} />
+    <Swap {...args} ref={ref}>
+      <input
+        checked={active}
+        className="theme-controller"
+        type="checkbox"
+        value={value}
+      />
       {children}
-    </SwapBase>
+    </Swap>
   );
 });
+ThemeControllerSwap.displayName = "ThemeControllerSwap";

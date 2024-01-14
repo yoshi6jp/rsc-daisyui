@@ -1,4 +1,5 @@
 import type { Variant } from "@tw-classed/core";
+
 export const ThemeList = [
   "light",
   "dark",
@@ -36,5 +37,10 @@ export const ThemeList = [
 export type ThemeType = (typeof ThemeList)[number];
 export const ThemeVariants: Variant = ThemeList.reduce(
   (result, item) => ({ ...result, [item]: item }),
+  {}
+);
+
+export const ThemeEmptyVariants: Variant = ThemeList.reduce(
+  (result, item) => ({ ...result, [item]: "" }),
   {}
 );

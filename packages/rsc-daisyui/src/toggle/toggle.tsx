@@ -23,3 +23,4 @@ export const Toggle = classed("input", "toggle", {
     type: "checkbox",
   },
 });
+Toggle.displayName = "Toggle";

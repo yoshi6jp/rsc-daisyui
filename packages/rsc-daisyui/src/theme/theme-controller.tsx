@@ -22,6 +22,7 @@ export const ThemeController = deriveClassed<
     <ThemeControllerBase ref={ref} value={value} {...rest} type="checkbox" />
   );
 });
+ThemeController.displayName = "ThemeController";
 
 export default Object.assign(ThemeController, {
   Checkbox: ThemeControllerCheckbox,

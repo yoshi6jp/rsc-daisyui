@@ -12,7 +12,6 @@ const meta: Meta<typeof Modal> = {
   tags: ["autodocs"],
   argTypes: toArgTypes<ModalProps>(getVariantConfig(ModalBase), {
     backdrop: "boolean",
-    checkbox: "boolean",
   }),
 };
 
@@ -131,23 +130,26 @@ export const Responsive: Story = {
 };
 
 export const UsingLabelAndHiddenCheckbox: Story = {
-  args: {
-    id: "my_modal_1",
-    checkbox: true,
+  parameters: {
+    controls: {
+      exclude: ["as", "children", "backdrop"],
+    },
   },
   render: (args) => {
+    const id = "my_modal_1";
     return (
       <>
-        <Button as="label" htmlFor={args.id}>
+        <Button as="label" htmlFor={id}>
           open modal
         </Button>
+        <Modal.Toggle id={id} />
         {/* @ts-expect-error: as */}
         <Modal {...args} as="div">
           <Modal.Box>
             <h3 className="font-bold text-lg">Hello!</h3>
             <p className="py-4">This modal works with a hidden checkbox!</p>
             <Modal.Action dialog={false}>
-              <Button as="label" htmlFor={args.id}>
+              <Button as="label" htmlFor={id}>
                 Close!
               </Button>
             </Modal.Action>
@@ -159,11 +161,29 @@ export const UsingLabelAndHiddenCheckbox: Story = {
 };
 
 export const UsingLabelClosesWhenClickedOutside: Story = {
-  ...UsingLabelAndHiddenCheckbox,
-  args: {
-    id: "my_modal_2",
-    checkbox: true,
-    backdrop: true,
+  parameters: {
+    controls: {
+      exclude: ["as", "children", "backdrop"],
+    },
+  },
+  render: (args) => {
+    const id = "my_modal_2";
+    return (
+      <>
+        <Button as="label" htmlFor={id}>
+          open modal
+        </Button>
+        <Modal.Toggle id={id} />
+        {/* @ts-expect-error: as */}
+        <Modal {...args} as="div">
+          <Modal.Box>
+            <h3 className="font-bold text-lg">Hello!</h3>
+            <p className="py-4">Click outside to close</p>
+          </Modal.Box>
+          <Modal.BackdropLabel htmlFor={id} />
+        </Modal>
+      </>
+    );
   },
 };
 

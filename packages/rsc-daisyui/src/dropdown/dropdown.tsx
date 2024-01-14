@@ -44,7 +44,7 @@ export type DropdownProps = ComponentProps<typeof DropdownDetails> & {
   open?: boolean;
 };
 
-const Dropdown = deriveClassed<typeof DropdownDetails, DropdownProps>(
+export const Dropdown = deriveClassed<typeof DropdownDetails, DropdownProps>(
   ({ children, open, ...rest }, ref) => {
     const as = rest.as as unknown as string | undefined;
     if (as === "details" || as === undefined) {
@@ -65,7 +65,7 @@ const Dropdown = deriveClassed<typeof DropdownDetails, DropdownProps>(
     );
   }
 );
-
+Dropdown.displayName = "Dropdown";
 export default Object.assign(Dropdown, {
   Button: DropdownButton,
   Menu: DropdownMenu,

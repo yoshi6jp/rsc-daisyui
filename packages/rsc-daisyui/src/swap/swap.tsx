@@ -1,4 +1,3 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { Button } from "../button";
@@ -10,7 +9,7 @@ export const SwapEffectConfig = {
   },
 };
 
-export const SwapBase = classed(
+export const Swap = classed(
   "label",
   "swap",
   configWithThemeFn({
@@ -20,45 +19,16 @@ export const SwapBase = classed(
     },
   })
 );
+Swap.displayName = "Swap";
 const SwapOn = classed("div", "swap-on");
+SwapOn.displayName = "SwapOn";
 const SwapOff = classed("div", "swap-off");
+SwapOff.displayName = "SwapOff";
 const SwapIndeterminate = classed("div", "swap-indeterminate");
-export const SwapButtonBase = classed("label", SwapBase, Button);
+SwapIndeterminate.displayName = "SwapIndeterminate";
+export const SwapButton = classed("label", Swap, Button);
+SwapButton.displayName = "SwapButton";
 
-type ICustomProps = {
-  checkbox?: boolean;
-};
-export type SwapProps = ComponentProps<typeof SwapBase> & ICustomProps;
-
-function SwapCheckbox({ checkbox }: ICustomProps): JSX.Element | null {
-  if (checkbox === false) {
-    return null;
-  }
-  return <input type="checkbox" />;
-}
-
-export const Swap = deriveClassed<typeof SwapBase, SwapProps>(
-  ({ checkbox, children, ...args }, ref) => {
-    return (
-      <SwapBase {...args} ref={ref}>
-        <SwapCheckbox checkbox={checkbox} />
-        {children}
-      </SwapBase>
-    );
-  }
-);
-export type SwapButtonProps = ComponentProps<typeof SwapButtonBase> &
-  ICustomProps;
-export const SwapButton = deriveClassed<typeof SwapButtonBase, SwapButtonProps>(
-  ({ checkbox, children, ...args }, ref) => {
-    return (
-      <SwapButtonBase {...args} ref={ref}>
-        <SwapCheckbox checkbox={checkbox} />
-        {children}
-      </SwapButtonBase>
-    );
-  }
-);
 export default Object.assign(Swap, {
   On: SwapOn,
   Off: SwapOff,

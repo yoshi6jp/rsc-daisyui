@@ -18,3 +18,4 @@ export const Breadcrumbs = deriveClassed<typeof BreadcrumbsBase>(
     );
   }
 );
+Breadcrumbs.displayName = "Breadcrumbs";

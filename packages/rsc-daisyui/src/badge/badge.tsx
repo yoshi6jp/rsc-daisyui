@@ -27,3 +27,4 @@ export const Badge = classed(
     },
   })
 );
+Badge.displayName = "Badge";

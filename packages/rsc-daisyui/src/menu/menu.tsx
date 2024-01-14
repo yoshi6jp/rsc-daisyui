@@ -20,6 +20,7 @@ export const Menu = classed(
     },
   })
 );
+Menu.displayName = "Menu";
 
 export default Object.assign(Menu, {
   Li: MenuLi,

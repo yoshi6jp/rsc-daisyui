@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { Button, Card, Navbar } from "..";
 import { toArgTypes } from "../storybook-helpers";
-import Dropdown, { DropdownBase } from "./dropdown";
+import { default as Dropdown, DropdownBase } from "./dropdown";
 
 const meta: Meta<typeof Dropdown> = {
   title: "Actions/Dropdown",

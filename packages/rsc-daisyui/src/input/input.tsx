@@ -27,3 +27,4 @@ export const Input = classed("input", "input", {
     bordered: true,
   },
 });
+Input.displayName = "Input";

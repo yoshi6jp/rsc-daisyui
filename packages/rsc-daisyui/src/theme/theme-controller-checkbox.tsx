@@ -27,3 +27,4 @@ export const ThemeControllerCheckbox = deriveClassed<
     />
   );
 });
+ThemeControllerCheckbox.displayName = "ThemeControllerCheckbox";

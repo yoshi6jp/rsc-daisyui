@@ -2,21 +2,13 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import {
-  SwapBase,
-  SwapButtonBase,
-  type SwapProps,
-  type SwapButtonProps,
-} from "./swap";
 import { Swap } from ".";
 
 const meta: Meta<typeof Swap> = {
   title: "Actions/Swap",
   component: Swap,
   tags: ["autodocs"],
-  argTypes: toArgTypes<SwapProps>(getVariantConfig(SwapBase), {
-    checkbox: "boolean",
-  }),
+  argTypes: toArgTypes(getVariantConfig(Swap)),
 };
 
 export default meta;
@@ -26,8 +18,9 @@ export const Default: Story = {
   render: (args) => {
     return (
       <Swap {...args}>
+        <input type="checkbox" />
         <Swap.On>ON</Swap.On>
-        <Swap.Off>Off</Swap.Off>
+        <Swap.Off>OFF</Swap.Off>
       </Swap>
     );
   },
@@ -37,6 +30,7 @@ export const VolumeIcons: Story = {
   render: (args) => {
     return (
       <Swap {...args}>
+        <input type="checkbox" />
         <Swap.On
           as="svg"
           className="fill-current"
@@ -69,6 +63,7 @@ export const IconsWithRotateEffect: Story = {
   render: (args) => {
     return (
       <Swap {...args}>
+        <input type="checkbox" />
         <Swap.On
           as="svg"
           className="fill-current w-10 h-10"
@@ -91,9 +86,7 @@ export const IconsWithRotateEffect: Story = {
 };
 
 export const HamburgerButton: StoryObj<typeof Swap.Button> = {
-  argTypes: toArgTypes<SwapButtonProps>(getVariantConfig(SwapButtonBase), {
-    checkbox: "boolean",
-  }),
+  argTypes: toArgTypes(getVariantConfig(Swap.Button)),
   args: {
     effect: "rotate",
     shape: "circle",
@@ -101,6 +94,7 @@ export const HamburgerButton: StoryObj<typeof Swap.Button> = {
   render: (args) => {
     return (
       <Swap.Button {...args}>
+        <input type="checkbox" />
         <Swap.Off
           as="svg"
           className="fill-current"
@@ -111,7 +105,6 @@ export const HamburgerButton: StoryObj<typeof Swap.Button> = {
         >
           <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
         </Swap.Off>
-
         <Swap.On
           as="svg"
           className="fill-current"
@@ -135,6 +128,7 @@ export const IconsWithFlipEffect: Story = {
   render: (args) => {
     return (
       <Swap {...args}>
+        <input type="checkbox" />
         <Swap.On>😈</Swap.On>
         <Swap.Off>😇</Swap.Off>
       </Swap>
@@ -145,7 +139,6 @@ export const IconsWithFlipEffect: Story = {
 export const ActivateUsingClassName: Story = {
   args: {
     className: "text-6xl",
-    checkbox: false,
   },
   render: ({ active, ...args }) => {
     return (

@@ -4,6 +4,7 @@ export * from "./badge";
 export * from "./breadcrumbs";
 export * from "./button";
 export * from "./card";
+export * from "./collapse";
 export * from "./dropdown";
 export * from "./form-control";
 // export * from "./input";

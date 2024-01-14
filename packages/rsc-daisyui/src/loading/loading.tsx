@@ -23,3 +23,4 @@ export const Loading = classed(
     ...textColorVariant,
   })
 );
+Loading.displayName = "Loading";

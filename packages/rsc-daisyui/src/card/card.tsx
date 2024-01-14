@@ -25,7 +25,7 @@ export const Card = classed(
     },
   })
 );
-
+Card.displayName = "Card";
 export default Object.assign(Card, {
   Body: CardBody,
   Title: CardTitle,

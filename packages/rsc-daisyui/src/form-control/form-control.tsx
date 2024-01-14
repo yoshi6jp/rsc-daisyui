@@ -6,3 +6,4 @@ export const FormControl = classed(
   "form-control",
   configWithThemeFn({})
 );
+FormControl.displayName = "FormControl";

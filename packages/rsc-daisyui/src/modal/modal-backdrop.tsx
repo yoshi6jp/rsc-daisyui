@@ -10,9 +10,11 @@ export const ModalBackdrop = deriveClassed<
 >(({ children, ...args }, ref) => {
   return (
     <ModalBackdropBase {...args} method="dialog" ref={ref}>
-      <button>{children}</button>
+      <button type="submit">{children}</button>
     </ModalBackdropBase>
   );
 });
+ModalBackdrop.displayName = "ModalBackdrop";
 
 export const ModalBackdropLabel = classed("label", "modal-backdrop");
+ModalBackdropLabel.displayName = "ModalBackdropLabel";

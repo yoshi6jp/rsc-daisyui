@@ -27,3 +27,4 @@ export const ThemeControllerRadio = deriveClassed<
     <ThemeControllerRadioBase ref={ref} value={value} {...rest} type="radio" />
   );
 });
+ThemeControllerRadio.displayName = "ThemeControllerRadio";

@@ -20,3 +20,4 @@ export const ModalAction = deriveClassed<
     </ModalActionBase>
   );
 });
+ModalAction.displayName = "ModalAction";
