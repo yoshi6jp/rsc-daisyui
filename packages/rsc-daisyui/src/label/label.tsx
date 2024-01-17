@@ -1,11 +1,10 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
-export const Label = classed(
-  "label",
-  "label cursor-pointer",
-  configWithThemeFn({})
-);
+export const Label = classed("label", "label", {
+  ...configWithThemeFn({ vanilla: { false: "cursor-pointer" } }),
+  ...VanillaDefaultVariants,
+});
 Label.displayName = "Label";
 export const LabelText = classed("span", "label-text");
 LabelText.displayName = "LabelText";

@@ -174,7 +174,7 @@ export const InNavbar: Story = {
     end: true,
   },
   render: (args) => (
-    <Navbar className="bg-base-300 shadow-none mb-40">
+    <Navbar className="bg-base-300 mb-40 rounded-box" vanilla>
       <div className="flex-1 px-2 lg:flex-none">
         <a className="text-lg font-bold">daisyUI</a>
       </div>
@@ -184,7 +184,7 @@ export const InNavbar: Story = {
             Button
           </Button>
           <Dropdown {...args}>
-            <Dropdown.Button className="m-0" color="ghost">
+            <Dropdown.Button color="ghost" vanilla>
               Dropdown
             </Dropdown.Button>
             <Dropdown.Menu className="w-52 mt-4">

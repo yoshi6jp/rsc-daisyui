@@ -149,7 +149,8 @@ export const NoImage: Story = {
 
 export const CustomColor: Story = {
   args: {
-    className: "w-96 bg-primary text-primary-content shadow-none",
+    className: "w-96 bg-primary text-primary-content",
+    vanilla: true,
   },
   render: (args) => {
     return (
@@ -168,7 +169,8 @@ export const CustomColor: Story = {
 
 export const CenteredWithNeutralColor: Story = {
   args: {
-    className: "w-96 bg-neutral text-neutral-content shadow-none",
+    className: "w-96 bg-neutral text-neutral-content",
+    vanilla: true,
   },
   render: (args) => {
     return (

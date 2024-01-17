@@ -39,8 +39,3 @@ export const ThemeVariants: Variant = ThemeList.reduce(
   (result, item) => ({ ...result, [item]: item }),
   {}
 );
-
-export const ThemeEmptyVariants: Variant = ThemeList.reduce(
-  (result, item) => ({ ...result, [item]: "" }),
-  {}
-);

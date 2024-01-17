@@ -1,13 +1,11 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 import { CardActions } from "./card-actions";
 import { CardBody } from "./card-body";
 import { CardTitle } from "./card-title";
 
-export const Card = classed(
-  "div",
-  "card bg-base-100 shadow-xl",
-  configWithThemeFn({
+export const Card = classed("div", "card", {
+  ...configWithThemeFn({
     bordered: {
       true: "card-bordered",
     },
@@ -23,8 +21,12 @@ export const Card = classed(
     side: {
       true: "card-side",
     },
-  })
-);
+    vanilla: {
+      false: "bg-base-100 shadow-xl",
+    },
+  }),
+  ...VanillaDefaultVariants,
+});
 Card.displayName = "Card";
 export default Object.assign(Card, {
   Body: CardBody,

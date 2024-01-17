@@ -42,7 +42,6 @@ export const Default: Story = {
           <p>hello</p>
         </Accordion.Content>
       </Accordion>
-
       <Accordion {...args}>
         <Accordion.Title>
           Click to open this one and close others
@@ -85,7 +84,7 @@ export const JoinTogether: Story = {
   render: (args) => (
     <Join className="w-full" vertical>
       <Accordion {...args} defaultChecked>
-        <Accordion.Title className="text-base font-normal">
+        <Accordion.Title vanilla>
           Click to open this one and close others
         </Accordion.Title>
         <Accordion.Content>
@@ -93,16 +92,15 @@ export const JoinTogether: Story = {
         </Accordion.Content>
       </Accordion>
       <Accordion {...args}>
-        <Accordion.Title className="text-base font-normal">
+        <Accordion.Title vanilla>
           Click to open this one and close others
         </Accordion.Title>
         <Accordion.Content>
           <p>hello</p>
         </Accordion.Content>
       </Accordion>
-
       <Accordion {...args}>
-        <Accordion.Title className="text-base font-normal">
+        <Accordion.Title vanilla>
           Click to open this one and close others
         </Accordion.Title>
         <Accordion.Content>

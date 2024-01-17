@@ -11,6 +11,11 @@ export function configWithThemeFn<T extends Variants>(conf: T) {
     dataAttributes: ["theme"] as const,
   } satisfies VariantConfig<T & { theme: Variant }>;
 }
+export const VanillaDefaultVariants = {
+  defaultVariants: {
+    vanilla: "false",
+  },
+} as const;
 
 export const disabledVariant = {
   disabled: {

@@ -1,5 +1,6 @@
 // components
-// export * from "./avatar";
+export * from "./accordion";
+export * from "./avatar";
 export * from "./badge";
 export * from "./breadcrumbs";
 export * from "./button";
@@ -11,6 +12,7 @@ export * from "./form-control";
 export * from "./join";
 export * from "./label";
 export * from "./loading";
+export * from "./mask";
 export * from "./menu";
 export * from "./modal";
 export * from "./navbar";

@@ -74,7 +74,7 @@ export default (props) => {
 #### Data display
 
 - [x] Accordion
-- [ ] Avatar
+- [x] Avatar
 - [x] Badge
 - [x] Card
 - [ ] Carousel

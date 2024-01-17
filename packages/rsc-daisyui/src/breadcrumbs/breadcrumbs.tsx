@@ -1,13 +1,16 @@
 import type { ComponentProps } from "react";
 import { deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
-export const BreadcrumbsBase = classed(
-  "div",
-  "breadcrumbs text-sm",
-  configWithThemeFn({})
-);
+export const BreadcrumbsBase = classed("div", "breadcrumbs", {
+  ...configWithThemeFn({
+    vanilla: {
+      false: "text-sm",
+    },
+  }),
+  ...VanillaDefaultVariants,
+});
 export type BreadcrumbsProps = ComponentProps<typeof BreadcrumbsBase>;
 export const Breadcrumbs = deriveClassed<typeof BreadcrumbsBase>(
   ({ children, ...rest }, ref) => {

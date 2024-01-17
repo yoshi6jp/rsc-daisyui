@@ -1,5 +1,5 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
 export const Collapse = classed(
   "div",
@@ -16,7 +16,14 @@ export const Collapse = classed(
   })
 );
 Collapse.displayName = "Collapse";
-const CollapseTitle = classed("div", "collapse-title text-xl font-medium");
+const CollapseTitle = classed("div", "collapse-title", {
+  variants: {
+    vanilla: {
+      false: "text-xl font-medium",
+    },
+  },
+  ...VanillaDefaultVariants,
+});
 CollapseTitle.displayName = "CollapseTitle";
 const CollapseContent = classed("div", "collapse-content");
 CollapseContent.displayName = "CollapseContent";
