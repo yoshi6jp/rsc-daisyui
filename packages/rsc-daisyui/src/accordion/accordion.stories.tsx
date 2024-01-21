@@ -73,8 +73,9 @@ export const PlusMinusIcon: Story = {
 export const JoinTogether: Story = {
   args: {
     name: "my-accordion-4",
-    className: "bg-inherit border border-base-300 join-item",
+    className: "border border-base-300 join-item",
     icon: "arrow",
+    vanilla: true,
   },
   parameters: {
     controls: {

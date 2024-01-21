@@ -79,10 +79,10 @@ export default (props) => {
 - [x] Card
 - [x] Carousel
 - [x] Chat bubble
-- [ ] Collapse
-- [ ] Countdown
-- [ ] Diff
-- [ ] Kbd
+- [x] Collapse
+- [x] Countdown
+- [x] Diff
+- [x] Kbd
 - [ ] Stat
 - [ ] Table
 - [ ] Timeline

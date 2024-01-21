@@ -1,10 +1,8 @@
 import { classed } from "../classed.config";
 import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
-export const Collapse = classed(
-  "div",
-  "collapse bg-base-200",
-  configWithThemeFn({
+export const Collapse = classed("div", "collapse", {
+  ...configWithThemeFn({
     icon: {
       arrow: "collapse-arrow",
       plus: "collapse-plus",
@@ -13,8 +11,13 @@ export const Collapse = classed(
       true: "collapse-open",
       false: "collapse-close",
     },
-  })
-);
+    vanilla: {
+      false: "bg-base-200",
+    },
+  }),
+  defaultProps: { tabIndex: 0 },
+  ...VanillaDefaultVariants,
+});
 Collapse.displayName = "Collapse";
 const CollapseTitle = classed("div", "collapse-title", {
   variants: {

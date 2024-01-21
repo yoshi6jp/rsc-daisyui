@@ -8,9 +8,14 @@ export type AccordionProps = Omit<
   "as" | "type" | "open"
 >;
 export const Accordion = deriveClassed<typeof AccordionBase, AccordionProps>(
-  ({ children, icon, theme, className, ...rest }, ref) => {
+  ({ children, icon, theme, className, vanilla, ...rest }, ref) => {
     return (
-      <Collapse className={className} icon={icon} theme={theme}>
+      <Collapse
+        className={className}
+        icon={icon}
+        theme={theme}
+        vanilla={vanilla}
+      >
         <input {...rest} ref={ref} type="radio" />
         {children}
       </Collapse>
