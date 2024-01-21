@@ -16,7 +16,7 @@ import { ThemeControllerRadioBase } from "./theme-controller-radio";
 import { ThemeControllerButtonBase } from "./theme-controller-button";
 
 const meta: Meta<typeof ThemeController> = {
-  title: "Actions/ThemeController",
+  title: "Actions/Theme Controller",
   component: ThemeController,
   tags: ["autodocs"],
   argTypes: toArgTypes<ThemeControllerProps>(

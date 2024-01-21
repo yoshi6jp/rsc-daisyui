@@ -77,8 +77,8 @@ export default (props) => {
 - [x] Avatar
 - [x] Badge
 - [x] Card
-- [ ] Carousel
-- [ ] Chat bubble
+- [x] Carousel
+- [x] Chat bubble
 - [ ] Collapse
 - [ ] Countdown
 - [ ] Diff
