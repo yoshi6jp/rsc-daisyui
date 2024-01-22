@@ -24,5 +24,6 @@ export * from "./modal";
 export * from "./navbar";
 export * from "./radio";
 export * from "./swap";
+export * from "./stat";
 export * from "./theme";
 export * from "./toggle";

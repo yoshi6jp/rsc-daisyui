@@ -83,7 +83,7 @@ export default (props) => {
 - [x] Countdown
 - [x] Diff
 - [x] Kbd
-- [ ] Stat
+- [x] Stat
 - [ ] Table
 - [ ] Timeline
 
