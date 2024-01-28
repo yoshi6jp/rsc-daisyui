@@ -7,7 +7,6 @@ import { default as Countdown } from "./countdown";
 const meta: Meta<typeof Countdown> = {
   title: "Data Display/Countdown",
   component: Countdown,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Countdown)),
 };
 

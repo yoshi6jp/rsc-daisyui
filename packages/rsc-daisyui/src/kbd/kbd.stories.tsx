@@ -1,13 +1,12 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
-import { Kbd } from ".";
 import { toArgTypes } from "../storybook-helpers";
+import { Kbd } from ".";
 
 const meta: Meta<typeof Kbd> = {
   title: "Data Display/Kbd",
   component: Kbd,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Kbd)),
 };
 export default meta;

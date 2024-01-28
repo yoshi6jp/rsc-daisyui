@@ -8,7 +8,6 @@ import { Avatar } from ".";
 const meta: Meta<typeof Avatar> = {
   title: "Data Display/Avatar",
   component: Avatar,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Avatar)),
 };
 

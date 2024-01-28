@@ -8,7 +8,6 @@ import { default as Dropdown, DropdownBase } from "./dropdown";
 const meta: Meta<typeof Dropdown> = {
   title: "Actions/Dropdown",
   component: Dropdown,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(DropdownBase)),
 };
 

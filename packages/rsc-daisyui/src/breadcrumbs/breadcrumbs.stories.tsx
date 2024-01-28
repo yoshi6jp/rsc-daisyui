@@ -7,7 +7,6 @@ import { BreadcrumbsBase, Breadcrumbs } from "./breadcrumbs";
 const meta: Meta<typeof Breadcrumbs> = {
   title: "Navigation/Breadcrumbs",
   component: Breadcrumbs,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(BreadcrumbsBase)),
 };
 

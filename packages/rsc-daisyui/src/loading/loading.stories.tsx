@@ -7,7 +7,6 @@ import { Loading } from ".";
 const meta: Meta<typeof Loading> = {
   title: "Feedback/Loading",
   component: Loading,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Loading)),
 };
 

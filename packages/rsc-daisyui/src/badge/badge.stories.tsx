@@ -8,7 +8,6 @@ import { Badge } from ".";
 const meta: Meta<typeof Badge> = {
   title: "Data Display/Badge",
   component: Badge,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Badge)),
 };
 

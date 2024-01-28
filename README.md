@@ -84,8 +84,8 @@ export default (props) => {
 - [x] Diff
 - [x] Kbd
 - [x] Stat
-- [ ] Table
-- [ ] Timeline
+- [x] Table
+- [x] Timeline
 
 #### Navigation
 

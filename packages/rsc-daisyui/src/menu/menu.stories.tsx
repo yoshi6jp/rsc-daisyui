@@ -7,7 +7,6 @@ import { Menu } from ".";
 const meta: Meta<typeof Menu> = {
   title: "Navigation/Menu",
   component: Menu,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Menu)),
 };
 

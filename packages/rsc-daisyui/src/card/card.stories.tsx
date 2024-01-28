@@ -8,7 +8,6 @@ import { Card } from ".";
 const meta: Meta<typeof Card> = {
   title: "Data Display/Card",
   component: Card,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Card)),
 };
 

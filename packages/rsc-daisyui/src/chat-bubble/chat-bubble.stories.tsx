@@ -7,7 +7,6 @@ import { Chat } from ".";
 const meta: Meta<typeof Chat.Bubble> = {
   title: "Data Display/Chat bubble",
   component: Chat.Bubble,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Chat.Bubble)),
 };
 

@@ -7,7 +7,6 @@ import { Diff, DiffBase } from "./diff";
 const meta: Meta<typeof Diff> = {
   title: "Data Display/Diff",
   component: Diff,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(DiffBase)),
   parameters: {
     controls: {

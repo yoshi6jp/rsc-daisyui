@@ -25,5 +25,7 @@ export * from "./navbar";
 export * from "./radio";
 export * from "./swap";
 export * from "./stat";
+export * from "./table";
 export * from "./theme";
+export * from "./timeline";
 export * from "./toggle";

@@ -8,7 +8,6 @@ import { Navbar } from ".";
 const meta: Meta<typeof Navbar> = {
   title: "Navigation/Navbar",
   component: Navbar,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Navbar)),
 };
 

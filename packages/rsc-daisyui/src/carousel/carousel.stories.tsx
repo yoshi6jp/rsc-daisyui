@@ -8,7 +8,6 @@ import { Carousel } from ".";
 const meta: Meta<typeof Carousel> = {
   title: "Data Display/Carousel",
   component: Carousel,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Carousel)),
 };
 export default meta;

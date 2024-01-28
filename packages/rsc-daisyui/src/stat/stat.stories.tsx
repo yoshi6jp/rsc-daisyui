@@ -8,7 +8,6 @@ import { Stats } from ".";
 const meta: Meta<typeof Stats> = {
   title: "Data Display/Stat",
   component: Stats,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Stats)),
 };
 

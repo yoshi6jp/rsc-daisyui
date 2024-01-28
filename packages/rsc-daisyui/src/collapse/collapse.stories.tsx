@@ -7,7 +7,6 @@ import { default as Collapse } from "./collapse";
 const meta: Meta<typeof Collapse> = {
   title: "Data Display/Collapse",
   component: Collapse,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Collapse)),
 };
 export default meta;

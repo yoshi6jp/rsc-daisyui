@@ -9,7 +9,6 @@ import { Modal } from ".";
 const meta: Meta<typeof Modal> = {
   title: "Actions/Modal",
   component: Modal,
-  tags: ["autodocs"],
   argTypes: toArgTypes<ModalProps>(getVariantConfig(ModalBase), {
     backdrop: "boolean",
   }),

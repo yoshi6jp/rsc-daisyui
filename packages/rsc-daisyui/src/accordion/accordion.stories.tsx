@@ -8,7 +8,6 @@ import { default as Accordion, AccordionBase } from "./accordion";
 const meta: Meta<typeof Accordion> = {
   title: "Data Display/Accordion",
   component: Accordion,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(AccordionBase)),
 };
 

@@ -8,7 +8,6 @@ import { Button } from "./button";
 const meta: Meta<typeof Button> = {
   title: "Actions/Button",
   component: Button,
-  tags: ["autodocs"],
   argTypes: toArgTypes(getVariantConfig(Button)),
   render: ({ children, ...args }) => <Button {...args}>{children}</Button>,
 };
