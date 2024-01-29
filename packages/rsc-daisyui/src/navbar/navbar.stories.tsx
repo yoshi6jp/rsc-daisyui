@@ -106,6 +106,9 @@ export const IconAtStartAndEnd: Story = {
 };
 
 export const MenuAndSubmenu: Story = {
+  args: {
+    className: "mb-32",
+  },
   render: (args) => {
     return (
       <Navbar {...args}>
@@ -117,15 +120,13 @@ export const MenuAndSubmenu: Story = {
         <div className="flex-none">
           <Menu className="bg-base-100 px-1" horizontal>
             <Menu.Item>Link</Menu.Item>
-            <Menu.Li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2 bg-base-100 rounded-t-none">
-                  <Menu.Item>Link 1</Menu.Item>
-                  <Menu.Item>Link 2</Menu.Item>
-                </ul>
-              </details>
-            </Menu.Li>
+            <Menu.Collapse
+              label="Parent"
+              ulClassName="p-2 bg-base-100 rounded-t-none"
+            >
+              <Menu.Item>Link 1</Menu.Item>
+              <Menu.Item>Link 2</Menu.Item>
+            </Menu.Collapse>
           </Menu>
         </div>
       </Navbar>

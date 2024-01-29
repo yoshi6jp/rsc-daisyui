@@ -90,9 +90,9 @@ export default (props) => {
 #### Navigation
 
 - [x] Breadcrumbs
-- [ ] Bottom navigation
-- [ ] Link
-- [ ] Menu
+- [x] Bottom navigation
+- [x] Link
+- [x] Menu
 - [ ] Navbar
 - [ ] Pagination
 - [ ] Steps
@@ -104,9 +104,9 @@ export default (props) => {
 - [x] Loading
 - [ ] Progress
 - [ ] Radial progress
-- [ ] Skeleton
+- [x] Skeleton
 - [ ] Toast
-- [ ] Tooltip
+- [x] Tooltip
 
 #### Data input
 
