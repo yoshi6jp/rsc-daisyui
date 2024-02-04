@@ -2,7 +2,7 @@ import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { MenuItem } from "../menu/menu-item";
-import { DropdownButton } from "./dropdown-button";
+import { DropdownButton, DropdownAvatar } from "./dropdown-button";
 import { DropdownMenu } from "./dropdown-menu";
 import { DropdownCard } from "./dropdown-card";
 
@@ -71,4 +71,5 @@ export default Object.assign(Dropdown, {
   Menu: DropdownMenu,
   Item: MenuItem,
   Card: DropdownCard,
+  Avatar: DropdownAvatar,
 });

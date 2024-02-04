@@ -9,5 +9,8 @@ export const DropdownCard = classed("div", "dropdown-content z-[1]", Card, {
     },
   },
   ...VanillaDefaultVariants,
+  defaultProps: {
+    tabIndex: 0,
+  },
 });
 DropdownCard.displayName = "DropdownCard";

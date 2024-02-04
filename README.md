@@ -93,10 +93,10 @@ export default (props) => {
 - [x] Bottom navigation
 - [x] Link
 - [x] Menu
-- [ ] Navbar
-- [ ] Pagination
-- [ ] Steps
-- [ ] Tab
+- [x] Navbar
+- [x] Pagination
+- [x] Steps
+- [x] Tab
 
 #### Feedback
 
