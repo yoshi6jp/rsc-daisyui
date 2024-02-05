@@ -1,5 +1,6 @@
 // components
 export * from "./accordion";
+export * from "./alert";
 export * from "./avatar";
 export * from "./badge";
 export * from "./bottom-navigation";
@@ -25,6 +26,8 @@ export * from "./mask";
 export * from "./menu";
 export * from "./modal";
 export * from "./navbar";
+export * from "./progress";
+export * from "./radial-progress";
 export * from "./radio";
 export * from "./skeleton";
 export * from "./stat";

@@ -100,10 +100,10 @@ export default (props) => {
 
 #### Feedback
 
-- [ ] Alert
+- [x] Alert
 - [x] Loading
-- [ ] Progress
-- [ ] Radial progress
+- [x] Progress
+- [x] Radial progress
 - [x] Skeleton
 - [ ] Toast
 - [x] Tooltip
