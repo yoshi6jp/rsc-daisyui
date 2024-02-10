@@ -105,15 +105,15 @@ export default (props) => {
 - [x] Progress
 - [x] Radial progress
 - [x] Skeleton
-- [ ] Toast
+- [x] Toast
 - [x] Tooltip
 
 #### Data input
 
-- [ ] Checkbox
-- [ ] File input
-- [ ] Radio
-- [ ] Range
+- [x] Checkbox
+- [x] File input
+- [x] Radio
+- [x] Range
 - [ ] Select
 - [ ] Text input
 - [ ] Textarea

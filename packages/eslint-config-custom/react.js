@@ -40,5 +40,6 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "off",
     "react-hooks/rules-of-hooks": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
+    "react/no-array-index-key": "off",
   },
 };
