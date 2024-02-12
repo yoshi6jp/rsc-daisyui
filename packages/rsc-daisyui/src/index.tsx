@@ -14,6 +14,7 @@ export * from "./checkbox";
 export * from "./collapse";
 export * from "./countdown";
 export * from "./diff";
+export * from "./divider";
 export * from "./dropdown";
 export * from "./file-input";
 export * from "./form-control";

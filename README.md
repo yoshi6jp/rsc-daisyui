@@ -122,7 +122,7 @@ export default (props) => {
 #### Layout
 
 - [x] Artboard
-- [ ] Divider
+- [x] Divider
 - [ ] Drawer
 - [ ] Footer
 - [ ] Hero
