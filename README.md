@@ -121,7 +121,7 @@ export default (props) => {
 
 #### Layout
 
-- [ ] Artboard
+- [x] Artboard
 - [ ] Divider
 - [ ] Drawer
 - [ ] Footer

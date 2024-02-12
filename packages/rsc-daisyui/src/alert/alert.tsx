@@ -14,3 +14,4 @@ export const Alert = classed("div", "alert", {
     role: "alert",
   },
 });
+Alert.displayName = "Alert";
