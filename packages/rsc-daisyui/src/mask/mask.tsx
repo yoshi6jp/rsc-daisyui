@@ -22,8 +22,10 @@ export const Mask = classed("img", "mask", {
       "triangle-2": "mask-triangle-2",
       "triangle-3": "mask-triangle-3",
       "triangle-4": "mask-triangle-4",
-      "half-1": "mask-half-1",
-      "half-2": "mask-half-2",
+    },
+    half: {
+      first: "mask-half-1",
+      second: "mask-half-2",
     },
   },
 });

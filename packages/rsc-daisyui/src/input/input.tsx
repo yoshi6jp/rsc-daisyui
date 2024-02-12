@@ -22,8 +22,12 @@ export const Input = classed("input", "input", {
       sm: "input-sm",
       xs: "input-xs",
     },
+    vanilla: {
+      false: "w-full max-w-xs",
+    },
   }),
   defaultVariants: {
+    vanilla: false,
     bordered: true,
   },
 });

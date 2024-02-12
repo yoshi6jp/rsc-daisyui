@@ -1,5 +1,6 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
+import { times } from "../utils";
 
 export const RangeMeasureBase = classed(
   "div",
@@ -12,10 +13,10 @@ export const RangeMeasure = deriveClassed<
   typeof RangeMeasureBase,
   RangeMeasureProps
 >(({ count, ...rest }, ref) => {
-  const length = Math.min(Math.max(2, Math.ceil(count)), 101);
+  const length = Math.min(Math.max(2, Math.floor(count)), 101);
   return (
     <RangeMeasureBase {...rest} ref={ref}>
-      {Array.from({ length }).map((_, idx) => (
+      {times(length).map((idx) => (
         <span key={idx}>|</span>
       ))}
     </RangeMeasureBase>

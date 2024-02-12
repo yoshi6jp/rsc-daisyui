@@ -1,7 +1,7 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "bugs": {

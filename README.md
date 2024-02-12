@@ -114,10 +114,10 @@ export default (props) => {
 - [x] File input
 - [x] Radio
 - [x] Range
-- [ ] Select
-- [ ] Text input
-- [ ] Textarea
-- [ ] Toggle
+- [x] Select
+- [x] Text input
+- [x] Textarea
+- [x] Toggle
 
 #### Layout
 
