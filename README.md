@@ -123,15 +123,15 @@ export default (props) => {
 
 - [x] Artboard
 - [x] Divider
-- [ ] Drawer
-- [ ] Footer
-- [ ] Hero
-- [ ] Indicator
+- [x] Drawer
+- [x] Footer
+- [x] Hero
+- [x] Indicator
 - [ ] Join (group items)
 - [ ] Mask
 - [ ] Stack
 
-#### Bockup
+#### Mockup
 
 - [ ] Browser
 - [ ] Code
