@@ -99,7 +99,7 @@ export const ForInput: StoryObj<typeof Indicator.Badge> = {
     return (
       <Indicator>
         <Indicator.Badge {...args}>Required</Indicator.Badge>
-        <Input placeholder="Your email address" type="email" vanilla />
+        <Input placeholder="Your email address" type="email" />
       </Indicator>
     );
   },
@@ -116,7 +116,7 @@ export const ButtonAsIndicatorForCard: StoryObj<typeof Indicator.Item> = {
         <Indicator.Item {...args}>
           <Button color="primary">Apply</Button>
         </Indicator.Item>
-        <Card className="border" vanilla>
+        <Card className="border">
           <Card.Body>
             <Card.Title>Job Title</Card.Title>
             <p>Rerum reiciendis beatae tenetur excepturi</p>
@@ -140,6 +140,7 @@ export const InCenterOfImage: StoryObj<typeof Indicator.Badge> = {
         <Indicator.Badge {...args}>Uploading Image...</Indicator.Badge>
         <img
           alt="Tailwind CSS examples"
+          className="rounded"
           src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
         />
       </Indicator>

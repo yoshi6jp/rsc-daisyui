@@ -22,12 +22,8 @@ export const FileInput = classed("input", "file-input", {
       sm: "file-input-sm",
       xs: "file-input-xs",
     },
-    vanilla: {
-      false: "w-full max-w-xs",
-    },
   }),
   defaultVariants: {
-    vanilla: false,
     bordered: true,
   },
   defaultProps: {

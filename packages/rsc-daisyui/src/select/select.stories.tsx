@@ -16,6 +16,7 @@ type Story = StoryObj<typeof Select>;
 export const Default: Story = {
   args: {
     bordered: false,
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -33,6 +34,9 @@ export const Default: Story = {
   },
 };
 export const Border: Story = {
+  args: {
+    className: "w-full max-w-xs",
+  },
   render: (args) => {
     return (
       <Select {...args}>
@@ -49,6 +53,7 @@ export const Ghost: Story = {
   args: {
     color: "ghost",
     bordered: false,
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -96,6 +101,7 @@ export const FormControlAndLabels: Story = {
 export const PrimaryColor: Story = {
   args: {
     color: "primary",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -115,6 +121,7 @@ export const PrimaryColor: Story = {
 export const SecondaryColor: Story = {
   args: {
     color: "secondary",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -138,6 +145,7 @@ export const SecondaryColor: Story = {
 export const AccentColor: Story = {
   args: {
     color: "accent",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -155,6 +163,7 @@ export const AccentColor: Story = {
 export const InfoColor: Story = {
   args: {
     color: "info",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -172,6 +181,7 @@ export const InfoColor: Story = {
 export const SuccessColor: Story = {
   args: {
     color: "success",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -193,6 +203,7 @@ export const SuccessColor: Story = {
 export const WarningColor: Story = {
   args: {
     color: "warning",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -212,6 +223,7 @@ export const WarningColor: Story = {
 export const ErrorColor: Story = {
   args: {
     color: "error",
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
@@ -236,7 +248,7 @@ export const Sizes: Story = {
   render: (args) => {
     return (
       <div className="flex flex-col items-center gap-4 w-full">
-        <Select {...args} size="lg">
+        <Select {...args} className="w-full max-w-xs" size="lg">
           <option disabled selected>
             Large
           </option>
@@ -244,7 +256,7 @@ export const Sizes: Story = {
           <option>Large Orange</option>
           <option>Large Tomato</option>
         </Select>
-        <Select {...args} size="md">
+        <Select {...args} className="w-full max-w-xs" size="md">
           <option disabled selected>
             Normal
           </option>
@@ -252,7 +264,7 @@ export const Sizes: Story = {
           <option>Normal Orange</option>
           <option>Normal Tomato</option>
         </Select>
-        <Select {...args} size="sm">
+        <Select {...args} className="w-full max-w-xs" size="sm">
           <option disabled selected>
             Small
           </option>
@@ -260,7 +272,7 @@ export const Sizes: Story = {
           <option>Small Orange</option>
           <option>Small Tomato</option>
         </Select>
-        <Select {...args} size="xs">
+        <Select {...args} className="w-full max-w-xs" size="xs">
           <option disabled selected>
             Tiny
           </option>
@@ -276,6 +288,7 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     bordered: false,
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (

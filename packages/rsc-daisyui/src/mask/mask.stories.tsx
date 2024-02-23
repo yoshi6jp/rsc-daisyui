@@ -1,0 +1,165 @@
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { getVariantConfig } from "@tw-classed/react";
+import { toArgTypes } from "../storybook-helpers";
+import { Mask } from ".";
+
+const meta: Meta<typeof Mask> = {
+  title: "Layout/Mask",
+  component: Mask,
+  argTypes: toArgTypes(getVariantConfig(Mask)),
+};
+
+export default meta;
+type Story = StoryObj<typeof Mask>;
+
+export const Default: Story = {
+  args: {
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+  render: (args) => {
+    return <Mask {...args} as="img" />;
+  },
+};
+export const Squircle: Story = {
+  ...Default,
+  args: {
+    shape: "squircle",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Heart: Story = {
+  ...Default,
+  args: {
+    shape: "heart",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Hexagon: Story = {
+  ...Default,
+  args: {
+    shape: "hexagon",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Hexagon2: Story = {
+  ...Default,
+  args: {
+    shape: "hexagon-2",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Decagon: Story = {
+  ...Default,
+  args: {
+    shape: "decagon",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Pentagon: Story = {
+  ...Default,
+  args: {
+    shape: "pentagon",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Diamond: Story = {
+  ...Default,
+  args: {
+    shape: "diamond",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Square: Story = {
+  ...Default,
+  args: {
+    shape: "square",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Circle: Story = {
+  ...Default,
+  args: {
+    shape: "circle",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Parallelogram: Story = {
+  ...Default,
+  args: {
+    shape: "parallelogram",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Parallelogram2: Story = {
+  ...Default,
+  args: {
+    shape: "parallelogram-2",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Parallelogram3: Story = {
+  ...Default,
+  args: {
+    shape: "parallelogram-3",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Parallelogram4: Story = {
+  ...Default,
+  args: {
+    shape: "parallelogram-4",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Star: Story = {
+  ...Default,
+  args: {
+    shape: "star",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Star2: Story = {
+  ...Default,
+  args: {
+    shape: "star-2",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+
+export const Triangle: Story = {
+  ...Default,
+  args: {
+    shape: "triangle",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Triangle2: Story = {
+  ...Default,
+  args: {
+    shape: "triangle-2",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Triangle3: Story = {
+  ...Default,
+  args: {
+    shape: "triangle-3",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};
+export const Triangle4: Story = {
+  ...Default,
+  args: {
+    shape: "triangle-4",
+    src: "https://daisyui.com/images/stock/photo-1567653418876-5bb0e566e1c2.jpg",
+  },
+};

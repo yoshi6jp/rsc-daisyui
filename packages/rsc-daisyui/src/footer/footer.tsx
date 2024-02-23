@@ -3,6 +3,9 @@ import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
 export const Footer = classed("footer", "footer", {
   ...configWithThemeFn({
+    center: {
+      true: "footer-center",
+    },
     vanilla: {
       false: "p-10",
     },

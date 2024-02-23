@@ -17,12 +17,16 @@ type Story = StoryObj<typeof FileInput>;
 export const Default: Story = {
   args: {
     bordered: false,
+    className: "w-full max-w-xs",
   },
   render: (args) => {
     return <FileInput {...args} />;
   },
 };
 export const Border: Story = {
+  args: {
+    className: "w-full max-w-xs",
+  },
   render: (args) => {
     return <FileInput {...args} />;
   },
@@ -32,6 +36,7 @@ export const Ghost: Story = {
   args: {
     color: "ghost",
     bordered: false,
+    className: "w-full max-w-xs",
   },
 };
 export const FormControlAndLabels: Story = {
@@ -57,12 +62,14 @@ export const Primary: Story = {
   ...Default,
   args: {
     color: "primary",
+    className: "w-full max-w-xs",
   },
 };
 export const Secondary: Story = {
   ...Default,
   args: {
     color: "secondary",
+    className: "w-full max-w-xs",
   },
 };
 
@@ -70,6 +77,7 @@ export const Accent: Story = {
   ...Default,
   args: {
     color: "accent",
+    className: "w-full max-w-xs",
   },
 };
 
@@ -77,6 +85,7 @@ export const Info: Story = {
   ...Default,
   args: {
     color: "info",
+    className: "w-full max-w-xs",
   },
 };
 
@@ -84,6 +93,7 @@ export const Success: Story = {
   ...Default,
   args: {
     color: "success",
+    className: "w-full max-w-xs",
   },
 };
 
@@ -91,6 +101,7 @@ export const Warning: Story = {
   ...Default,
   args: {
     color: "warning",
+    className: "w-full max-w-xs",
   },
 };
 
@@ -98,6 +109,7 @@ export const Error: Story = {
   ...Default,
   args: {
     color: "error",
+    className: "w-full max-w-xs",
   },
 };
 
@@ -110,10 +122,10 @@ export const Sizes: Story = {
   render: (args) => {
     return (
       <div className="flex flex-col gap-4 w-full items-center">
-        <FileInput {...args} size="xs" />
-        <FileInput {...args} size="sm" />
-        <FileInput {...args} size="md" />
-        <FileInput {...args} size="lg" />
+        <FileInput {...args} className="w-full max-w-xs" size="xs" />
+        <FileInput {...args} className="w-full max-w-xs" size="sm" />
+        <FileInput {...args} className="w-full max-w-xs" size="md" />
+        <FileInput {...args} className="w-full max-w-xs" size="lg" />
       </div>
     );
   },
@@ -124,5 +136,6 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     placeholder: "You can't touch this",
+    className: "w-full max-w-xs",
   },
 };

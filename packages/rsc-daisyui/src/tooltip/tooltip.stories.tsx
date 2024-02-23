@@ -140,10 +140,10 @@ export const ErrorColor: Story = {
 };
 
 export const Responsive: Story = {
-  ...PrimaryColor,
+  ...Default,
   args: {
-    open: true,
-    color: "error",
-    tip: "error",
+    tip: "hello",
+    disabled: true,
+    className: "lg:tooltip",
   },
 };

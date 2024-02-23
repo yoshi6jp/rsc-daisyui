@@ -22,7 +22,7 @@ export const Card = classed("div", "card", {
       true: "card-side",
     },
     vanilla: {
-      false: "bg-base-100 shadow-xl",
+      false: "bg-base-100",
     },
   }),
   ...VanillaDefaultVariants,

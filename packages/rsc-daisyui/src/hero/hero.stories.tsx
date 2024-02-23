@@ -117,18 +117,13 @@ export const WithForm: Story = {
                 <Label>
                   <Label.Text>Email</Label.Text>
                 </Label>
-                <Input placeholder="email" required type="email" vanilla />
+                <Input placeholder="email" required type="email" />
               </FormControl>
               <FormControl>
                 <Label>
                   <Label.Text>Password</Label.Text>
                 </Label>
-                <Input
-                  placeholder="password"
-                  required
-                  type="password"
-                  vanilla
-                />
+                <Input placeholder="password" required type="password" />
                 <Label className="label">
                   <Label.TextAlt as="a" className="link link-hover" href="#">
                     Forgot password?

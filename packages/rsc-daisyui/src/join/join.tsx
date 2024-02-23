@@ -1,6 +1,6 @@
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
-import { JoinButton } from "./join-item";
+import { JoinButton, JoinInput, JoinSelect } from "./join-item";
 
 export const Join = classed(
   "div",
@@ -16,4 +16,8 @@ export const Join = classed(
 );
 Join.displayName = "Join";
 
-export default Object.assign(Join, { Button: JoinButton });
+export default Object.assign(Join, {
+  Button: JoinButton,
+  Input: JoinInput,
+  Select: JoinSelect,
+});

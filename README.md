@@ -127,16 +127,16 @@ export default (props) => {
 - [x] Footer
 - [x] Hero
 - [x] Indicator
-- [ ] Join (group items)
-- [ ] Mask
-- [ ] Stack
+- [x] Join (group items)
+- [x] Mask
+- [x] Stack
 
 #### Mockup
 
-- [ ] Browser
-- [ ] Code
-- [ ] Phone
-- [ ] Window
+- [x] Browser
+- [x] Code
+- [x] Phone
+- [x] Window
 
 ---
 

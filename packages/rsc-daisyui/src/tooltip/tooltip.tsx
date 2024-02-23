@@ -2,10 +2,11 @@ import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 
-export const TooltipBase = classed(
-  "div",
-  "tooltip",
-  configWithThemeFn({
+export const TooltipBase = classed("div", {
+  ...configWithThemeFn({
+    disabled: {
+      false: "tooltip",
+    },
     open: {
       true: "tooltip-open",
     },
@@ -24,8 +25,11 @@ export const TooltipBase = classed(
       warning: "tooltip-warning",
       error: "tooltip-error",
     },
-  })
-);
+  }),
+  defaultVariants: {
+    disabled: false,
+  },
+});
 
 export type TooltipProps = ComponentProps<typeof TooltipBase> & {
   tip: string;

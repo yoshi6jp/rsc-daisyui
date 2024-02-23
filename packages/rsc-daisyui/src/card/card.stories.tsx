@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   args: {
-    className: "w-96",
+    className: "w-96 shadow-xl",
   },
   render: (args) => {
     return (
@@ -42,14 +42,14 @@ export const Default: Story = {
 export const Compact: Story = {
   ...Default,
   args: {
-    className: "w-96",
+    className: "w-96 shadow-xl",
     compact: true,
   },
 };
 
 export const WithBadge: Story = {
   args: {
-    className: "w-96",
+    className: "w-96 shadow-xl",
   },
   render: (args) => {
     return (
@@ -76,9 +76,31 @@ export const WithBadge: Story = {
   },
 };
 
+export const WithBottomImage: Story = {
+  args: {
+    className: "w-96 shadow-xl",
+  },
+  render: (args) => {
+    return (
+      <Card {...args}>
+        <Card.Body>
+          <Card.Title>Shoes!</Card.Title>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+        </Card.Body>
+        <figure>
+          <img
+            alt="Shoes"
+            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+          />
+        </figure>
+      </Card>
+    );
+  },
+};
+
 export const CenteredContentAndPaddings: Story = {
   args: {
-    className: "w-96",
+    className: "w-96 shadow-xl",
   },
   render: (args) => {
     return (
@@ -104,7 +126,7 @@ export const CenteredContentAndPaddings: Story = {
 
 export const ImageOverlay: Story = {
   args: {
-    className: "w-96 image-full",
+    className: "w-96 image-full shadow-xl",
   },
   render: (args) => {
     return (
@@ -129,7 +151,7 @@ export const ImageOverlay: Story = {
 
 export const NoImage: Story = {
   args: {
-    className: "w-96",
+    className: "w-96 shadow-xl",
   },
   render: (args) => {
     return (
@@ -149,7 +171,6 @@ export const NoImage: Story = {
 export const CustomColor: Story = {
   args: {
     className: "w-96 bg-primary text-primary-content",
-    vanilla: true,
   },
   render: (args) => {
     return (
@@ -169,7 +190,6 @@ export const CustomColor: Story = {
 export const CenteredWithNeutralColor: Story = {
   args: {
     className: "w-96 bg-neutral text-neutral-content",
-    vanilla: true,
   },
   render: (args) => {
     return (
@@ -189,7 +209,7 @@ export const CenteredWithNeutralColor: Story = {
 
 export const ActionOnTop: Story = {
   args: {
-    className: "w-96",
+    className: "w-96 shadow-xl",
   },
   render: (args) => {
     return (
@@ -222,7 +242,8 @@ export const ActionOnTop: Story = {
 
 export const Glass: Story = {
   args: {
-    className: "w-96 glass bg-inherit",
+    className: "w-96 glass",
+    vanilla: true,
   },
   render: (args) => {
     return (
@@ -257,6 +278,7 @@ export const Glass: Story = {
 export const ImageOnSide: Story = {
   args: {
     side: true,
+    className: "shadow-xl",
   },
   render: (args) => {
     return (
@@ -281,7 +303,7 @@ export const ImageOnSide: Story = {
 
 export const Responsive: Story = {
   args: {
-    className: "lg:card-side",
+    className: "lg:card-side shadow-xl",
   },
   render: (args) => {
     return (

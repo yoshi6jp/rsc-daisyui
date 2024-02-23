@@ -13,7 +13,7 @@ export function configWithThemeFn<T extends Variants>(conf: T) {
 }
 export const VanillaDefaultVariants = {
   defaultVariants: {
-    vanilla: "false",
+    vanilla: false,
   },
 } as const;
 

@@ -22,12 +22,8 @@ export const Select = classed("select", "select", {
       sm: "select-sm",
       xs: "select-xs",
     },
-    vanilla: {
-      false: "w-full max-w-xs",
-    },
   }),
   defaultVariants: {
-    vanilla: false,
     bordered: true,
   },
 });
