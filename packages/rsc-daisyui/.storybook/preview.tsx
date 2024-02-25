@@ -28,6 +28,7 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
+          "Welcome",
           "Actions",
           "Data Display",
           "Navigation",

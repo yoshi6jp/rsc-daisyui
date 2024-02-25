@@ -42,7 +42,7 @@ export const Ghost: Story = {
 export const FormControlAndLabels: Story = {
   render: (args) => {
     return (
-      <FormControl>
+      <FormControl className="w-full max-w-xs">
         <Label>
           <Label.Text>Pick a file</Label.Text>
           <Label.TextAlt>Alt label</Label.TextAlt>

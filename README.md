@@ -9,7 +9,7 @@
 
 [Storybook](https://yoshi6jp.github.io/rsc-daisyui/)
 
-[Next.js --- Kitchen Sink ---](https://rsc-daisyui-web.vercel.app/)
+[Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
 
 ## rsc-daisyui 🌼
 

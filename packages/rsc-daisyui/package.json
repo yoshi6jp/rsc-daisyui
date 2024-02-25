@@ -1,9 +1,15 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
+  "keywords": [
+    "react",
+    "daisyui",
+    "component",
+    "rsc"
+  ],
   "bugs": {
     "url": "https://github.com/yoshi6jp/rsc-daisyui/issues"
   },
@@ -61,6 +67,7 @@
     "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-github-btn": "^1.4.0",
     "storybook": "^7.6.14",
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.4.1",

@@ -47,7 +47,7 @@ export const FormControlAndLabels: Story = {
   },
   render: (args) => {
     return (
-      <FormControl>
+      <FormControl className="w-full max-w-xs">
         <Label>
           <Label.Text>What is your name?</Label.Text>
           <Label.TextAlt>Top Right label</Label.TextAlt>
