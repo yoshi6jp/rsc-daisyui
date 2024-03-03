@@ -11,6 +11,8 @@
 
 [Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
 
+[Sandbox](https://codesandbox.io/p/github/yoshi6jp/rsc-daisyui-sample/draft/condescending-water?embed=1)
+
 ## rsc-daisyui 🌼
 
 ### Install
