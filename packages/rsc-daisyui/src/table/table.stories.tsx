@@ -857,14 +857,14 @@ export const PinnedRowsAndPinnedCols: Story = {
       <Table {...args}>
         <thead>
           <tr>
-            <th></th>
+            <th />
             <td>Name</td>
             <td>Job</td>
             <td>company</td>
             <td>location</td>
             <td>Last Login</td>
             <td>Favorite Color</td>
-            <th></th>
+            <th />
           </tr>
         </thead>
         <tbody>
@@ -1071,14 +1071,14 @@ export const PinnedRowsAndPinnedCols: Story = {
         </tbody>
         <tfoot>
           <tr>
-            <th></th>
+            <th />
             <td>Name</td>
             <td>Job</td>
             <td>company</td>
             <td>location</td>
             <td>Last Login</td>
             <td>Favorite Color</td>
-            <th></th>
+            <th />
           </tr>
         </tfoot>
       </Table>

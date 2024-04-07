@@ -3,6 +3,11 @@ import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
+const DiffItem1 = classed("div", "diff-item-1");
+DiffItem1.displayName = "DiffItem1";
+const DiffItem2 = classed("div", "diff-item-2");
+DiffItem2.displayName = "DiffItem2";
+
 export const DiffBase = classed("div", "diff", {
   ...configWithThemeFn({
     vanilla: {
@@ -13,17 +18,32 @@ export const DiffBase = classed("div", "diff", {
 });
 
 export type DiffProps = ComponentProps<typeof DiffBase> & {
-  secondItem: ReactNode;
+  secondItem?: ReactNode;
+  secondChild?: ReactNode;
 };
 
 export const Diff = deriveClassed<typeof DiffBase, DiffProps>(
-  ({ children, secondItem, ...rest }, ref) => {
+  ({ children, secondItem, secondChild, ...rest }, ref) => {
+    if (secondChild) {
+      return (
+        <DiffBase {...rest} ref={ref}>
+          {children}
+          {secondChild}
+          <div className="diff-resizer" />
+        </DiffBase>
+      );
+    }
     return (
       <DiffBase {...rest} ref={ref}>
-        <div className="diff-item-1">{children}</div>
-        <div className="diff-item-2">{secondItem}</div>
+        <DiffItem1>{children}</DiffItem1>
+        <DiffItem2>{secondItem}</DiffItem2>
         <div className="diff-resizer" />
       </DiffBase>
     );
   }
 );
+Diff.displayName = "Diff";
+export default Object.assign(Diff, {
+  Item1: DiffItem1,
+  Item2: DiffItem2,
+});

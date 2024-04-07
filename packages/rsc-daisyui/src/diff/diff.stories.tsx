@@ -2,7 +2,8 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { Diff, DiffBase } from "./diff";
+import { DiffBase } from "./diff";
+import { Diff } from ".";
 
 const meta: Meta<typeof Diff> = {
   title: "Data Display/Diff",
@@ -49,6 +50,29 @@ export const DiffText: Story = {
       <div className="bg-primary text-primary-content text-9xl font-black grid place-content-center">
         DAISY
       </div>
+    </Diff>
+  ),
+};
+
+export const CustomBorder: Story = {
+  render: (args) => (
+    <Diff
+      {...args}
+      secondChild={
+        <Diff.Item2 className="border-primary">
+          <img
+            alt="daisy"
+            src="https://daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.jpg"
+          />
+        </Diff.Item2>
+      }
+    >
+      <Diff.Item1>
+        <img
+          alt="daisy"
+          src="https://daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.jpg"
+        />
+      </Diff.Item1>
     </Diff>
   ),
 };

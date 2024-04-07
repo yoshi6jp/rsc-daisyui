@@ -236,3 +236,12 @@ export const CustomColorsAndButton: Story = {
     </Stats>
   ),
 };
+
+export const ZeroValue: StoryObj<typeof Stats.Stat> = {
+  ...Default,
+  args: {
+    title: "Total Page Views",
+    value: 0,
+    desc: "21% more than last month",
+  },
+};

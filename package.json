@@ -7,7 +7,7 @@
     "lint": "turbo lint",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-packages": "cp README.md packages/rsc-daisyui && turbo run publish-packages && rm packages/rsc-daisyui/README.md",
+    "publish-pkg": "cp README.md packages/rsc-daisyui && cd packages/rsc-daisyui && pnpm publish-pkg && rm README.md",
     "build-storybook": "cd packages/rsc-daisyui && pnpm build-storybook"
   },
   "devDependencies": {
@@ -16,6 +16,6 @@
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tsconfig": "workspace:*",
-    "turbo": "^1.11.3"
+    "turbo": "^1.13.0"
   }
 }

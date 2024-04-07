@@ -1,7 +1,7 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "keywords": [
@@ -39,7 +39,7 @@
     "lint": "eslint src/",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "publish-pkg": "turbo run build lint && changeset version && changeset publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

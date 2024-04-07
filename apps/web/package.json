@@ -13,7 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-btn": "^1.4.0",
-    "rsc-daisyui": "^1.0.0"
+    "rsc-daisyui": "^1.0.2"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.5.6",
