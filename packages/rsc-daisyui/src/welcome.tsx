@@ -14,7 +14,7 @@ export function Welcome() {
                 <img
                   alt="logo"
                   className="h-16 inline-block"
-                  src="https://daisyui.com/images/daisyui-logo/daisyui-logomark.svg"
+                  src="https://img.daisyui.com/images/daisyui-logo/daisyui-logomark.svg"
                 />
                 rsc-daisyUI
               </div>

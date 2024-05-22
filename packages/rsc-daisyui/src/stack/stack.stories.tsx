@@ -58,17 +58,17 @@ export const StackedImages: Story = {
         <img
           alt="stack 1"
           className="rounded w-28"
-          src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+          src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
         />
         <img
           alt="stack 2"
           className="rounded w-28"
-          src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
+          src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
         />
         <img
           alt="stack 3"
           className="rounded w-28"
-          src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
+          src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
         />
       </Stack>
     );
