@@ -21,7 +21,7 @@ export const Stat = deriveClassed<typeof StatBase, StatProps>(
     <StatBase {...rest} ref={ref}>
       {figure ? <StatFigure>{figure}</StatFigure> : null}
       {title ? <StatTitle>{title}</StatTitle> : null}
-      {value ?? <StatValue>{value}</StatValue>}
+      {value !== undefined ? <StatValue>{value}</StatValue> : null}
       {desc ? <StatDesc>{desc}</StatDesc> : null}
       {actions ? <StatActions>{actions}</StatActions> : null}
       {children}

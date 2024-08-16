@@ -105,7 +105,7 @@ export default function Page(): JSX.Element {
           <div className="w-10 rounded-full">
             <img
               alt="avatar"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
             />
           </div>
         </Chat.Avatar>

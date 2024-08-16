@@ -116,3 +116,11 @@ export const Sizes: Story = {
     );
   },
 };
+
+export const CustomColor: Story = {
+  ...Default,
+  args: {
+    ...Default.args,
+    className: "max-w-xs [--range-shdw:yellow]",
+  },
+};

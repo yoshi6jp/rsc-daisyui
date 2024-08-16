@@ -214,7 +214,7 @@ export const VisualElements: Story = {
                   <Mask as="div" className="w-12 h-12" shape="squircle">
                     <img
                       alt="Avatar Tailwind CSS Component"
-                      src="https://daisyui.com/tailwind-css-component-profile-2@56w.png"
+                      src="https://img.daisyui.com/images/profile/demo/2@94.webp"
                     />
                   </Mask>
                 </Avatar>
@@ -252,7 +252,7 @@ export const VisualElements: Story = {
                   <Mask as="div" className="w-12 h-12" shape="squircle">
                     <img
                       alt="Avatar Tailwind CSS Component"
-                      src="https://daisyui.com/tailwind-css-component-profile-3@56w.png"
+                      src="https://img.daisyui.com/images/profile/demo/3@94.webp"
                     />
                   </Mask>
                 </Avatar>
@@ -290,7 +290,7 @@ export const VisualElements: Story = {
                   <Mask as="div" className="w-12 h-12" shape="squircle">
                     <img
                       alt="Avatar Tailwind CSS Component"
-                      src="https://daisyui.com/tailwind-css-component-profile-4@56w.png"
+                      src="https://img.daisyui.com/images/profile/demo/4@94.webp"
                     />
                   </Mask>
                 </Avatar>
@@ -328,7 +328,7 @@ export const VisualElements: Story = {
                   <Mask as="div" className="w-12 h-12" shape="squircle">
                     <img
                       alt="Avatar Tailwind CSS Component"
-                      src="https://daisyui.com/tailwind-css-component-profile-5@56w.png"
+                      src="https://img.daisyui.com/images/profile/demo/5@94.webp"
                     />
                   </Mask>
                 </Avatar>

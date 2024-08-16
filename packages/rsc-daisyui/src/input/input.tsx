@@ -1,5 +1,9 @@
+import type { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
+import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
+import { InsideInput } from "./inside-input";
 
 export const Input = classed("input", "input", {
   ...configWithThemeFn({
@@ -28,3 +32,48 @@ export const Input = classed("input", "input", {
   },
 });
 Input.displayName = "Input";
+
+export type InsideProps = ComponentProps<typeof Input> & {
+  start?: ReactNode;
+  end?: ReactNode;
+  innerClassName?: string;
+};
+
+export const Inside = deriveClassed<typeof Input, InsideProps>(
+  (
+    {
+      children,
+      className,
+      innerClassName,
+      title,
+      start,
+      end,
+      bordered,
+      color,
+      size,
+      theme,
+      ...rest
+    },
+    ref
+  ) => (
+    <Input
+      as="label"
+      bordered={bordered}
+      className={twMerge("flex items-center gap-2", className)}
+      color={color}
+      size={size}
+      theme={theme}
+      title={title}
+    >
+      {start ?? null}
+      <InsideInput {...rest} className={innerClassName} ref={ref}>
+        {children}
+      </InsideInput>
+      {end ?? null}
+    </Input>
+  )
+);
+
+Inside.displayName = "InputInside";
+
+export default Object.assign(Input, { Inside });

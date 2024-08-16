@@ -163,7 +163,7 @@ export const GlassButton: Story = {
       className="no-container w-full h-full min-h-[6rem] p-4 flex items-center justify-center rounded-box"
       style={{
         backgroundImage:
-          "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+          "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
         backgroundSize: "cover",
       }}
     >

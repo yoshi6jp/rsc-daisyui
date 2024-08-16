@@ -48,7 +48,7 @@ export const WithFigure: Story = {
           <img
             alt="logo"
             className="max-w-sm rounded-lg shadow-2xl"
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
           />
           <div>
             <h1 className="text-5xl font-bold">Box Office News!</h1>
@@ -76,7 +76,7 @@ export const FigureButReverseOrder: Story = {
           <img
             alt="logo"
             className="max-w-sm rounded-lg shadow-2xl"
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
           />
           <div>
             <h1 className="text-5xl font-bold">Box Office News!</h1>
@@ -146,7 +146,7 @@ export const WithOverlayImage: Story = {
     className: "min-h-[30rem] rounded",
     style: {
       backgroundImage:
-        "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+        "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
     },
   },
   render: (args) => {

@@ -17,8 +17,8 @@ const preview: Preview = {
       },
     },
   },
+
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       exclude: ["as"],
       matchers: {
@@ -40,6 +40,7 @@ const preview: Preview = {
       },
     },
   },
+
   decorators: [
     (Story, context) => {
       return (
@@ -49,6 +50,8 @@ const preview: Preview = {
       );
     },
   ],
+
+  tags: ["autodocs"],
 };
 
 export default preview;

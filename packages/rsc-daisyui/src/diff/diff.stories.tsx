@@ -25,13 +25,13 @@ export const Default: Story = {
       secondItem={
         <img
           alt="daisy"
-          src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.jpg"
+          src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.webp"
         />
       }
     >
       <img
         alt="daisy"
-        src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.jpg"
+        src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.webp"
       />
     </Diff>
   ),
@@ -62,7 +62,7 @@ export const CustomBorder: Story = {
         <Diff.Item2 className="border-primary">
           <img
             alt="daisy"
-            src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a-blur.webp"
           />
         </Diff.Item2>
       }
@@ -70,7 +70,7 @@ export const CustomBorder: Story = {
       <Diff.Item1>
         <img
           alt="daisy"
-          src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.jpg"
+          src="https://img.daisyui.com/images/stock/photo-1560717789-0ac7c58ac90a.webp"
         />
       </Diff.Item1>
     </Diff>

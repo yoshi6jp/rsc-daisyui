@@ -24,7 +24,7 @@ export const Default: Story = {
         <figure>
           <img
             alt="Shoes"
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
           />
         </figure>
         <Card.Body>
@@ -57,7 +57,7 @@ export const WithBadge: Story = {
         <figure>
           <img
             alt="Shoes"
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
           />
         </figure>
         <Card.Body>
@@ -90,7 +90,7 @@ export const WithBottomImage: Story = {
         <figure>
           <img
             alt="Shoes"
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
           />
         </figure>
       </Card>
@@ -109,7 +109,7 @@ export const CenteredContentAndPaddings: Story = {
           <img
             alt="Shoes"
             className="rounded-xl"
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
           />
         </figure>
         <Card.Body className="items-center text-center">
@@ -134,7 +134,7 @@ export const ImageOverlay: Story = {
         <figure>
           <img
             alt="Shoes"
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
           />
         </figure>
         <Card.Body>
@@ -251,7 +251,7 @@ export const Glass: Story = {
         className="no-container w-full h-full flex min-h-[6rem] p-4 item-center justify-center rounded-box"
         style={{
           backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1481026469463-66327c86e544.jpg)",
+            "url(https://img.daisyui.com/images/stock/photo-1481026469463-66327c86e544.webp)",
           backgroundSize: "cover",
         }}
       >
@@ -259,7 +259,7 @@ export const Glass: Story = {
           <figure>
             <img
               alt="car!"
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
             />
           </figure>
           <Card.Body>
@@ -286,7 +286,7 @@ export const ImageOnSide: Story = {
         <figure>
           <img
             alt="Movie"
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
           />
         </figure>
         <Card.Body>
@@ -311,7 +311,7 @@ export const Responsive: Story = {
         <figure>
           <img
             alt="Album"
-            src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
           />
         </figure>
         <Card.Body>

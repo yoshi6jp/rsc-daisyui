@@ -83,7 +83,7 @@ export const ForAvatar: StoryObj<typeof Indicator.Avatar> = {
         <div className="w-20 h-20 rounded-lg">
           <img
             alt="Tailwind CSS examples"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           />
         </div>
       </Indicator.Avatar>
@@ -141,7 +141,7 @@ export const InCenterOfImage: StoryObj<typeof Indicator.Badge> = {
         <img
           alt="Tailwind CSS examples"
           className="rounded"
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
         />
       </Indicator>
     );
