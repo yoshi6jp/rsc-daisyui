@@ -41,5 +41,6 @@ module.exports = {
     "react-hooks/rules-of-hooks": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "react/no-array-index-key": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
   },
 };

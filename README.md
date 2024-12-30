@@ -43,10 +43,11 @@ To prevent TailwindCSS from purging your styles, add the following line to your 
 
 ```ts
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui";
 
 const config: Config = {
   content: ["node_modules/rsc-daisyui/dist/**/*.js"],
-  plugins: [require("daisyui")],
+  plugins: [daisyui],
 };
 export default config;
 ```

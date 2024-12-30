@@ -14,7 +14,7 @@ export const CountdownItem = deriveClassed<
 >(({ value, ...rest }, ref) => {
   const countdownValue = Math.min(99, Math.max(0, value));
   const countdownStyle: Record<string, number> = {
-    ["--value"]: countdownValue,
+    "--value": countdownValue,
   };
   return <CountdownItemBase {...rest} ref={ref} style={countdownStyle} />;
 });

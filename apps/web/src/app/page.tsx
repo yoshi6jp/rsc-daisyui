@@ -15,6 +15,8 @@ import {
 import { Dialog } from "./dialog";
 import { Info } from "./info";
 
+import type { JSX } from "react";
+
 export default function Page(): JSX.Element {
   return (
     <main className="m-8">
@@ -66,10 +68,10 @@ export default function Page(): JSX.Element {
         </figure>
         <Card.Body>
           <Card.Title>DaisyUI Card</Card.Title>
-          <p>
+          <div>
             Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit
             sit necessitatibus.
-          </p>
+          </div>
         </Card.Body>
       </Card>
       <Divider />

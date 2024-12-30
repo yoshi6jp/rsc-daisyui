@@ -46,7 +46,7 @@ export const FormControlAndLabels: Story = {
   },
   render: (args) => {
     return (
-      <FormControl vanilla>
+      <FormControl>
         <Label>
           <Label.Text>Your bio</Label.Text>
           <Label.TextAlt>Alt label</Label.TextAlt>

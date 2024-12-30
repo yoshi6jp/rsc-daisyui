@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, type JSX } from "react";
 import { Button, Modal } from "rsc-daisyui";
 
 export function Dialog(): JSX.Element {
@@ -15,9 +15,9 @@ export function Dialog(): JSX.Element {
       <Button onClick={handleClick}>open modal</Button>
       <Modal ref={ref}>
         <Modal.Box>
-          <p className="py-4">
+          <div className="py-4">
             Press ESC key or click the button below to close
-          </p>
+          </div>
           <Modal.Action>
             <Button>Close</Button>
           </Modal.Action>

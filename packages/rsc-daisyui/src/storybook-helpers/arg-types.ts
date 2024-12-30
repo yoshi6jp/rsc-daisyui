@@ -71,9 +71,11 @@ export function toArgTypes<
     ([key, item]) => [key, itemToArgTypes(item)] as const
   );
 
-  const propsArgs = Object.entries(props || {}).map(([key, type]) => {
-    return [key, propToArgTypes(type)] as const;
-  });
+  const propsArgs = Array.from(Object.entries(props || {})).flatMap(
+    ([key, type]) => {
+      return type ? [[key, propToArgTypes(type)] as const] : [];
+    }
+  );
   const args = [...configArgs, ...propsArgs];
   return Object.fromEntries(args);
 }

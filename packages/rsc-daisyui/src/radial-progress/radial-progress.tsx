@@ -19,9 +19,9 @@ export const RadialProgress = deriveClassed<
   RadialProgressProps
 >(({ children, value, size, thickness, ...rest }, ref) => {
   const radialProgressStyle: Record<string, unknown> = {
-    ["--value"]: Math.min(100, Math.max(0, value || 0)),
-    ["--size"]: size,
-    ["--thickness"]: thickness,
+    "--value": Math.min(100, Math.max(0, value || 0)),
+    "--size": size,
+    "--thickness": thickness,
   };
   return (
     <RadialProgressBase

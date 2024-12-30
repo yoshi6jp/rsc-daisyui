@@ -1,5 +1,7 @@
-"use client";
+"use client";;
 import GitHubButton from "react-github-btn";
+
+import type { JSX } from "react";
 
 export function Info(): JSX.Element {
   return (
