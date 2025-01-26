@@ -7,9 +7,9 @@
 - Simple components available in the React Server Component
 - No `useEffect`, `useState`, etc and used.
 
-[Storybook](https://yoshi6jp.github.io/rsc-daisyui/)
+[Storybook](https://candid-daffodil-759fc3.netlify.app/)
 
-[Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
+[Next.js (Kitchen Sink) ](https://v1-rsc-daisyui-web.vercel.app/)
 
 [Sandbox](https://codesandbox.io/p/github/yoshi6jp/rsc-daisyui-sample/draft/condescending-water?embed=1)
 
