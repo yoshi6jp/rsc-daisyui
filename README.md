@@ -8,9 +8,9 @@
 - No `useEffect`, `useState`, etc and used.
 - Support for `daisyUI 5` and `Tailwind CSS v4`
 
-[Storybook](https://yoshi6jp.github.io/rsc-daisyui/)
+[Storybook](https://dreamy-melomakarona-11a971.netlify.app/)
 
-[Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
+[Next.js (Kitchen Sink) ](https://v2-rsc-daisyui-web.vercel.app/)
 
 [Sandbox](https://codesandbox.io/p/github/yoshi6jp/rsc-daisyui-sample/draft/condescending-water?embed=1)
 
