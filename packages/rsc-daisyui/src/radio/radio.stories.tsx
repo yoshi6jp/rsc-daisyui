@@ -27,7 +27,31 @@ export const Default: Story = {
     );
   },
 };
-
+export const Sizes: Story = {
+  parameters: {
+    controls: {
+      exclude: ["as", "size"],
+    },
+  },
+  render: (args) => {
+    return (
+      <>
+        <Radio {...args} defaultChecked size="xs" />
+        <Radio {...args} defaultChecked size="sm" />
+        <Radio {...args} defaultChecked size="md" />
+        <Radio {...args} defaultChecked size="lg" />
+        <Radio {...args} defaultChecked size="xl" />
+      </>
+    );
+  },
+};
+export const NeutralColor: Story = {
+  ...Default,
+  args: {
+    name: "radio-neutral",
+    color: "neutral",
+  },
+};
 export const PrimaryColor: Story = {
   ...Default,
   args: {
@@ -88,36 +112,24 @@ export const Disabled: Story = {
     name: "radio-9",
     disabled: true,
   },
-  // render: (args) => {
-  //   return (
-  //     <>
-  //       <Radio {...args} checked />
-  //       <Radio {...args} />
-  //     </>
-  //   );
-  // },
 };
-export const LabelAndFormControlAndCustomColors: Story = {
+export const CustomColors: Story = {
   args: {
-    checked: true,
-    name: "radio-10",
+    name: "radio-11",
   },
   render: (args) => {
     return (
-      <div className="flex flex-col">
-        <FormControl className="w-52">
-          <Label>
-            <Label.Text>Red pill</Label.Text>
-            <Radio {...args} className="checked:bg-red-500" />
-          </Label>
-        </FormControl>
-        <FormControl className="w-52">
-          <Label>
-            <Label.Text>Blue pill</Label.Text>
-            <Radio {...args} className="checked:bg-blue-500" defaultChecked />
-          </Label>
-        </FormControl>
-      </div>
+      <>
+        <Radio
+          {...args}
+          defaultChecked
+          className="bg-red-100 border-red-300 checked:bg-red-200 checked:text-red-600 checked:border-red-600"
+        />
+        <Radio
+          {...args}
+          className="bg-blue-100 border-blue-300 checked:bg-blue-200 checked:text-blue-600 checked:border-blue-600"
+        />
+      </>
     );
   },
 };

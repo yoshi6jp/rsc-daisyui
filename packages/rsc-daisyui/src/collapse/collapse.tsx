@@ -12,7 +12,7 @@ export const Collapse = classed("div", "collapse", {
       false: "collapse-close",
     },
     vanilla: {
-      false: "bg-base-200",
+      false: "bg-base-100 border-base-300 border",
     },
   }),
   defaultProps: { tabIndex: 0 },
@@ -22,13 +22,20 @@ Collapse.displayName = "Collapse";
 const CollapseTitle = classed("div", "collapse-title", {
   variants: {
     vanilla: {
-      false: "text-xl font-medium",
+      false: "font-semibold",
     },
   },
   ...VanillaDefaultVariants,
 });
 CollapseTitle.displayName = "CollapseTitle";
-const CollapseContent = classed("div", "collapse-content");
+const CollapseContent = classed("div", "collapse-content", {
+  variants: {
+    vanilla: {
+      false: "text-sm",
+    },
+  },
+  ...VanillaDefaultVariants,
+});
 CollapseContent.displayName = "CollapseContent";
 
 export default Object.assign(Collapse, {

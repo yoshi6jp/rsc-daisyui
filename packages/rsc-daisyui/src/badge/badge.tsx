@@ -8,7 +8,17 @@ export const Badge = classed(
     outline: {
       true: "badge-outline",
     },
+    soft: {
+      true: "badge-soft",
+    },
+    dash: {
+      true: "badge-dash",
+    },
+    ghost: {
+      true: "badge-ghost",
+    },
     size: {
+      xl: "badge-xl",
       lg: "badge-lg",
       md: "badge-md",
       sm: "badge-sm",
@@ -19,7 +29,6 @@ export const Badge = classed(
       primary: "badge-primary",
       secondary: "badge-secondary",
       accent: "badge-accent",
-      ghost: "badge-ghost",
       info: "badge-info",
       success: "badge-success",
       warning: "badge-warning",

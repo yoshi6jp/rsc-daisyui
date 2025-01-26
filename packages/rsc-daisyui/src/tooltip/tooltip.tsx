@@ -1,6 +1,7 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
+import { TooltipContent } from "./tooltip-content";
 
 export const TooltipBase = classed("div", {
   ...configWithThemeFn({
@@ -17,6 +18,7 @@ export const TooltipBase = classed("div", {
       right: "tooltip-right",
     },
     color: {
+      neutral: "tooltip-neutral",
       primary: "tooltip-primary",
       secondary: "tooltip-secondary",
       accent: "tooltip-accent",
@@ -42,3 +44,5 @@ export const Tooltip = deriveClassed<typeof TooltipBase, TooltipProps>(
     </TooltipBase>
   )
 );
+
+export default Object.assign(Tooltip, { Content: TooltipContent });

@@ -18,7 +18,6 @@ export const Default: Story = {
     min: 0,
     max: 100,
     defaultValue: 40,
-    className: "max-w-xs",
   },
   render: (args) => {
     return <Range {...args} />;
@@ -37,8 +36,16 @@ export const StepAndMeasure: Story = {
       <div className="w-full max-w-xs">
         <Range {...args} />
         <Range.Measure count={5} />
+        <Range.Measure count={5} formatter={(index) => index + 1} />
       </div>
     );
+  },
+};
+export const NeutralColor: Story = {
+  ...Default,
+  args: {
+    ...Default.args,
+    color: "neutral",
   },
 };
 
@@ -97,7 +104,6 @@ export const Sizes: Story = {
   args: {
     min: 0,
     max: 100,
-    className: "max-w-xs",
   },
   parameters: {
     controls: {
@@ -108,10 +114,11 @@ export const Sizes: Story = {
   render: (args) => {
     return (
       <div className="w-full flex flex-col items-center gap-4">
-        <Range {...args} defaultValue={40} size="xs" />
-        <Range {...args} defaultValue={50} size="sm" />
-        <Range {...args} defaultValue={60} size="md" />
-        <Range {...args} defaultValue={70} size="lg" />
+        <Range {...args} defaultValue={30} size="xs" />
+        <Range {...args} defaultValue={40} size="sm" />
+        <Range {...args} defaultValue={50} size="md" />
+        <Range {...args} defaultValue={60} size="lg" />
+        <Range {...args} defaultValue={70} size="xl" />
       </div>
     );
   },
@@ -121,6 +128,7 @@ export const CustomColor: Story = {
   ...Default,
   args: {
     ...Default.args,
-    className: "max-w-xs [--range-shdw:yellow]",
+    className:
+      "text-blue-300 [--range-bg:orange] [--range-thumb:blue] [--range-fill:0]",
   },
 };

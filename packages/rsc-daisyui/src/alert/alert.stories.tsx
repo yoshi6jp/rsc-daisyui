@@ -14,13 +14,12 @@ const meta: Meta<typeof Alert> = {
 export default meta;
 type Story = StoryObj<typeof Alert>;
 export const Default: Story = {
-  args: {
-    className: "shadow-lg",
-  },
   render: (args) => {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-info shrink-0 w-6 h-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -47,6 +46,8 @@ export const InfoColor: Story = {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-current shrink-0 w-6 h-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -73,6 +74,8 @@ export const SuccessColor: Story = {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-current shrink-0 h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -99,6 +102,8 @@ export const WarningColor: Story = {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-current shrink-0 h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -125,6 +130,8 @@ export const ErrorColor: Story = {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-current shrink-0 h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -143,11 +150,58 @@ export const ErrorColor: Story = {
   },
 };
 
-export const Buttons: Story = {
+export const SoftStyle: Story = {
+  parameters: {
+    controls: {
+      exclude: ["as", "color"],
+    },
+  },
+  args: {
+    soft: true,
+  },
+  render: (args) => {
+    return (
+      <div className="flex gap-2 flex-wrap">
+        <Alert {...args} color="info">
+          <span>12 unread messages. Tap to see.</span>
+        </Alert>
+        <Alert {...args} color="success">
+          <span>Your purchase has been confirmed!</span>
+        </Alert>
+        <Alert {...args} color="warning">
+          <span>Warning: Invalid email address!</span>
+        </Alert>
+        <Alert {...args} color="error">
+          <span>Error! Task failed successfully.</span>
+        </Alert>
+      </div>
+    );
+  },
+};
+export const OutlineStyle: Story = {
+  ...SoftStyle,
+  args: {
+    outline: true,
+  },
+};
+export const DashStyle: Story = {
+  ...SoftStyle,
+  args: {
+    dash: true,
+  },
+};
+
+export const ButtonsResponsive: Story = {
+  args: {
+    className: "sm:alert-horizontal",
+    direction: "vertical",
+  },
   render: (args) => {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-info shrink-0 w-6 h-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -174,12 +228,15 @@ export const Buttons: Story = {
 
 export const TitleAndDescription: Story = {
   args: {
-    className: "shadow-lg",
+    className: "sm:alert-horizontal",
+    direction: "vertical",
   },
   render: (args) => {
     return (
       <Alert {...args}>
         <svg
+          role="img"
+          aria-label="icon"
           className="stroke-info shrink-0 w-6 h-6"
           fill="none"
           viewBox="0 0 24 24"

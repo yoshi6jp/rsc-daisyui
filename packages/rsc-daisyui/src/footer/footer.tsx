@@ -6,6 +6,10 @@ export const Footer = classed("footer", "footer", {
     center: {
       true: "footer-center",
     },
+    direction: {
+      horizontal: "footer-horizontal",
+      vertical: "footer-vertical",
+    },
     vanilla: {
       false: "p-10",
     },

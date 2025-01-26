@@ -1,9 +1,10 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, validatorVariant } from "../config";
 
 export const Toggle = classed("input", "toggle", {
   ...configWithThemeFn({
     color: {
+      neutral: "toggle-neutral",
       primary: "toggle-primary",
       secondary: "toggle-secondary",
       accent: "toggle-accent",
@@ -13,11 +14,13 @@ export const Toggle = classed("input", "toggle", {
       error: "toggle-error",
     },
     size: {
+      xl: "toggle-xl",
       lg: "toggle-lg",
       md: "toggle-md",
       sm: "toggle-sm",
       xs: "toggle-xs",
     },
+    ...validatorVariant,
   }),
   defaultProps: {
     type: "checkbox",

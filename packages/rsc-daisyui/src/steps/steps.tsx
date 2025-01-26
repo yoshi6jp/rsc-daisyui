@@ -1,6 +1,6 @@
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
-import { Step } from "./step";
+import { Step, Icon } from "./step";
 
 export const Steps = classed(
   "ul",
@@ -18,4 +18,5 @@ Steps.displayName = "Steps";
 
 export default Object.assign(Steps, {
   Step,
+  Icon,
 });

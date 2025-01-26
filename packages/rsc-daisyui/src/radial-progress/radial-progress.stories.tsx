@@ -33,9 +33,6 @@ export const DifferentValues: Story = {
         <RadialProgress {...args} value={20}>
           20%
         </RadialProgress>
-        <RadialProgress {...args} value={40}>
-          40%
-        </RadialProgress>
         <RadialProgress {...args} value={60}>
           60%
         </RadialProgress>

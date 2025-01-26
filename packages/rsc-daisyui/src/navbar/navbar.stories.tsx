@@ -27,7 +27,7 @@ export const Default: Story = {
   render: (args) => {
     return (
       <Navbar {...args}>
-        <Button as="a" className="text-xl" color="ghost">
+        <Button as="a" className="text-xl" ghost={true}>
           daisyUI
         </Button>
       </Navbar>
@@ -40,13 +40,15 @@ export const TitleAndIcon: Story = {
     return (
       <Navbar {...args}>
         <div className="flex-1">
-          <Button as="a" className="text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost={true}>
             daisyUI
           </Button>
         </div>
         <div className="flex-none">
-          <Button color="ghost" shape="square">
+          <Button ghost={true} shape="square">
             <svg
+              role="img"
+              aria-label="icon"
               className="inline-block w-5 h-5 stroke-current"
               fill="none"
               viewBox="0 0 24 24"
@@ -71,8 +73,10 @@ export const IconAtStartAndEnd: Story = {
     return (
       <Navbar {...args}>
         <div className="flex-none">
-          <Button color="ghost" shape="square">
+          <Button ghost={true} shape="square">
             <svg
+              role="img"
+              aria-label="icon"
               className="inline-block w-5 h-5 stroke-current"
               fill="none"
               viewBox="0 0 24 24"
@@ -88,13 +92,15 @@ export const IconAtStartAndEnd: Story = {
           </Button>
         </div>
         <div className="flex-1">
-          <Button as="a" className="text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost={true}>
             daisyUI
           </Button>
         </div>
         <div className="flex-none">
-          <Button color="ghost" shape="square">
+          <Button ghost shape="square">
             <svg
+              role="img"
+              aria-label="icon"
               className="inline-block w-5 h-5 stroke-current"
               fill="none"
               viewBox="0 0 24 24"
@@ -122,7 +128,7 @@ export const MenuAndSubmenu: Story = {
     return (
       <Navbar {...args}>
         <div className="flex-1">
-          <Button as="a" className="text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost>
             daisyUI
           </Button>
         </div>
@@ -151,16 +157,14 @@ export const SearchInputAndDropdown: Story = {
     return (
       <Navbar {...args}>
         <div className="flex-1">
-          <Button as="a" className="text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost>
             daisyUI
           </Button>
         </div>
-        <div className="flex-none gap-2">
-          <FormControl className="form-control">
-            <Input className="w-24 md:w-auto" placeholder="Search" />
-          </FormControl>
-          <Dropdown end>
-            <Dropdown.Avatar color="ghost" shape="circle">
+        <div className="flex gap-2">
+          <Input className="w-24 md:w-auto" placeholder="Search" />
+          <Dropdown align="end">
+            <Dropdown.Avatar ghost shape="circle">
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
@@ -194,15 +198,17 @@ export const IconIndicatorAndDropdown: Story = {
     return (
       <Navbar {...args}>
         <div className="flex-1">
-          <Button as="a" className="btn text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost>
             daisyUI
           </Button>
         </div>
         <div className="flex-none">
-          <Dropdown as="div" className="dropdown" end>
-            <Dropdown.Button as="div" color="ghost" shape="circle" vanilla>
+          <Dropdown as="div" align="end">
+            <Dropdown.Button as="div" ghost shape="circle" vanilla={false}>
               <Indicator>
                 <svg
+                  role="img"
+                  aria-label="icon"
                   className="h-5 w-5"
                   fill="none"
                   stroke="currentColor"
@@ -219,7 +225,7 @@ export const IconIndicatorAndDropdown: Story = {
                 <Indicator.Badge size="sm">8</Indicator.Badge>
               </Indicator>
             </Dropdown.Button>
-            <Dropdown.Card className="mt-3 w-52" compact>
+            <Dropdown.Card className="mt-3 w-52">
               <Card.Body>
                 <span className="font-bold text-lg">8 Items</span>
                 <span className="text-info">Subtotal: $999</span>
@@ -231,8 +237,8 @@ export const IconIndicatorAndDropdown: Story = {
               </Card.Body>
             </Dropdown.Card>
           </Dropdown>
-          <Dropdown as="div" end>
-            <Dropdown.Avatar as="div" color="ghost" shape="circle">
+          <Dropdown as="div" align="end">
+            <Dropdown.Avatar as="div" ghost shape="circle" tabIndex={0}>
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
@@ -263,8 +269,10 @@ export const DropdownCenterLogoAndIcon: Story = {
       <Navbar {...args}>
         <Navbar.Start>
           <Dropdown>
-            <Dropdown.Button color="ghost" shape="circle">
+            <Dropdown.Button ghost shape="circle">
               <svg
+                role="img"
+                aria-label="icon"
                 className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
@@ -287,13 +295,15 @@ export const DropdownCenterLogoAndIcon: Story = {
           </Dropdown>
         </Navbar.Start>
         <Navbar.Center>
-          <Button as="a" className="text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost>
             daisyUI
           </Button>
         </Navbar.Center>
         <Navbar.End>
-          <Button color="ghost" shape="circle">
+          <Button ghost shape="circle">
             <svg
+              role="img"
+              aria-label="icon"
               className="h-5 w-5"
               fill="none"
               stroke="currentColor"
@@ -308,9 +318,11 @@ export const DropdownCenterLogoAndIcon: Story = {
               />
             </svg>
           </Button>
-          <Button color="ghost" shape="circle">
+          <Button ghost shape="circle">
             <div className="indicator">
               <svg
+                role="img"
+                aria-label="icon"
                 className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
@@ -342,8 +354,10 @@ export const Responsive: Story = {
       <Navbar {...args}>
         <Navbar.Start>
           <Dropdown className="dropdown">
-            <Dropdown.Button className="lg:hidden" color="ghost">
+            <Dropdown.Button className="lg:hidden" ghost>
               <svg
+                role="img"
+                aria-label="icon"
                 className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
@@ -358,7 +372,10 @@ export const Responsive: Story = {
                 />
               </svg>
             </Dropdown.Button>
-            <Dropdown.Menu className="mt-3 p-2 w-52" size="sm">
+            <Dropdown.Menu
+              className="mt-3 p-2 w-52 bg-base-100 z-1 shadow"
+              size="sm"
+            >
               <Menu.Item>Item 1</Menu.Item>
               <Menu.Submenu label="Parent">
                 <Menu.Item>Submenu 1</Menu.Item>
@@ -367,12 +384,12 @@ export const Responsive: Story = {
               <Menu.Item>Item 3</Menu.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Button as="a" className="text-xl" color="ghost">
+          <Button as="a" className="text-xl" ghost>
             daisyUI
           </Button>
         </Navbar.Start>
         <Navbar.Center className="hidden lg:flex">
-          <Menu className="px-1" horizontal>
+          <Menu className="px-1 bg-base-100" horizontal>
             <Menu.Item>Item 1</Menu.Item>
             <Menu.Collapse label="Parent" ulClassName="p-2 w-40">
               <Menu.Item>Submenu 1</Menu.Item>
@@ -393,17 +410,17 @@ export const Colors: Story = {
     return (
       <div className="flex flex-wrap w-full gap-2">
         <Navbar {...args} className="bg-neutral text-neutral-content">
-          <Button className="text-xl" color="ghost">
+          <Button className="text-xl" ghost>
             daisyUI
           </Button>
         </Navbar>
         <Navbar {...args} className="bg-base-300">
-          <Button className="text-xl" color="ghost">
+          <Button className="text-xl" ghost>
             daisyUI
           </Button>
         </Navbar>
         <Navbar {...args} className="bg-primary text-primary-content">
-          <Button className="text-xl" color="ghost">
+          <Button className="text-xl" ghost>
             daisyUI
           </Button>
         </Navbar>

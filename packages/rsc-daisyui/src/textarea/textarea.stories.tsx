@@ -1,8 +1,7 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { FormControl, Label } from "..";
+import { Fieldset } from "..";
 import { Textarea } from ".";
 
 const meta: Meta<typeof Textarea> = {
@@ -16,7 +15,6 @@ type Story = StoryObj<typeof Textarea>;
 
 export const Default: Story = {
   args: {
-    bordered: false,
     placeholder: "Bio",
   },
   render: (args) => {
@@ -24,97 +22,54 @@ export const Default: Story = {
   },
 };
 
-export const Border: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-  },
-};
 export const Ghost: Story = {
   ...Default,
   args: {
-    bordered: false,
-    placeholder: "Bio",
-    color: "ghost",
+    ...Default.args,
+    ghost: true,
   },
 };
 
-export const FormControlAndLabels: Story = {
+export const FieldsetAndLabels: Story = {
   args: {
     placeholder: "Bio",
     className: "h-24",
   },
   render: (args) => {
     return (
-      <FormControl>
-        <Label>
-          <Label.Text>Your bio</Label.Text>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-        </Label>
+      <Fieldset className="w-xs">
+        <Fieldset.Legend>Your bio</Fieldset.Legend>
         <Textarea {...args} />
-        <Label>
-          <Label.TextAlt>Your bio</Label.TextAlt>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-        </Label>
-      </FormControl>
+        <Fieldset.Label as="div">Optional</Fieldset.Label>
+      </Fieldset>
     );
   },
 };
-
-export const PrimaryColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "primary",
+export const Colors: Story = {
+  parameters: {
+    controls: {
+      exclude: ["as", "color"],
+    },
   },
-};
-export const SecondaryColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "secondary",
-  },
-};
-export const AccentColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "accent",
-  },
-};
-export const InfoColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "info",
-  },
-};
-export const SuccessColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "success",
-  },
-};
-export const WarningColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "warning",
-  },
-};
-export const ErrorColor: Story = {
-  ...Default,
-  args: {
-    placeholder: "Bio",
-    color: "error",
+  render: (args) => {
+    return (
+      <div className="grid gap-4 w-xs">
+        <Textarea {...args} color="primary" placeholder="Primary" />
+        <Textarea {...args} color="secondary" placeholder="Secondary" />
+        <Textarea {...args} color="accent" placeholder="Accent" />
+        <Textarea {...args} color="neutral" placeholder="Neutral" />
+        <Textarea {...args} color="info" placeholder="Info" />
+        <Textarea {...args} color="success" placeholder="Success" />
+        <Textarea {...args} color="warning" placeholder="Warning" />
+        <Textarea {...args} color="error" placeholder="Error" />
+      </div>
+    );
   },
 };
 
 export const Sizes: Story = {
   args: {
     placeholder: "Bio",
-    className: "w-full max-w-xs",
   },
   parameters: {
     controls: {
@@ -123,11 +78,12 @@ export const Sizes: Story = {
   },
   render: (args) => {
     return (
-      <div className="flex flex-col items-center gap-4 w-full">
-        <Textarea {...args} size="xs" />
-        <Textarea {...args} size="sm" />
-        <Textarea {...args} size="md" />
-        <Textarea {...args} size="lg" />
+      <div className="grid gap-4 w-xs">
+        <Textarea {...args} size="xs" placeholder="Xsmall" />
+        <Textarea {...args} size="sm" placeholder="Small" />
+        <Textarea {...args} size="md" placeholder="Medium" />
+        <Textarea {...args} size="lg" placeholder="Large" />
+        <Textarea {...args} size="xl" placeholder="Xlarge" />
       </div>
     );
   },
@@ -136,7 +92,6 @@ export const Disabled: Story = {
   ...Default,
   args: {
     placeholder: "Bio",
-    bordered: false,
     disabled: true,
   },
 };

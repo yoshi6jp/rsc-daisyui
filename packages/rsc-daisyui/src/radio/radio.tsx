@@ -4,6 +4,7 @@ import { configWithThemeFn } from "../config";
 export const Radio = classed("input", "radio", {
   ...configWithThemeFn({
     color: {
+      neutral: "radio-neutral",
       primary: "radio-primary",
       secondary: "radio-secondary",
       accent: "radio-accent",
@@ -13,6 +14,7 @@ export const Radio = classed("input", "radio", {
       error: "radio-error",
     },
     size: {
+      xl: "radio-xl",
       lg: "radio-lg",
       md: "radio-md",
       sm: "radio-sm",

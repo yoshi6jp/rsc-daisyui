@@ -14,18 +14,7 @@ export default meta;
 type Story = StoryObj<typeof Link>;
 
 export const Default: Story = {
-  render: (args) => <Link {...args}>I&apos;m a simple link</Link>,
-};
-
-export const Paragraph: Story = {
-  render: (args) => (
-    <p>
-      Tailwind CSS resets the style of links by default.
-      <br />
-      Add &quot;link&quot; class to make it look like a{" "}
-      <Link {...args}>normal link</Link> again.
-    </p>
-  ),
+  render: (args) => <Link {...args}>Click me</Link>,
 };
 
 export const PrimaryColor: Story = {

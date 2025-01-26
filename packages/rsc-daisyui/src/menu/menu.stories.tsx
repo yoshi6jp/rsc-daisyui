@@ -233,23 +233,28 @@ export const Sizes: Story = {
   render: (args) => (
     <div className="flex flex-col gap-4">
       <Menu {...args} size="xs">
-        <Menu.Item>xs Item 1</Menu.Item>
-        <Menu.Item>xs Item 2</Menu.Item>
+        <Menu.Item>Xsmall 1</Menu.Item>
+        <Menu.Item>Xsmall 2</Menu.Item>
       </Menu>
 
       <Menu {...args} size="sm">
-        <Menu.Item>sm Item 1</Menu.Item>
-        <Menu.Item>sm Item 2</Menu.Item>
+        <Menu.Item>Small 1</Menu.Item>
+        <Menu.Item>Small 2</Menu.Item>
       </Menu>
 
       <Menu {...args} size="md">
-        <Menu.Item>md Item 1</Menu.Item>
-        <Menu.Item>md Item 2</Menu.Item>
+        <Menu.Item>Medium 1</Menu.Item>
+        <Menu.Item>Medium 2</Menu.Item>
       </Menu>
 
       <Menu {...args} size="lg">
-        <Menu.Item>lg Item 1</Menu.Item>
-        <Menu.Item>lg Item 2</Menu.Item>
+        <Menu.Item>Large 1</Menu.Item>
+        <Menu.Item>Large 2</Menu.Item>
+      </Menu>
+
+      <Menu {...args} size="xl">
+        <Menu.Item>Xlarge 1</Menu.Item>
+        <Menu.Item>Xlarge 2</Menu.Item>
       </Menu>
     </div>
   ),

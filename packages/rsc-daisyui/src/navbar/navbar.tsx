@@ -7,7 +7,7 @@ import { NavbarStart } from "./navbar-start";
 export const Navbar = classed("div", "navbar", {
   ...configWithThemeFn({
     vanilla: {
-      false: "bg-base-100 shadow-xl rounded-box",
+      false: "bg-base-100 shadow-sm",
     },
   }),
   ...VanillaDefaultVariants,

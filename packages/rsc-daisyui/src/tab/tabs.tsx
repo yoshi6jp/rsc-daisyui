@@ -6,11 +6,16 @@ import { TabContent } from "./tab-content";
 export const Tabs = classed("div", "tabs", {
   ...configWithThemeFn({
     decorate: {
-      boxed: "tabs-boxed",
-      bordered: "tabs-bordered",
-      lifted: "tabs-lifted",
+      box: "tabs-box",
+      border: "tabs-border",
+      lift: "tabs-lift",
+    },
+    placement: {
+      top: "tabs-top",
+      bottom: "tabs-bottom",
     },
     size: {
+      xl: "tabs-xl",
       lg: "tabs-lg",
       md: "tabs-md",
       sm: "tabs-sm",

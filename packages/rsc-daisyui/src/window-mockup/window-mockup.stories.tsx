@@ -15,7 +15,7 @@ type Story = StoryObj<typeof WindowMockup>;
 
 export const Default: Story = {
   args: {
-    className: "border-base-300 w-full",
+    className: "border border-base-300 w-full",
   },
   render: (args) => {
     return (
@@ -30,14 +30,12 @@ export const Default: Story = {
 
 export const WithBackgroundColor: Story = {
   args: {
-    className: "bg-base-300 w-full",
+    className: "border border-base-300 bg-base-100 w-full",
   },
   render: (args) => {
     return (
       <WindowMockup {...args}>
-        <WindowMockup.Content className="bg-base-200">
-          Hello!
-        </WindowMockup.Content>
+        <WindowMockup.Content>Hello!</WindowMockup.Content>
       </WindowMockup>
     );
   },

@@ -6,6 +6,7 @@ export const Kbd = classed(
   "kbd",
   configWithThemeFn({
     size: {
+      xl: "kbd-xl",
       lg: "kbd-lg",
       md: "kbd-md",
       sm: "kbd-sm",

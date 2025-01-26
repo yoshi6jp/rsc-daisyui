@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 
@@ -8,7 +9,7 @@ type CountdownItemProps = Omit<
 > & {
   value: number;
 };
-export const CountdownItem = deriveClassed<
+export const CountdownItem: FC = deriveClassed<
   typeof CountdownItemBase,
   CountdownItemProps
 >(({ value, ...rest }, ref) => {

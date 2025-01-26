@@ -123,7 +123,7 @@ export const CustomWidth: Story = {
 export const Responsive: Story = {
   ...Default,
   args: {
-    position: "bottom",
+    placement: "bottom",
     className: "sm:modal-middle",
   },
 };

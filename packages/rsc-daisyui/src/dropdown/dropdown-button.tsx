@@ -15,7 +15,6 @@ export const DropdownButton = classed(
   {
     defaultProps: {
       role: "button",
-      tabIndex: 0,
     },
   }
 );
@@ -26,7 +25,6 @@ export const DropdownAvatar = classed(
   {
     defaultProps: {
       role: "button",
-      tabIndex: 0,
     },
   },
   Button,

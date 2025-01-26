@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
-import { Label, FormControl, Join, Dropdown, Swap } from "..";
+import { Fieldset, Join, Dropdown, Swap } from "..";
 import { toArgTypes } from "../storybook-helpers";
 import {
   type ThemeControllerProps,
@@ -90,11 +90,11 @@ export const ToggleWithText: Story = {
     value: "synthwave",
   },
   render: (args) => (
-    <Label className="gap-2">
-      <Label.Text>Current</Label.Text>
+    <label className="flex cursor-pointer gap-2">
+      <span>Default</span>
       <ThemeController {...args} />
-      <Label.Text className="capitalize">{args.value}</Label.Text>
-    </Label>
+      <span className="capitalize">{args.value}</span>
+    </label>
   ),
 };
 
@@ -103,7 +103,7 @@ export const ToggleWithIcons: Story = {
     value: "synthwave",
   },
   render: (args) => (
-    <Label className="gap-2">
+    <label className="flex cursor-pointer gap-2">
       <svg
         fill="none"
         height="20"
@@ -132,48 +132,57 @@ export const ToggleWithIcons: Story = {
       >
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
-    </Label>
+    </label>
   ),
 };
 
 export const ToggleWithIconsInside: Story = {
   args: {
     value: "synthwave",
-    className: "bg-base-content row-start-1 col-start-1 col-span-2",
   },
   render: (args) => (
-    <Label className="grid place-items-center">
-      <ThemeController {...args} />
+    <label className="toggle text-base-content">
+      <input type="checkbox" value={args.value} className="theme-controller" />
       <svg
-        className="col-start-1 row-start-1 stroke-base-100 fill-base-100"
-        fill="none"
-        height="14"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        width="14"
+        aria-label="sun"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
       >
-        <circle cx="12" cy="12" r="5" />
-        <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+        <g
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="2"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </g>
       </svg>
+
       <svg
-        className="col-start-2 row-start-1 stroke-base-100 fill-base-100"
-        fill="none"
-        height="14"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        width="14"
+        aria-label="moon"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
       >
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        <g
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="2"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </g>
       </svg>
-    </Label>
+    </label>
   ),
 };
 
@@ -181,7 +190,7 @@ export const ToggleWithCustomColors: Story = {
   args: {
     value: "synthwave",
     className:
-      "bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2",
+      "bg-blue-600 text-blue-200 border-blue-700 checked:bg-yellow-100 checked:text-yellow-600 checked:border-yellow-400",
   },
   render: (args) => <ThemeController {...args} />,
 };
@@ -194,39 +203,28 @@ export const UsingRadioInput: StoryObj<typeof ThemeController.Radio> = {
     },
   },
   render: (args) => (
-    <div className="flex flex-col">
-      <FormControl>
-        <Label className="gap-4">
-          <Label.Text>Light</Label.Text>
-          <ThemeController.Radio {...args} value="light" />
-        </Label>
-      </FormControl>
-      <FormControl>
-        <Label className="gap-4">
-          <Label.Text>Retro</Label.Text>
-          <ThemeController.Radio {...args} value="retro" />
-        </Label>
-      </FormControl>
-      <FormControl>
-        <Label className="gap-4">
-          <Label.Text>Cyberpunk</Label.Text>
-          <ThemeController.Radio {...args} value="cyberpunk" />
-        </Label>
-      </FormControl>
-      <FormControl>
-        <Label className="gap-4">
-          <Label.Text>Valentine</Label.Text>
-          <ThemeController.Radio {...args} value="valentine" />
-        </Label>
-      </FormControl>
-
-      <FormControl>
-        <Label className="gap-4">
-          <Label.Text>Aqua</Label.Text>
-          <ThemeController.Radio {...args} value="aqua" />
-        </Label>
-      </FormControl>
-    </div>
+    <Fieldset>
+      <label className="flex gap-2 cursor-pointer items-center">
+        <ThemeController.Radio size="sm" value="default" defaultChecked />
+        Default
+      </label>
+      <label className="flex gap-2 cursor-pointer items-center">
+        <ThemeController.Radio size="sm" value="retro" />
+        Retro
+      </label>
+      <label className="flex gap-2 cursor-pointer items-center">
+        <ThemeController.Radio size="sm" value="cyberpunk" />
+        Cyberpunk
+      </label>
+      <label className="flex gap-2 cursor-pointer items-center">
+        <ThemeController.Radio size="sm" value="valentine" />
+        Valentine
+      </label>
+      <label className="flex gap-2 cursor-pointer items-center">
+        <ThemeController.Radio size="sm" value="aqua" />
+        Aqua
+      </label>
+    </Fieldset>
   ),
 };
 
@@ -241,20 +239,43 @@ export const UsingRadioButton: StoryObj<typeof ThemeController.Button> = {
   },
   argTypes: toArgTypes(getVariantConfig(ThemeControllerButtonBase)),
   render: (args) => (
-    <Join vertical>
-      <ThemeController.Button {...args} aria-label="Light" value="light" />
-      <ThemeController.Button {...args} aria-label="Retro" value="retro" />
+    <Join direction="vertical">
       <ThemeController.Button
-        {...args}
+        type="radio"
+        name="theme-buttons"
+        className="join-item"
+        aria-label="Default"
+        value="default"
+        defaultChecked
+      />
+      <ThemeController.Button
+        type="radio"
+        name="theme-buttons"
+        className="join-item"
+        aria-label="Retro"
+        value="retro"
+      />
+      <ThemeController.Button
+        type="radio"
+        name="theme-buttons"
+        className="join-item"
         aria-label="Cyberpunk"
         value="cyberpunk"
       />
       <ThemeController.Button
-        {...args}
+        type="radio"
+        name="theme-buttons"
+        className="join-item"
         aria-label="Valentine"
         value="valentine"
       />
-      <ThemeController.Button {...args} aria-label="Aqua" value="aqua" />
+      <ThemeController.Button
+        type="radio"
+        name="theme-buttons"
+        className="join-item"
+        aria-label="Aqua"
+        value="aqua"
+      />
     </Join>
   ),
 };
@@ -277,38 +298,76 @@ export const UsingDropdown: StoryObj<typeof ThemeController.Button> = {
       <Dropdown.Button>
         Theme
         <svg
-          className="h-2 w-2 fill-current opacity-60 inline-block"
-          height="12px"
-          viewBox="0 0 2048 2048"
           width="12px"
+          height="12px"
+          class="inline-block h-2 w-2 fill-current opacity-60"
           xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 2048 2048"
         >
-          <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z" />
+          <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
       </Dropdown.Button>
-      <Dropdown.Menu className="shadow-2xl bg-base-300 rounded-box w-52">
+      <Dropdown.Menu className="w-52">
         <li>
-          <ThemeController.Button {...args} aria-label="Light" value="light" />
-        </li>
-        <li>
-          <ThemeController.Button {...args} aria-label="Retro" value="retro" />
+          <ThemeController.Button
+            type="radio"
+            name="theme-dropdown"
+            size="sm"
+            block
+            ghost
+            className="w-full justify-start"
+            aria-label="Default"
+            value="default"
+            defaultChecked
+          />
         </li>
         <li>
           <ThemeController.Button
-            {...args}
+            type="radio"
+            name="theme-dropdown"
+            size="sm"
+            block
+            ghost
+            className="w-full justify-start"
+            aria-label="Retro"
+            value="retro"
+          />
+        </li>
+        <li>
+          <ThemeController.Button
+            type="radio"
+            name="theme-dropdown"
+            size="sm"
+            block
+            ghost
+            className="w-full justify-start"
             aria-label="Cyberpunk"
             value="cyberpunk"
           />
         </li>
         <li>
           <ThemeController.Button
-            {...args}
+            type="radio"
+            name="theme-dropdown"
+            size="sm"
+            block
+            ghost
+            className="w-full justify-start"
             aria-label="Valentine"
             value="valentine"
           />
         </li>
         <li>
-          <ThemeController.Button {...args} aria-label="Aqua" value="aqua" />
+          <ThemeController.Button
+            type="radio"
+            name="theme-dropdown"
+            size="sm"
+            block
+            ghost
+            className="w-full justify-start"
+            aria-label="Aqua"
+            value="aqua"
+          />
         </li>
       </Dropdown.Menu>
     </Dropdown>

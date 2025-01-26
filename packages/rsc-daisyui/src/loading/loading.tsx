@@ -7,6 +7,7 @@ export const Loading = classed(
   "loading",
   configWithThemeFn({
     size: {
+      xl: "loading-xl",
       lg: "loading-lg",
       md: "loading-md",
       sm: "loading-sm",

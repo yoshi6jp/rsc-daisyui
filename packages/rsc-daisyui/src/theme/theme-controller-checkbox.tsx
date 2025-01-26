@@ -1,7 +1,7 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Checkbox } from "../checkbox";
-import type { ThemeType } from "./constants";
+import type { ThemeTypeWithDefault } from "./constants";
 
 export const ThemeControllerCheckboxBase = classed(
   "input",
@@ -12,7 +12,7 @@ export type ThemeControllerCheckboxProps = Omit<
   ComponentProps<typeof ThemeControllerCheckboxBase>,
   "type"
 > & {
-  value: ThemeType;
+  value: ThemeTypeWithDefault;
 };
 export const ThemeControllerCheckbox = deriveClassed<
   typeof ThemeControllerCheckboxBase,

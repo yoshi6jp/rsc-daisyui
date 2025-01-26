@@ -1,13 +1,13 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, validatorVariant } from "../config";
 
 export const FileInput = classed("input", "file-input", {
   ...configWithThemeFn({
-    bordered: {
-      true: "file-input-bordered",
+    ghost: {
+      true: "file-input-ghost",
     },
     color: {
-      ghost: "file-input-ghost",
+      neutral: "file-input-neutral",
       primary: "file-input-primary",
       secondary: "file-input-secondary",
       accent: "file-input-accent",
@@ -17,15 +17,14 @@ export const FileInput = classed("input", "file-input", {
       error: "file-input-error",
     },
     size: {
+      xl: "file-input-xl",
       lg: "file-input-lg",
       md: "file-input-md",
       sm: "file-input-sm",
       xs: "file-input-xs",
     },
+    ...validatorVariant,
   }),
-  defaultVariants: {
-    bordered: true,
-  },
   defaultProps: {
     type: "file",
   },

@@ -14,9 +14,10 @@ type Story = StoryObj<typeof Collapse>;
 export const Default: Story = {
   render: (args) => (
     <Collapse {...args}>
-      <Collapse.Title>Focus me to see content</Collapse.Title>
+      <Collapse.Title>How do I create an account?</Collapse.Title>
       <Collapse.Content>
-        <p>hello</p>
+        Click the "Sign Up" button in the top right corner and follow the
+        registration process.
       </Collapse.Content>
     </Collapse>
   ),
@@ -26,9 +27,10 @@ export const WithCheckbox: Story = {
   render: (args) => (
     <Collapse {...args}>
       <input type="checkbox" />
-      <Collapse.Title>Click me to show/hide content</Collapse.Title>
-      <Collapse.Content className="collapse-content">
-        <p>hello</p>
+      <Collapse.Title>How do I create an account?</Collapse.Title>
+      <Collapse.Content>
+        Click the "Sign Up" button in the top right corner and follow the
+        registration process.
       </Collapse.Content>
     </Collapse>
   ),
@@ -39,9 +41,12 @@ export const DetailsAndSummary: Story = {
     <>
       {/* @ts-expect-error: as*/}
       <Collapse {...args} as="details">
-        <Collapse.Title as="summary">Click to open/close</Collapse.Title>
-        <Collapse.Content className="collapse-content">
-          <p>content</p>
+        <Collapse.Title as="summary">
+          How do I create an account?
+        </Collapse.Title>
+        <Collapse.Content>
+          Click the "Sign Up" button in the top right corner and follow the
+          registration process.
         </Collapse.Content>
       </Collapse>
     </>
@@ -49,21 +54,14 @@ export const DetailsAndSummary: Story = {
 };
 
 export const BorderAndBackgroundColor: Story = {
+  ...Default,
   args: {
-    className: "border border-base-300",
+    className: "border border-base-100 bg-base-300",
   },
-  render: (args) => (
-    <Collapse {...args}>
-      <Collapse.Title>Focus me to see content</Collapse.Title>
-      <Collapse.Content>
-        <p>hello</p>
-      </Collapse.Content>
-    </Collapse>
-  ),
 };
 
 export const ArrowIcon: Story = {
-  ...BorderAndBackgroundColor,
+  ...Default,
   args: {
     className: "border border-base-300",
     icon: "arrow",
@@ -71,7 +69,7 @@ export const ArrowIcon: Story = {
 };
 
 export const PlusMinusIcon: Story = {
-  ...BorderAndBackgroundColor,
+  ...Default,
   args: {
     className: "border border-base-300",
     icon: "plus",
@@ -79,23 +77,14 @@ export const PlusMinusIcon: Story = {
 };
 
 export const ForceOpen: Story = {
+  ...Default,
   args: {
     className: "border border-base-300",
     open: true,
   },
-  render: (args) => (
-    <Collapse {...args}>
-      <Collapse.Title>
-        I have open={args.open ? "true" : "false"} props
-      </Collapse.Title>
-      <Collapse.Content>
-        <p>hello</p>
-      </Collapse.Content>
-    </Collapse>
-  ),
 };
 export const ForceClose: Story = {
-  ...ForceOpen,
+  ...Default,
   args: {
     className: "border border-base-300",
     open: false,
@@ -103,18 +92,11 @@ export const ForceClose: Story = {
 };
 
 export const CustomColorWithFocus: Story = {
+  ...Default,
   args: {
     className:
       "bg-primary text-primary-content focus:bg-secondary focus:text-secondary-content",
   },
-  render: (args) => (
-    <Collapse {...args}>
-      <Collapse.Title>Focus me to see content</Collapse.Title>
-      <Collapse.Content>
-        <p>hello</p>
-      </Collapse.Content>
-    </Collapse>
-  ),
 };
 
 export const CustomColorWithCheckbox: Story = {
@@ -122,10 +104,11 @@ export const CustomColorWithCheckbox: Story = {
     <Collapse {...args}>
       <input className="peer" type="checkbox" />
       <Collapse.Title className="bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-        Click me to show/hide content
+        How do I create an account?
       </Collapse.Title>
       <Collapse.Content className="text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
-        <p>hello</p>
+        Click the "Sign Up" button in the top right corner and follow the
+        registration process.
       </Collapse.Content>
     </Collapse>
   ),

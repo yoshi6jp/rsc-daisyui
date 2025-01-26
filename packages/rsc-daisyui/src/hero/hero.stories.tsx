@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { Button, Input, Label, FormControl, Card } from "..";
+import { Button, Input, Link, Fieldset, Card } from "..";
 import { Hero } from ".";
 
 const meta: Meta<typeof Hero> = {
@@ -109,30 +109,25 @@ export const WithForm: Story = {
             </p>
           </div>
           <Card
-            className="shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
+            // className="shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
+            className="bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
             vanilla
           >
             <Card.Body>
-              <FormControl>
-                <Label>
-                  <Label.Text>Email</Label.Text>
-                </Label>
-                <Input placeholder="email" required type="email" />
-              </FormControl>
-              <FormControl>
-                <Label>
-                  <Label.Text>Password</Label.Text>
-                </Label>
-                <Input placeholder="password" required type="password" />
-                <Label className="label">
-                  <Label.TextAlt as="a" className="link link-hover" href="#">
-                    Forgot password?
-                  </Label.TextAlt>
-                </Label>
-              </FormControl>
-              <FormControl className="mt-6">
-                <Button color="primary">Login</Button>
-              </FormControl>
+              <Fieldset>
+                <Fieldset.Label>Email</Fieldset.Label>
+                <Input type="email" placeholder="Email" />
+                <Fieldset.Label className="fieldset-label">
+                  Password
+                </Fieldset.Label>
+                <Input type="password" placeholder="Password" />
+                <div>
+                  <Link hover>Forgot password?</Link>
+                </div>
+                <Button color="neutral" className="mt-4">
+                  Login
+                </Button>
+              </Fieldset>
             </Card.Body>
           </Card>
         </Hero.Content>
@@ -152,7 +147,7 @@ export const WithOverlayImage: Story = {
   render: (args) => {
     return (
       <Hero {...args}>
-        <Hero.Overlay className="bg-opacity-60 rounded" />
+        <Hero.Overlay className="rounded" />
         <Hero.Content className="text-center text-neutral-content">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>

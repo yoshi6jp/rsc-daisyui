@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Input } from "../input";
@@ -7,7 +8,7 @@ export const BrowserMockupToolbarBase = classed(
   "mockup-browser-toolbar"
 );
 type BrowserMockupToolbarProps = ComponentProps<typeof Input>;
-export const BrowserMockupToolbar = deriveClassed<
+export const BrowserMockupToolbar: FC = deriveClassed<
   typeof BrowserMockupToolbarBase,
   BrowserMockupToolbarProps
 >(({ children, ...rest }, ref) => {

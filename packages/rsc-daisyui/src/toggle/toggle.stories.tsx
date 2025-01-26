@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { FormControl, Label } from "..";
+import { Fieldset } from "..";
 import { Toggle } from ".";
 
 const meta: Meta<typeof Toggle> = {
@@ -23,80 +23,22 @@ export const Default: Story = {
   },
 };
 
-export const LabelAndFormControl: Story = {
+export const FieldsetAndLabel: Story = {
   args: {
     defaultChecked: true,
   },
   render: (args) => {
     return (
-      <FormControl className="w-52">
-        <Label>
-          <Label.Text>Remember me</Label.Text>
+      <Fieldset className="p-4 bg-base-100 border border-base-300 rounded-box w-64">
+        <Fieldset.Legend>Login options</Fieldset.Legend>
+        <Fieldset.Label>
           <Toggle {...args} />
-        </Label>
-      </FormControl>
+          Remember me
+        </Fieldset.Label>
+      </Fieldset>
     );
   },
 };
-
-export const BrandColors: Story = {
-  args: {
-    defaultChecked: true,
-  },
-  parameters: {
-    controls: {
-      exclude: ["as", "color"],
-    },
-  },
-  render: (args) => {
-    return (
-      <div className="flex flex-col">
-        <FormControl className="w-52">
-          <Label>
-            <Label.Text>Remember me</Label.Text>
-            <Toggle {...args} color="primary" />
-          </Label>
-        </FormControl>
-
-        <FormControl className="w-52">
-          <Label>
-            <Label.Text>Remember me</Label.Text>
-            <Toggle {...args} color="secondary" />
-          </Label>
-        </FormControl>
-
-        <FormControl className="w-52">
-          <Label>
-            <Label.Text>Remember me</Label.Text>
-            <Toggle {...args} color="accent" />
-          </Label>
-        </FormControl>
-      </div>
-    );
-  },
-};
-
-export const StateColors: Story = {
-  args: {
-    defaultChecked: true,
-  },
-  parameters: {
-    controls: {
-      exclude: ["as", "color"],
-    },
-  },
-  render: (args) => {
-    return (
-      <div className="flex flex-col items-center gap-2">
-        <Toggle {...args} color="success" />
-        <Toggle {...args} color="warning" />
-        <Toggle {...args} color="info" />
-        <Toggle {...args} color="error" />
-      </div>
-    );
-  },
-};
-
 export const Sizes: Story = {
   args: {
     defaultChecked: true,
@@ -108,30 +50,57 @@ export const Sizes: Story = {
   },
   render: (args) => {
     return (
-      <div className="flex flex-col items-center gap-2">
+      <>
         <Toggle {...args} size="xs" />
         <Toggle {...args} size="sm" />
         <Toggle {...args} size="md" />
         <Toggle {...args} size="lg" />
-      </div>
+        <Toggle {...args} size="xl" />
+      </>
+    );
+  },
+};
+
+export const Colors: Story = {
+  args: {
+    defaultChecked: true,
+  },
+  parameters: {
+    controls: {
+      exclude: ["as", "color"],
+    },
+  },
+  render: (args) => {
+    return (
+      <>
+        <Toggle {...args} color="primary" />
+        <Toggle {...args} color="secondary" />
+        <Toggle {...args} color="accent" />
+        <Toggle {...args} color="neutral" />
+
+        <Toggle {...args} color="info" />
+        <Toggle {...args} color="success" />
+        <Toggle {...args} color="warning" />
+        <Toggle {...args} color="error" />
+      </>
     );
   },
 };
 
 export const Disabled: Story = {
-  ...Default,
   args: {
     disabled: true,
+  },
+  render: (args) => {
+    return (
+      <>
+        <Toggle {...args} />
+        <Toggle {...args} defaultChecked />
+      </>
+    );
   },
 };
 
-export const DisabledAndChecked: Story = {
-  ...Default,
-  args: {
-    disabled: true,
-    defaultChecked: true,
-  },
-};
 export const Indeterminate: Story = {
   render: (args) => {
     const ref = useRef<HTMLInputElement>(null);
@@ -143,10 +112,57 @@ export const Indeterminate: Story = {
     return <Toggle {...args} ref={ref} />;
   },
 };
+
+export const IconInside: Story = {
+  args: {
+    className: "text-base-content",
+  },
+  render: (args) => {
+    return (
+      <>
+        {/* @ts-expect-error: as */}
+        <Toggle {...args} as="label">
+          <input type="checkbox" />
+          <svg
+            role="img"
+            aria-label="enabled"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="4"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </g>
+          </svg>
+          <svg
+            role="img"
+            aria-label="disabled"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </Toggle>
+      </>
+    );
+  },
+};
 export const CustomColors: Story = {
   ...Default,
   args: {
     defaultChecked: true,
-    className: "[--tglbg:yellow] bg-blue-500 hover:bg-blue-700 border-blue-500",
+    className:
+      "toggle border-indigo-600 bg-indigo-500 checked:bg-orange-400 checked:text-orange-800 checked:border-orange-500",
   },
 };

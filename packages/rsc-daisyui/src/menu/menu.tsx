@@ -14,6 +14,7 @@ export const Menu = classed("ul", "menu", {
       true: "menu-horizontal",
     },
     size: {
+      xl: "menu-xl",
       lg: "menu-lg",
       md: "menu-md",
       sm: "menu-sm",

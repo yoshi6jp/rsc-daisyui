@@ -56,10 +56,11 @@ export const AccentColor: Story = {
     max: 100,
   },
 };
-export const SuccessColor: Story = {
+
+export const NeutralColor: Story = {
   ...Default,
   args: {
-    color: "success",
+    color: "neutral",
     className: "w-56",
     max: 100,
   },
@@ -69,6 +70,15 @@ export const InfoColor: Story = {
   ...Default,
   args: {
     color: "info",
+    className: "w-56",
+    max: 100,
+  },
+};
+
+export const SuccessColor: Story = {
+  ...Default,
+  args: {
+    color: "success",
     className: "w-56",
     max: 100,
   },

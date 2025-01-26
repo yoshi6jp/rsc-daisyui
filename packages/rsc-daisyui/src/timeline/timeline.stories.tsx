@@ -256,7 +256,12 @@ export const VerticalWithColorfulLines: Story = {
     vertical: true,
   },
 };
-
+export const VerticalWithoutIcons: Story = {
+  ...WithoutIcons,
+  args: {
+    vertical: true,
+  },
+};
 export const Responsive: Story = {
   ...Default,
   args: {

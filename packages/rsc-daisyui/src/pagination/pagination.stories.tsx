@@ -64,6 +64,15 @@ export const Sizes: Story = {
           <Join.Button size="lg">3</Join.Button>
           <Join.Button size="lg">4</Join.Button>
         </Join>
+
+        <Join {...args}>
+          <Join.Button size="xl">1</Join.Button>
+          <Join.Button active size="xl">
+            2
+          </Join.Button>
+          <Join.Button size="xl">3</Join.Button>
+          <Join.Button size="xl">4</Join.Button>
+        </Join>
       </div>
     );
   },

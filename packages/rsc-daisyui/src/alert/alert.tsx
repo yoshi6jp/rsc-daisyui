@@ -9,6 +9,19 @@ export const Alert = classed("div", "alert", {
       warning: "alert-warning",
       error: "alert-error",
     },
+    outline: {
+      true: "alert-outline",
+    },
+    dash: {
+      true: "alert-dash",
+    },
+    soft: {
+      true: "alert-soft",
+    },
+    direction: {
+      vertical: "alert-vertical",
+      horizontal: "alert-horizontal",
+    },
   }),
   defaultProps: {
     role: "alert",

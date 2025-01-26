@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
@@ -26,27 +25,27 @@ export const Default: Story = {
   render: (args) => (
     <div className="flex gap-2 flex-wrap">
       <Accordion {...args} defaultChecked>
-        <Accordion.Title>
-          Click to open this one and close others
-        </Accordion.Title>
+        <Accordion.Title>How do I create an account?</Accordion.Title>
         <Accordion.Content>
-          <p>hello</p>
+          Click the "Sign Up" button in the top right corner and follow the
+          registration process.
         </Accordion.Content>
       </Accordion>
       <Accordion {...args}>
         <Accordion.Title>
-          Click to open this one and close others
+          I forgot my password. What should I do?
         </Accordion.Title>
         <Accordion.Content>
-          <p>hello</p>
+          Click on "Forgot Password" on the login page and follow the
+          instructions sent to your email.
         </Accordion.Content>
       </Accordion>
       <Accordion {...args}>
         <Accordion.Title>
-          Click to open this one and close others
+          How do I update my profile information?
         </Accordion.Title>
         <Accordion.Content>
-          <p>hello</p>
+          Go to "My Account" settings and select "Edit Profile" to make changes.
         </Accordion.Content>
       </Accordion>
     </div>
@@ -82,29 +81,29 @@ export const JoinTogether: Story = {
     },
   },
   render: (args) => (
-    <Join className="w-full" vertical>
+    <Join vertical>
       <Accordion {...args} defaultChecked>
-        <Accordion.Title vanilla>
-          Click to open this one and close others
-        </Accordion.Title>
+        <Accordion.Title>How do I create an account?</Accordion.Title>
         <Accordion.Content>
-          <p>hello</p>
+          Click the "Sign Up" button in the top right corner and follow the
+          registration process.
         </Accordion.Content>
       </Accordion>
       <Accordion {...args}>
-        <Accordion.Title vanilla>
-          Click to open this one and close others
+        <Accordion.Title>
+          I forgot my password. What should I do?
         </Accordion.Title>
         <Accordion.Content>
-          <p>hello</p>
+          Click on "Forgot Password" on the login page and follow the
+          instructions sent to your email.
         </Accordion.Content>
       </Accordion>
       <Accordion {...args}>
-        <Accordion.Title vanilla>
-          Click to open this one and close others
+        <Accordion.Title>
+          How do I update my profile information?
         </Accordion.Title>
         <Accordion.Content>
-          <p>hello</p>
+          Go to "My Account" settings and select "Edit Profile" to make changes.
         </Accordion.Content>
       </Accordion>
     </Join>

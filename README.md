@@ -6,6 +6,7 @@
 - [daisyUI](https://daisyui.com/) components build with React, Typescript, [TailwindCSS](https://tailwindcss.com/) and [TW CLASSED](https://tw-classed.vercel.app/)
 - Simple components available in the React Server Component
 - No `useEffect`, `useState`, etc and used.
+- Support for `daisyUI 5` and `Tailwind CSS v4`
 
 [Storybook](https://yoshi6jp.github.io/rsc-daisyui/)
 
@@ -17,39 +18,34 @@
 
 ### Install
 
-Make sure you've installed [TailwindCSS](https://tailwindcss.com/docs/installation) and [daisyUI](https://daisyui.com/docs/install/).
+Make sure you've installed [TailwindCSS](https://tailwindcss.com/docs/installation) and [daisyUI (beta)](https://v5.daisyui.com/docs/install/).
 
 Install the package with npm or yarn or pnpm:
 
 #### npm
 
 ```bash
-npm install rsc-daisyui
+npm install rsc-daisyui@beta
 ```
 
 #### yarn
 
 ```bash
-yarn add rsc-daisyui
+yarn add rsc-daisyui@beta
 ```
 
 #### pnpm
 
 ```bash
-pnpm add rsc-daisyui
+pnpm add rsc-daisyui@beta
 ```
 
-To prevent TailwindCSS from purging your styles, add the following line to your tailwind.config.js:
+### Add rsc-daisyui to app.css
 
-```ts
-import type { Config } from "tailwindcss";
-import daisyui from "daisyui";
-
-const config: Config = {
-  content: ["node_modules/rsc-daisyui/dist/**/*.js"],
-  plugins: [daisyui],
-};
-export default config;
+```app.css
+@import "tailwindcss";
+@plugin "daisyui";
+@source "../../node_modules/rsc-daisyui/dist/**/*.js";
 ```
 
 ### Quick Start
@@ -68,78 +64,98 @@ export default (props) => {
 
 #### Actions
 
-- [x] Button
-- [x] Dropdown
-- [x] Modal
-- [x] Swap
-- [x] Theme Controller
+| Name             | v1  | v2  |
+| ---------------- | --- | --- |
+| Button           | ✅  | ✅  |
+| Dropdown         | ✅  | ✅  |
+| Modal            | ✅  | ✅  |
+| Swap             | ✅  | ✅  |
+| Theme Controller | ✅  | ✅  |
 
 #### Data display
 
-- [x] Accordion
-- [x] Avatar
-- [x] Badge
-- [x] Card
-- [x] Carousel
-- [x] Chat bubble
-- [x] Collapse
-- [x] Countdown
-- [x] Diff
-- [x] Kbd
-- [x] Stat
-- [x] Table
-- [x] Timeline
+| Name        | v1  | v2  |
+| ----------- | --- | --- |
+| Accordion   | ✅  | ✅  |
+| Avatar      | ✅  | ✅  |
+| Badge       | ✅  | ✅  |
+| Card        | ✅  | ✅  |
+| Carousel    | ✅  | ✅  |
+| Chat bubble | ✅  | ✅  |
+| Collapse    | ✅  | ✅  |
+| Countdown   | ✅  | ✅  |
+| Diff        | ✅  | ✅  |
+| Kbd         | ✅  | ✅  |
+| List        | -   | ✅  |
+| Stat        | ✅  | ✅  |
+| Status      | -   | ✅  |
+| Table       | ✅  | ✅  |
+| Timeline    | ✅  | ✅  |
 
 #### Navigation
 
-- [x] Breadcrumbs
-- [x] Bottom navigation
-- [x] Link
-- [x] Menu
-- [x] Navbar
-- [x] Pagination
-- [x] Steps
-- [x] Tab
+| Name                     | v1  | v2  |
+| ------------------------ | --- | --- |
+| Breadcrumbs              | ✅  | ✅  |
+| Dock (Bottom navigation) |     | ✅  |
+| Link                     | ✅  | ✅  |
+| Menu                     | ✅  | ✅  |
+| Navbar                   | ✅  | ✅  |
+| Pagination               | ✅  | ✅  |
+| Steps                    | ✅  | ✅  |
+| Tab                      | ✅  | ✅  |
 
 #### Feedback
 
-- [x] Alert
-- [x] Loading
-- [x] Progress
-- [x] Radial progress
-- [x] Skeleton
-- [x] Toast
-- [x] Tooltip
+| Name            | v1  | v2  |
+| --------------- | --- | --- |
+| Alert           | ✅  | ✅  |
+| Loading         | ✅  | ✅  |
+| Progress        | ✅  | ✅  |
+| Radial progress | ✅  | ✅  |
+| Skeleton        | ✅  | ✅  |
+| Toast           | ✅  | ✅  |
+| Tooltip         | ✅  | ✅  |
 
 #### Data input
 
-- [x] Checkbox
-- [x] File input
-- [x] Radio
-- [x] Range
-- [x] Select
-- [x] Text input
-- [x] Textarea
-- [x] Toggle
+| Name       | v1  | v2  |
+| ---------- | --- | --- |
+| Checkbox   | ✅  | ✅  |
+| Fieldset   | -   | ✅  |
+| File input | ✅  | ✅  |
+| Filter     | -   | ✅  |
+| Label      | -   | ✅  |
+| Radio      | ✅  | ✅  |
+| Range      | ✅  | ✅  |
+| Rating     | ✅  | ✅  |
+| Select     | ✅  | ✅  |
+| Text input | ✅  | ✅  |
+| Textarea   | ✅  | ✅  |
+| Toggle     | ✅  | ✅  |
+| Validator  | -   | ✅  |
 
 #### Layout
 
-- [x] Artboard
-- [x] Divider
-- [x] Drawer
-- [x] Footer
-- [x] Hero
-- [x] Indicator
-- [x] Join (group items)
-- [x] Mask
-- [x] Stack
+| Name               | v1  | v2  |
+| ------------------ | --- | --- |
+| Divider            | ✅  | ✅  |
+| Drawer             | ✅  | ✅  |
+| Footer             | ✅  | ✅  |
+| Hero               | ✅  | ✅  |
+| Indicator          | ✅  | ✅  |
+| Join (group items) | ✅  | ✅  |
+| Mask               | ✅  | ✅  |
+| Stack              | ✅  | ✅  |
 
 #### Mockup
 
-- [x] Browser
-- [x] Code
-- [x] Phone
-- [x] Window
+| Name    | v1  | v2  |
+| ------- | --- | --- |
+| Browser | ✅  | ✅  |
+| Code    | ✅  | ✅  |
+| Phone   | ✅  | ✅  |
+| Window  | ✅  | ✅  |
 
 ---
 

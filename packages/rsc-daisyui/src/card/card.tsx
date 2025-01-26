@@ -15,11 +15,19 @@ export const Card = classed("div", "card", {
     normal: {
       true: "card-normal",
     },
-    compact: {
-      true: "card-compact",
-    },
+    border: { true: "card-border" },
     side: {
       true: "card-side",
+    },
+    dash: {
+      true: "card-dash",
+    },
+    size: {
+      xs: "card-xs",
+      sm: "card-sm",
+      md: "card-md",
+      lg: "card-lg",
+      xl: "card-xl",
     },
     vanilla: {
       false: "bg-base-100",

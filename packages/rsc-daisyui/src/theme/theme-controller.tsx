@@ -1,7 +1,7 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Toggle } from "../toggle/toggle";
-import type { ThemeType } from "./constants";
+import type { ThemeTypeWithDefault } from "./constants";
 import { ThemeControllerCheckbox } from "./theme-controller-checkbox";
 import { ThemeControllerRadio } from "./theme-controller-radio";
 import { ThemeControllerSwap } from "./theme-controller-swap";
@@ -12,7 +12,7 @@ export type ThemeControllerProps = Omit<
   ComponentProps<typeof ThemeControllerBase>,
   "type"
 > & {
-  value: ThemeType;
+  value: ThemeTypeWithDefault;
 };
 export const ThemeController = deriveClassed<
   typeof ThemeControllerBase,

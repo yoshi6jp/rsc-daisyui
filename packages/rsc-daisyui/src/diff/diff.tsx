@@ -8,10 +8,10 @@ DiffItem1.displayName = "DiffItem1";
 const DiffItem2 = classed("div", "diff-item-2");
 DiffItem2.displayName = "DiffItem2";
 
-export const DiffBase = classed("div", "diff", {
+export const DiffBase = classed("figure", "diff", {
   ...configWithThemeFn({
     vanilla: {
-      false: "aspect-[16/9] rounded-btn",
+      false: "aspect-16/9 rounded-btn",
     },
   }),
   ...VanillaDefaultVariants,

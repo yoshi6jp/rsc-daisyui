@@ -1,10 +1,11 @@
+import type { FC } from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 
 export const TimelineMiddleBase = classed("div", "timeline-middle");
 
 export type TimelineMiddleProps = ComponentProps<typeof TimelineMiddleBase>;
-export const TimelineMiddle = deriveClassed<
+export const TimelineMiddle: FC = deriveClassed<
   typeof TimelineMiddleBase,
   TimelineMiddleProps
 >(({ children, ...rest }, ref) => (
@@ -13,6 +14,8 @@ export const TimelineMiddle = deriveClassed<
       children
     ) : (
       <svg
+        role="img"
+        aria-label="icon"
         className="w-5 h-5"
         fill="currentColor"
         viewBox="0 0 20 20"

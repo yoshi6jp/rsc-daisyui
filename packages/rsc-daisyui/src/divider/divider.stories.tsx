@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
@@ -19,18 +18,12 @@ export const Default: Story = {
   },
   render: (args) => {
     return (
-      <div className="flex flex-col w-full">
-        <Card
-          className="grid h-20 bg-base-300 rounded-box place-items-center"
-          vanilla
-        >
+      <div className="flex w-full flex-col">
+        <Card className="grid h-20 bg-base-300 rounded-box place-items-center">
           content
         </Card>
         <Divider {...args} />
-        <Card
-          className="grid h-20 bg-base-300 rounded-box place-items-center"
-          vanilla
-        >
+        <Card className="grid h-20 bg-base-300 rounded-box place-items-center">
           content
         </Card>
       </div>
@@ -40,23 +33,17 @@ export const Default: Story = {
 
 export const Horizontal: Story = {
   args: {
-    horizontal: true,
     children: "OR",
+    direction: "horizontal",
   },
   render: (args) => {
     return (
       <div className="flex w-full">
-        <Card
-          className="grid h-20 flex-grow bg-base-300 rounded-box place-items-center"
-          vanilla
-        >
+        <Card className="grid h-20 grow bg-base-300 rounded-box place-items-center">
           content
         </Card>
         <Divider {...args} />
-        <Card
-          className="grid h-20 flex-grow bg-base-300 rounded-box place-items-center"
-          vanilla
-        >
+        <Card className="grid h-20 grow bg-base-300 rounded-box place-items-center">
           content
         </Card>
       </div>
@@ -77,17 +64,11 @@ export const Responsive: Story = {
   render: (args) => {
     return (
       <div className="flex flex-col w-full lg:flex-row">
-        <Card
-          className="grid h-32 flex-grow bg-base-300 rounded-box place-items-center"
-          vanilla
-        >
+        <Card className="grid h-32 grow bg-base-300 rounded-box place-items-center">
           content
         </Card>
         <Divider {...args} />
-        <Card
-          className="grid h-32 flex-grow bg-base-300 rounded-box place-items-center"
-          vanilla
-        >
+        <Card className="grid h-32 grow bg-base-300 rounded-box place-items-center">
           content
         </Card>
       </div>
@@ -137,17 +118,17 @@ export const Colors: Story = {
 export const DifferentPositions: Story = {
   parameters: {
     controls: {
-      exclude: ["as", "position"],
+      exclude: ["as", "placement"],
     },
   },
   render: (args) => {
     return (
       <div className="flex flex-col w-full">
-        <Divider {...args} position="start">
+        <Divider {...args} placement="start">
           Start
         </Divider>
         <Divider {...args}>Default</Divider>
-        <Divider {...args} position="end">
+        <Divider {...args} placement="end">
           End
         </Divider>
       </div>
@@ -157,21 +138,21 @@ export const DifferentPositions: Story = {
 
 export const DifferentPositionsHorizontal: Story = {
   args: {
-    horizontal: true,
+    direction: "horizontal",
   },
   parameters: {
     controls: {
-      exclude: ["as", "position"],
+      exclude: ["as", "placement"],
     },
   },
   render: (args) => {
     return (
       <div className="flex w-full justify-center h-52">
-        <Divider {...args} position="start">
+        <Divider {...args} placement="start">
           Start
         </Divider>
         <Divider {...args}>Default</Divider>
-        <Divider {...args} position="end">
+        <Divider {...args} placement="end">
           End
         </Divider>
       </div>
