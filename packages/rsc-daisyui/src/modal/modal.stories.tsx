@@ -79,7 +79,7 @@ export const CloseButtonAtCorner: Story = {
             <form method="dialog">
               <Button
                 className="absolute right-2 top-2"
-                color="ghost"
+                ghost
                 shape="circle"
                 size="sm"
               >

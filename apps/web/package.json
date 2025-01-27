@@ -15,7 +15,7 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-github-btn": "^1.4.0",
-    "rsc-daisyui": "2.0.0-beta.1"
+    "rsc-daisyui": "2.0.0-beta.2"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "15.1.3",

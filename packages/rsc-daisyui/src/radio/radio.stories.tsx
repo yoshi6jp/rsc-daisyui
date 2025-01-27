@@ -2,7 +2,6 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { FormControl, Label } from "..";
 import { Radio } from ".";
 
 const meta: Meta<typeof Radio> = {

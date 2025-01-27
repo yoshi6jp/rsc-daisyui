@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { Fieldset, Join, Dropdown, Swap } from "..";
@@ -285,7 +284,7 @@ export const UsingDropdown: StoryObj<typeof ThemeController.Button> = {
     className: " justify-start",
     size: "sm",
     block: true,
-    color: "ghost",
+    ghost: true,
   },
   parameters: {
     controls: {
@@ -300,7 +299,7 @@ export const UsingDropdown: StoryObj<typeof ThemeController.Button> = {
         <svg
           width="12px"
           height="12px"
-          class="inline-block h-2 w-2 fill-current opacity-60"
+          className="inline-block h-2 w-2 fill-current opacity-60"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 2048 2048"
         >

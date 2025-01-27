@@ -45,7 +45,7 @@ pnpm add rsc-daisyui@beta
 ```app.css
 @import "tailwindcss";
 @plugin "daisyui";
-@source "../../node_modules/rsc-daisyui/dist/**/*.js";
+@source "../../node_modules/rsc-daisyui/dist";
 ```
 
 ### Quick Start

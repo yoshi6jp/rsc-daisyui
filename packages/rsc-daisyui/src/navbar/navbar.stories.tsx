@@ -2,16 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import {
-  Badge,
-  Button,
-  Card,
-  Menu,
-  FormControl,
-  Input,
-  Dropdown,
-  Indicator,
-} from "..";
+import { Badge, Button, Card, Menu, Input, Dropdown, Indicator } from "..";
 import { Navbar } from ".";
 
 const meta: Meta<typeof Navbar> = {

@@ -42,8 +42,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(react@19.0.0)
       rsc-daisyui:
-        specifier: 2.0.0-beta.1
-        version: 2.0.0-beta.1(react@19.0.0)
+        specifier: 2.0.0-beta.2
+        version: 2.0.0-beta.2(react@19.0.0)
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: 15.1.3
@@ -3308,8 +3308,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  rsc-daisyui@2.0.0-beta.1:
-    resolution: {integrity: sha512-6irfo3eN7rPqrlZod7gX48sc4UhGn6SZnE0jL9pkNhvjuQAXqdA5RSBD1cvnLj1I+5xnKlfswvwGMQr+i5XecQ==}
+  rsc-daisyui@2.0.0-beta.2:
+    resolution: {integrity: sha512-9vgNJDC3AkGIkROt8L3FUKzIJiE53IzYq6mu6o1w5VmpnDffb0zuWNwsL7qor4SAo7XK+YTsYS+qD8/mXqxW6w==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -7206,7 +7206,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.29.1
       fsevents: 2.3.3
 
-  rsc-daisyui@2.0.0-beta.1(react@19.0.0):
+  rsc-daisyui@2.0.0-beta.2(react@19.0.0):
     dependencies:
       '@tw-classed/react': 1.8.0(react@19.0.0)
       react: 19.0.0

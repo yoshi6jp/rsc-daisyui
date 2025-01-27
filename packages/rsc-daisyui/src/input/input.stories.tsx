@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { FormControl, Label, Kbd, Badge, Fieldset } from "..";
+import { Kbd, Badge, Fieldset } from "..";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {

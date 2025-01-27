@@ -1,5 +1,8 @@
-import type { FC } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import {
+  type ComponentProps,
+  deriveClassed,
+  type DerivedComponentType,
+} from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Input } from "../input";
 
@@ -8,16 +11,18 @@ export const BrowserMockupToolbarBase = classed(
   "mockup-browser-toolbar"
 );
 type BrowserMockupToolbarProps = ComponentProps<typeof Input>;
-export const BrowserMockupToolbar: FC = deriveClassed<
+export const BrowserMockupToolbar: DerivedComponentType<
   typeof BrowserMockupToolbarBase,
   BrowserMockupToolbarProps
->(({ children, ...rest }, ref) => {
-  return (
-    <BrowserMockupToolbarBase ref={ref}>
-      <Input as="div" {...rest}>
-        {children}
-      </Input>
-    </BrowserMockupToolbarBase>
-  );
-});
+> = deriveClassed<typeof BrowserMockupToolbarBase, BrowserMockupToolbarProps>(
+  ({ children, ...rest }, ref) => {
+    return (
+      <BrowserMockupToolbarBase>
+        <Input as="div" {...rest} ref={ref}>
+          {children}
+        </Input>
+      </BrowserMockupToolbarBase>
+    );
+  }
+);
 BrowserMockupToolbar.displayName = "BrowserMockupToolbar";

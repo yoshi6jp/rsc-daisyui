@@ -2,4 +2,4 @@
 @plugin "daisyui" {
   themes: all;
 }
-@source "../../node_modules/rsc-daisyui/dist/**/*.js";
+@source "../../node_modules/rsc-daisyui/dist";

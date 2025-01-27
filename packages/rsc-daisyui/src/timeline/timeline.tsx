@@ -1,3 +1,4 @@
+import type { FC, ComponentProps } from "react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { TimelineEnd } from "./timeline-end";
@@ -26,6 +27,6 @@ Timeline.displayName = "Timeline";
 
 export default Object.assign(Timeline, {
   Start: TimelineStart,
-  Middle: TimelineMiddle,
+  Middle: TimelineMiddle as FC<ComponentProps<typeof TimelineMiddle>>,
   End: TimelineEnd,
 });

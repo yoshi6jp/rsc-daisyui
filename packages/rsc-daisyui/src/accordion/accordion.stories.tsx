@@ -81,7 +81,7 @@ export const JoinTogether: Story = {
     },
   },
   render: (args) => (
-    <Join vertical>
+    <Join direction="vertical">
       <Accordion {...args} defaultChecked>
         <Accordion.Title>How do I create an account?</Accordion.Title>
         <Accordion.Content>
