@@ -1,7 +1,7 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/core";
 import { toArgTypes } from "../storybook-helpers";
-import { Button } from "..";
 import { Filter } from ".";
 
 const meta: Meta<typeof Filter> = {
