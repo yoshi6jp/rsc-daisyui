@@ -163,6 +163,7 @@ export const ErrorColor: Story = {
 
 export const Responsive: Story = {
   ...Default,
+  name: "Responsive tooltip. only show for large screen",
   args: {
     tip: "hello",
     disabled: true,

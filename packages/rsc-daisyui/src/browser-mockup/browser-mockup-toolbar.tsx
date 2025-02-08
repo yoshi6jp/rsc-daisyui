@@ -15,10 +15,10 @@ export const BrowserMockupToolbar: DerivedComponentType<
   typeof BrowserMockupToolbarBase,
   BrowserMockupToolbarProps
 > = deriveClassed<typeof BrowserMockupToolbarBase, BrowserMockupToolbarProps>(
-  ({ children, ...rest }, ref) => {
+  ({ children, ...rest }) => {
     return (
       <BrowserMockupToolbarBase>
-        <Input as="div" {...rest} ref={ref}>
+        <Input as="div" {...rest}>
           {children}
         </Input>
       </BrowserMockupToolbarBase>

@@ -3,9 +3,17 @@ import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
-const DiffItem1 = classed("div", "diff-item-1");
+const DiffItem1 = classed("div", "diff-item-1", {
+  defaultProps: {
+    tabIndex: 0,
+  },
+});
 DiffItem1.displayName = "DiffItem1";
-const DiffItem2 = classed("div", "diff-item-2");
+const DiffItem2 = classed("div", "diff-item-2", {
+  defaultProps: {
+    tabIndex: 0,
+  },
+});
 DiffItem2.displayName = "DiffItem2";
 
 export const DiffBase = classed("figure", "diff", {

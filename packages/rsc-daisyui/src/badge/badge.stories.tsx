@@ -31,7 +31,7 @@ export const Sizes: Story = {
   },
   render: ({ children, ...args }) => {
     return (
-      <>
+      <div className="flex gap-2 xl:py-10 flex-wrap items-center justify-center">
         <Badge {...args} size="xs">
           Xsmall
         </Badge>
@@ -47,7 +47,7 @@ export const Sizes: Story = {
         <Badge {...args} size="xl">
           Xlarge
         </Badge>
-      </>
+      </div>
     );
   },
 };
@@ -59,7 +59,7 @@ export const Colors: Story = {
   },
   render: (args) => {
     return (
-      <>
+      <div className="flex gap-2 xl:py-10 flex-wrap items-center justify-center">
         <Badge {...args} color="primary">
           Primary
         </Badge>
@@ -85,7 +85,7 @@ export const Colors: Story = {
         <Badge {...args} color="error">
           Error
         </Badge>
-      </>
+      </div>
     );
   },
 };
@@ -128,7 +128,7 @@ export const Empty: Story = {
   },
   render: ({ children, ...args }) => {
     return (
-      <>
+      <div className="flex gap-2 xl:py-10 flex-wrap items-center justify-center">
         <Badge {...args} size="xs">
           {children}
         </Badge>
@@ -144,7 +144,7 @@ export const Empty: Story = {
         <Badge {...args} size="xl">
           {children}
         </Badge>
-      </>
+      </div>
     );
   },
 };
@@ -160,7 +160,7 @@ export const WithIcon: Story = {
   },
   render: (args) => {
     return (
-      <>
+      <div className="flex gap-2 xl:py-10 flex-wrap items-center justify-center">
         <Badge {...args} color="info">
           <svg
             className="size-[1em]"
@@ -281,7 +281,7 @@ export const WithIcon: Story = {
           </svg>
           Error
         </Badge>
-      </>
+      </div>
     );
   },
 };

@@ -16,14 +16,16 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
+  name: "Button",
   args: {
     children: "Default",
   },
 };
 
 export const ButtonSizes: Story = {
+  name: "Button sizes",
   render: ({ ...args }) => (
-    <>
+    <div className="flex gap-2 xl:py-10 flex-wrap items-center justify-center">
       <Button {...args} size="xs">
         Xsmall
       </Button>
@@ -37,7 +39,7 @@ export const ButtonSizes: Story = {
       <Button {...args} size="xl">
         Xlarge
       </Button>
-    </>
+    </div>
   ),
 
   parameters: {
@@ -48,6 +50,7 @@ export const ButtonSizes: Story = {
 };
 
 export const ResponsiveButton: Story = {
+  name: "Responsive button",
   args: {
     children: "Responsive",
     size: "xs",
@@ -56,8 +59,9 @@ export const ResponsiveButton: Story = {
 };
 
 export const ButtonsColors: Story = {
+  name: "Button colors",
   render: ({ ...args }) => (
-    <>
+    <div className="flex gap-2 xl:py-10 flex-wrap justify-center">
       <Button {...args}>Default</Button>
       <Button {...args} color="neutral">
         Neutral
@@ -83,7 +87,7 @@ export const ButtonsColors: Story = {
       <Button {...args} color="error">
         Error
       </Button>
-    </>
+    </div>
   ),
   parameters: {
     controls: {
@@ -94,30 +98,35 @@ export const ButtonsColors: Story = {
 
 export const SoftButtons: Story = {
   ...ButtonsColors,
+  name: "Soft buttons",
   args: {
     soft: true,
   },
 };
 export const OutlineButtons: Story = {
   ...ButtonsColors,
+  name: "Outline buttons",
   args: {
     outline: true,
   },
 };
 export const DashButtons: Story = {
   ...ButtonsColors,
+  name: "Dash buttons",
   args: {
     dash: true,
   },
 };
 export const ActiveButtons: Story = {
   ...ButtonsColors,
+  name: "Active buttons",
   args: {
     active: true,
   },
 };
 
 export const ButtonsGhostAndButtonLink: Story = {
+  name: "Buttons ghost and button link",
   render: ({ ...args }) => (
     <>
       <Button {...args} ghost={true}>
@@ -136,6 +145,7 @@ export const ButtonsGhostAndButtonLink: Story = {
 };
 
 export const WideButton: Story = {
+  name: "Wide button",
   args: {
     children: "Wide",
     wide: true,
@@ -144,7 +154,7 @@ export const WideButton: Story = {
 
 export const ButtonsWithAnyHtmlTags: Story = {
   render: (args) => (
-    <>
+    <div className="flex gap-2 xl:py-10 flex-wrap justify-center">
       {/* @ts-expect-error: as */}
       <Button {...args} as="a">
         Link
@@ -162,8 +172,9 @@ export const ButtonsWithAnyHtmlTags: Story = {
       <Button {...args} aria-label="Checkbox" as="input" type="checkbox" />
       {/* @ts-expect-error: as */}
       <Button {...args} as="input" type="reset" value="Reset" />
-    </>
+    </div>
   ),
+  name: "Buttons with any HTML tags",
   parameters: {
     controls: {
       exclude: ["as", "children"],
@@ -172,6 +183,7 @@ export const ButtonsWithAnyHtmlTags: Story = {
 };
 
 export const DisabledButtons: Story = {
+  name: "Disabled buttons",
   render: ({ ...args }) => (
     <>
       <Button {...args} disabled>
@@ -196,6 +208,7 @@ export const DisabledButtons: Story = {
 };
 
 export const CircleButtonAndSquareButton: Story = {
+  name: "Circle button and square button",
   render: ({ ...args }) => (
     <>
       <Button {...args} shape="square">
@@ -240,6 +253,7 @@ export const CircleButtonAndSquareButton: Story = {
 };
 
 export const ButtonWithIcon: Story = {
+  name: "Button with Icon",
   render: ({ ...args }) => (
     <>
       <Button {...args}>
@@ -281,6 +295,7 @@ export const ButtonWithIcon: Story = {
 };
 
 export const ButtonBlock: Story = {
+  name: "Button block",
   args: {
     children: "block",
     block: true,
@@ -288,6 +303,7 @@ export const ButtonBlock: Story = {
 };
 
 export const ButtonWithLoadingSpinner: Story = {
+  name: "Button with loading spinner",
   render: ({ ...args }) => (
     <>
       <Button {...args} shape="square">
@@ -307,6 +323,7 @@ export const ButtonWithLoadingSpinner: Story = {
 };
 
 export const LoginButtons: Story = {
+  name: "Login buttons",
   render: ({ ...args }) => (
     <div className="grid gap-4">
       {/* Email */}

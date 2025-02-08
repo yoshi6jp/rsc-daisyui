@@ -9,6 +9,9 @@ const meta: Meta<typeof Alert> = {
   title: "Feedback/Alert",
   component: Alert,
   argTypes: toArgTypes(getVariantConfig(Alert)),
+  args: {
+    className: "w-full",
+  },
 };
 
 export default meta;
@@ -193,7 +196,7 @@ export const DashStyle: Story = {
 
 export const ButtonsResponsive: Story = {
   args: {
-    className: "sm:alert-horizontal",
+    className: "sm:alert-horizontal w-full",
     direction: "vertical",
   },
   render: (args) => {
@@ -228,7 +231,7 @@ export const ButtonsResponsive: Story = {
 
 export const TitleAndDescription: Story = {
   args: {
-    className: "sm:alert-horizontal",
+    className: "sm:alert-horizontal w-full",
     direction: "vertical",
   },
   render: (args) => {

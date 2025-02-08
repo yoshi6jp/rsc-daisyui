@@ -1,7 +1,7 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0-beta.3",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "keywords": [
@@ -58,10 +58,10 @@
     "@storybook/react": "^8.5.1",
     "@storybook/react-vite": "^8.5.1",
     "@storybook/test": "^8.5.1",
-    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.3",
     "@tw-classed/core": "^1.7.0",
-    "@types/react": "^19.0.2",
-    "daisyui": "5.0.0-beta.2",
+    "@types/react": "^19.0.8",
+    "daisyui": "5.0.0-beta.7",
     "eslint": "^8.57.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "^0.11.1",
@@ -70,13 +70,13 @@
     "react-dom": "^19.0.0",
     "react-github-btn": "^1.4.0",
     "storybook": "^8.5.1",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.0.3",
     "tsconfig": "workspace:*",
-    "tsup": "^8.3.5",
+    "tsup": "^8.3.6",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "@tw-classed/react": "^1.8.0",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^3.0.1"
   }
 }

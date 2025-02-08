@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
 export const DetailsAndSummary: Story = {
+  name: "Dropdown using details and summary",
   args: {
     className: "mb-32",
   },
@@ -30,6 +31,7 @@ export const DetailsAndSummary: Story = {
 };
 export const PopoverAPIAndAnchorPositioning: StoryObj<typeof Dropdown.Popover> =
   {
+    name: "Dropdown using popover API and anchor positioning",
     render: (args) => (
       <div className="mb-32">
         <Button
@@ -57,6 +59,7 @@ export const PopoverAPIAndAnchorPositioning: StoryObj<typeof Dropdown.Popover> =
   };
 
 export const CssFocus: Story = {
+  name: "CSS focus",
   args: {
     className: "mb-32",
   },
@@ -78,6 +81,7 @@ export const CssFocus: Story = {
 };
 
 export const AlignsToStartHorizontally: Story = {
+  name: "Dropdown / aligns to start of button horizontally",
   args: {
     className: "mb-32",
   },
@@ -93,12 +97,22 @@ export const AlignsToStartHorizontally: Story = {
 };
 export const AlignsToEndHorizontally: Story = {
   ...AlignsToStartHorizontally,
+  name: "Dropdown / aligns to end of button horizontally",
   args: {
     ...AlignsToStartHorizontally.args,
     align: "end",
   },
 };
+export const AlignsToCenterHorizontally: Story = {
+  ...AlignsToStartHorizontally,
+  name: "Dropdown / aligns to center of button horizontally",
+  args: {
+    ...AlignsToStartHorizontally.args,
+    align: "center",
+  },
+};
 export const PlacementTop: Story = {
+  name: "Dropdown top",
   args: {
     className: "mt-32",
     placement: "top",
@@ -115,6 +129,7 @@ export const PlacementTop: Story = {
 };
 export const PlacementTopAlignsToCenterHorizontally: Story = {
   ...PlacementTop,
+  name: "Dropdown top / aligns to center of button horizontally",
   args: {
     ...PlacementTop.args,
     align: "center",
@@ -122,12 +137,14 @@ export const PlacementTopAlignsToCenterHorizontally: Story = {
 };
 export const PlacementTopAlignsToEndHorizontally: Story = {
   ...PlacementTop,
+  name: "Dropdown top / aligns to end of button horizontally",
   args: {
     ...PlacementTop.args,
     align: "end",
   },
 };
 export const PlacementBottom: Story = {
+  name: "Dropdown bottom (default)",
   args: {
     className: "mb-32",
     placement: "bottom",
@@ -144,6 +161,7 @@ export const PlacementBottom: Story = {
 };
 export const PlacementBottomAlignsToCenterHorizontally: Story = {
   ...PlacementBottom,
+  name: "Dropdown bottom (default) / aligns to center of button horizontally",
   args: {
     ...PlacementBottom.args,
     align: "center",
