@@ -1,7 +1,7 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "keywords": [
@@ -39,7 +39,7 @@
     "lint": "echo 'disabled lint'",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit",
-    "publish-pkg": "turbo run build lint && changeset version && changeset publish --tag beta",
+    "publish-pkg": "turbo run build lint && changeset version && changeset publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -61,7 +61,7 @@
     "@tailwindcss/postcss": "^4.0.3",
     "@tw-classed/core": "^1.7.0",
     "@types/react": "^19.0.8",
-    "daisyui": "5.0.0-beta.7",
+    "daisyui": "^5.0.0",
     "eslint": "^8.57.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "^0.11.1",

@@ -8,36 +8,33 @@
 - No `useEffect`, `useState`, etc and used.
 - Support for `daisyUI 5` and `Tailwind CSS v4`
 
-[Storybook](https://dreamy-melomakarona-11a971.netlify.app/)
+[Storybook](https://yoshi6jp.github.io/rsc-daisyui/)
 
-[Next.js (Kitchen Sink) ](https://v2-rsc-daisyui-web.vercel.app/)
-
-[Sandbox](https://codesandbox.io/p/github/yoshi6jp/rsc-daisyui-sample/draft/condescending-water?embed=1)
+[Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
 
 ## rsc-daisyui 🌼
 
 ### Install
 
-Make sure you've installed [TailwindCSS](https://tailwindcss.com/docs/installation) and [daisyUI (beta)](https://v5.daisyui.com/docs/install/).
-
+Make sure you've installed [TailwindCSS](https://tailwindcss.com/docs/installation) and [daisyUI](https://daisyui.com/docs/install/).
 Install the package with npm or yarn or pnpm:
 
 #### npm
 
 ```bash
-npm install rsc-daisyui@beta
+npm install rsc-daisyui
 ```
 
 #### yarn
 
 ```bash
-yarn add rsc-daisyui@beta
+yarn add rsc-daisyui
 ```
 
 #### pnpm
 
 ```bash
-pnpm add rsc-daisyui@beta
+pnpm add rsc-daisyui
 ```
 
 ### Add rsc-daisyui to app.css

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
 import { Fieldset } from ".";
-import { Input, Button } from "..";
+import { Input, Button, Join } from "..";
 
 const meta: Meta<typeof Fieldset> = {
   title: "Data Input/Fieldset",
@@ -53,6 +53,22 @@ export const MultipleInputs: Story = {
 
         <Fieldset.Label>Author</Fieldset.Label>
         <Input placeholder="Name" />
+      </Fieldset>
+    );
+  },
+};
+export const MultipleJoinItems: Story = {
+  args: {
+    className: "w-xs bg-base-200 border border-base-300 p-4 rounded-box",
+  },
+  render: (args) => {
+    return (
+      <Fieldset {...args}>
+        <Fieldset.Legend>Settings</Fieldset.Legend>
+        <Join>
+          <Join.Input placeholder="Product name" />
+          <Join.Button>save</Join.Button>
+        </Join>
       </Fieldset>
     );
   },
