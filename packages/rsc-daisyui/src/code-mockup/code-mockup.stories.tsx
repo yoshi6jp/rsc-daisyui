@@ -7,6 +7,9 @@ import { CodeMockup } from ".";
 const meta: Meta<typeof CodeMockup> = {
   title: "Mockup/Code",
   component: CodeMockup,
+  args: {
+    className: "w-full",
+  },
   argTypes: toArgTypes(getVariantConfig(CodeMockup)),
 };
 export default meta;
@@ -73,7 +76,7 @@ export const WithoutPrefix: Story = {
 };
 export const WithColor: Story = {
   args: {
-    className: "bg-primary text-primary-content",
+    className: "bg-primary text-primary-content w-full",
   },
   render: (args) => {
     return (

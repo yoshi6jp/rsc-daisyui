@@ -15,3 +15,6 @@ export const Step = classed("li", "step", {
   },
 });
 Step.displayName = "Step";
+
+export const Icon = classed("span", "step-icon");
+Icon.displayName = "StepIcon";

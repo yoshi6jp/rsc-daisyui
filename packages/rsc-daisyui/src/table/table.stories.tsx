@@ -118,7 +118,7 @@ export const HighlightsOnHover: Story = {
             <td>Blue</td>
           </tr>
           {/* row 2 */}
-          <tr className="hover">
+          <tr className="hover:bg-base-300">
             <th>2</th>
             <td>Hart Hagerty</td>
             <td>Desktop Support Technician</td>
@@ -227,13 +227,13 @@ export const VisualElements: Story = {
             <td>
               Zemlak, Daniel and Leannon
               <br />
-              <Badge color="ghost" size="sm">
+              <Badge ghost={true} size="sm">
                 Desktop Support Technician
               </Badge>
             </td>
             <td>Purple</td>
             <th>
-              <Button color="ghost" size="xs">
+              <Button ghost={true} size="xs">
                 details
               </Button>
             </th>
@@ -265,13 +265,13 @@ export const VisualElements: Story = {
             <td>
               Carroll Group
               <br />
-              <Badge color="ghost" size="xs">
+              <Badge ghost={true} size="xs">
                 Tax Accountant
               </Badge>
             </td>
             <td>Red</td>
             <th>
-              <Button color="ghost" size="xs">
+              <Button ghost={true} size="xs">
                 details
               </Button>
             </th>
@@ -303,13 +303,13 @@ export const VisualElements: Story = {
             <td>
               Rowe-Schoen
               <br />
-              <Badge color="ghost" size="sm">
+              <Badge ghost={true} size="sm">
                 Office Assistant I
               </Badge>
             </td>
             <td>Crimson</td>
             <th>
-              <Button color="ghost" size="xs">
+              <Button ghost={true} size="xs">
                 details
               </Button>
             </th>
@@ -341,13 +341,13 @@ export const VisualElements: Story = {
             <td>
               Wyman-Ledner
               <br />
-              <Badge color="ghost" size="sm">
+              <Badge ghost={true} size="sm">
                 Community Outreach Specialist
               </Badge>
             </td>
             <td>Indigo</td>
             <th>
-              <Button color="ghost" size="xs">
+              <Button ghost={true} size="xs">
                 details
               </Button>
             </th>

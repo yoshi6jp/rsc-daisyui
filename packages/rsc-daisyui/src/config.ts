@@ -16,15 +16,8 @@ export const VanillaDefaultVariants = {
     vanilla: false,
   },
 } as const;
-
-export const disabledVariant = {
-  disabled: {
-    true: "disabled",
-  },
-} satisfies Variants;
-
-export const activeVariant = {
-  active: {
-    true: "active",
+export const validatorVariant = {
+  validator: {
+    true: "validator",
   },
 } satisfies Variants;

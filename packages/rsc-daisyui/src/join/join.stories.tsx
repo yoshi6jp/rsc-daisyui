@@ -29,13 +29,13 @@ export const Default: Story = {
 export const Vertically: Story = {
   ...Default,
   args: {
-    vertical: true,
+    direction: "vertical",
   },
 };
 export const Responsive: Story = {
   ...Default,
   args: {
-    vertical: true,
+    direction: "vertical",
     className: "lg:join-horizontal",
   },
 };

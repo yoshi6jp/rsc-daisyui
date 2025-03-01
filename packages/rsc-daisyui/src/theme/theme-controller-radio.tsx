@@ -1,7 +1,7 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Radio } from "../radio";
-import type { ThemeType } from "./constants";
+import type { ThemeTypeWithDefault } from "./constants";
 
 export const ThemeControllerRadioBase = classed(
   "input",
@@ -17,7 +17,7 @@ export type ThemeControllerRadioProps = Omit<
   ComponentProps<typeof ThemeControllerRadioBase>,
   "type"
 > & {
-  value: ThemeType;
+  value: ThemeTypeWithDefault;
 };
 export const ThemeControllerRadio = deriveClassed<
   typeof ThemeControllerRadioBase,

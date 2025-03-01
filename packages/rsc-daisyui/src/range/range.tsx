@@ -5,6 +5,7 @@ import { RangeMeasure } from "./range-measure";
 export const Range = classed("input", "range", {
   ...configWithThemeFn({
     color: {
+      neutral: "range-neutral",
       primary: "range-primary",
       secondary: "range-secondary",
       accent: "range-accent",
@@ -14,6 +15,7 @@ export const Range = classed("input", "range", {
       error: "range-error",
     },
     size: {
+      xl: "range-xl",
       lg: "range-lg",
       md: "range-md",
       sm: "range-sm",

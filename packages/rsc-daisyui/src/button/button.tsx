@@ -10,21 +10,32 @@ export const Button = classed(
       primary: "btn-primary",
       secondary: "btn-secondary",
       accent: "btn-accent",
-      ghost: "btn-ghost",
       info: "btn-info",
       success: "btn-success",
       warning: "btn-warning",
       error: "btn-error",
-      link: "btn-link",
     },
     outline: {
       true: "btn-outline",
     },
+    soft: {
+      true: "btn-soft",
+    },
+    dash: {
+      true: "btn-dash",
+    },
+    ghost: {
+      true: "btn-ghost",
+    },
+    link: {
+      true: "btn-link",
+    },
     size: {
-      lg: "btn-lg",
-      md: "btn-md",
-      sm: "btn-sm",
       xs: "btn-xs",
+      sm: "btn-sm",
+      md: "btn-md",
+      lg: "btn-lg",
+      xl: "btn-xl",
     },
     wide: {
       true: "btn-wide",

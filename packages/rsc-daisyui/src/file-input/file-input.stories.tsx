@@ -2,11 +2,11 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { FormControl, Label } from "..";
+import { Fieldset } from "..";
 import { FileInput } from ".";
 
 const meta: Meta<typeof FileInput> = {
-  title: "Data Input/FileInput",
+  title: "Data Input/File Input",
   component: FileInput,
   argTypes: toArgTypes(getVariantConfig(FileInput)),
 };
@@ -15,101 +15,26 @@ export default meta;
 type Story = StoryObj<typeof FileInput>;
 
 export const Default: Story = {
-  args: {
-    bordered: false,
-    className: "w-full max-w-xs",
-  },
   render: (args) => {
     return <FileInput {...args} />;
   },
 };
-export const Border: Story = {
-  args: {
-    className: "w-full max-w-xs",
-  },
-  render: (args) => {
-    return <FileInput {...args} />;
-  },
-};
+
 export const Ghost: Story = {
   ...Default,
   args: {
-    color: "ghost",
-    bordered: false,
-    className: "w-full max-w-xs",
+    ghost: true,
   },
 };
-export const FormControlAndLabels: Story = {
+export const FieldsetAntLabel: Story = {
   render: (args) => {
     return (
-      <FormControl className="w-full max-w-xs">
-        <Label>
-          <Label.Text>Pick a file</Label.Text>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-        </Label>
-
+      <Fieldset>
+        <Fieldset.Legend>Pick a file</Fieldset.Legend>
         <FileInput {...args} />
-        <Label>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-        </Label>
-      </FormControl>
+        <Fieldset.Label>Max size 2MB</Fieldset.Label>
+      </Fieldset>
     );
-  },
-};
-
-export const Primary: Story = {
-  ...Default,
-  args: {
-    color: "primary",
-    className: "w-full max-w-xs",
-  },
-};
-export const Secondary: Story = {
-  ...Default,
-  args: {
-    color: "secondary",
-    className: "w-full max-w-xs",
-  },
-};
-
-export const Accent: Story = {
-  ...Default,
-  args: {
-    color: "accent",
-    className: "w-full max-w-xs",
-  },
-};
-
-export const Info: Story = {
-  ...Default,
-  args: {
-    color: "info",
-    className: "w-full max-w-xs",
-  },
-};
-
-export const Success: Story = {
-  ...Default,
-  args: {
-    color: "success",
-    className: "w-full max-w-xs",
-  },
-};
-
-export const Warning: Story = {
-  ...Default,
-  args: {
-    color: "warning",
-    className: "w-full max-w-xs",
-  },
-};
-
-export const Error: Story = {
-  ...Default,
-  args: {
-    color: "error",
-    className: "w-full max-w-xs",
   },
 };
 
@@ -122,10 +47,32 @@ export const Sizes: Story = {
   render: (args) => {
     return (
       <div className="flex flex-col gap-4 w-full items-center">
-        <FileInput {...args} className="w-full max-w-xs" size="xs" />
-        <FileInput {...args} className="w-full max-w-xs" size="sm" />
-        <FileInput {...args} className="w-full max-w-xs" size="md" />
-        <FileInput {...args} className="w-full max-w-xs" size="lg" />
+        <FileInput {...args} size="xs" />
+        <FileInput {...args} size="sm" />
+        <FileInput {...args} size="md" />
+        <FileInput {...args} size="lg" />
+        <FileInput {...args} size="xl" />
+      </div>
+    );
+  },
+};
+export const Colors: Story = {
+  parameters: {
+    controls: {
+      exclude: ["as", "color"],
+    },
+  },
+  render: (args) => {
+    return (
+      <div className="flex flex-col gap-4 w-full items-center">
+        <FileInput {...args} color="primary" />
+        <FileInput {...args} color="secondary" />
+        <FileInput {...args} color="accent" />
+        <FileInput {...args} color="neutral" />
+        <FileInput {...args} color="info" />
+        <FileInput {...args} color="success" />
+        <FileInput {...args} color="warning" />
+        <FileInput {...args} color="error" />
       </div>
     );
   },
@@ -136,6 +83,5 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     placeholder: "You can't touch this",
-    className: "w-full max-w-xs",
   },
 };

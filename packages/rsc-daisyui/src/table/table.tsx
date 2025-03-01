@@ -9,6 +9,7 @@ export const Table = classed(
       true: "table-zebra",
     },
     size: {
+      xl: "table-xl",
       lg: "table-lg",
       md: "table-md",
       sm: "table-sm",

@@ -1,3 +1,4 @@
+import React from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
@@ -10,10 +11,12 @@ export const ModalBase = classed(
   "dialog",
   "modal",
   configWithThemeFn({
-    position: {
+    placement: {
       top: "modal-top",
       middle: "modal-middle",
       bottom: "modal-bottom",
+      start: "modal-start",
+      end: "modal-end",
     },
     open: {
       true: "modal-open",

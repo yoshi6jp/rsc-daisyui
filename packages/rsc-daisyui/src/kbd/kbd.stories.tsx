@@ -13,7 +13,10 @@ export default meta;
 type Story = StoryObj<typeof Kbd>;
 
 export const Default: Story = {
-  render: (args) => <Kbd {...args}>A</Kbd>,
+  args: {
+    children: "K",
+  },
+  render: (args) => <Kbd {...args} />,
 };
 
 export const Sizes: Story = {
@@ -24,17 +27,20 @@ export const Sizes: Story = {
   },
   render: (args) => (
     <>
-      <Kbd {...args} size="lg">
-        Shift
-      </Kbd>
-      <Kbd {...args} size="md">
-        Shift
+      <Kbd {...args} size="xs">
+        Xsmall
       </Kbd>
       <Kbd {...args} size="sm">
-        Shift
+        Small
       </Kbd>
-      <Kbd {...args} size="xs">
-        Shift
+      <Kbd {...args} size="md">
+        Medium
+      </Kbd>
+      <Kbd {...args} size="lg">
+        Large
+      </Kbd>
+      <Kbd {...args} size="xl">
+        Xlarge
       </Kbd>
     </>
   ),

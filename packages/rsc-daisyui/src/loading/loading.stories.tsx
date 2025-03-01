@@ -19,6 +19,7 @@ export const Spinner: Story = {
       <Loading {...args} size="sm" />
       <Loading {...args} size="md" />
       <Loading {...args} size="lg" />
+      <Loading {...args} size="xl" />
     </>
   ),
   args: {

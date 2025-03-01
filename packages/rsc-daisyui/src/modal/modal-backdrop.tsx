@@ -1,10 +1,11 @@
+import type { FC } from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 
 export const ModalBackdropBase = classed("form", "modal-backdrop");
 export type ModalBackdropProps = ComponentProps<typeof ModalBackdropBase>;
 
-export const ModalBackdrop = deriveClassed<
+export const ModalBackdrop: FC = deriveClassed<
   typeof ModalBackdropBase,
   ModalBackdropProps
 >(({ children, ...args }, ref) => {

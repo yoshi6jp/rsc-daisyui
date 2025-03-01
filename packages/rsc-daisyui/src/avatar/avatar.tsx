@@ -6,11 +6,11 @@ export const Avatar = classed(
   "avatar",
   configWithThemeFn({
     indicator: {
-      online: "online",
-      offline: "offline",
+      online: "avatar-online",
+      offline: "avatar-offline",
     },
     placeholder: {
-      true: "placeholder",
+      true: "avatar-placeholder",
     },
   })
 );

@@ -10,6 +10,7 @@ export const ChatBubble = classed("div", "chat-bubble", {
       success: "chat-bubble-success",
       warning: "chat-bubble-warning",
       error: "chat-bubble-error",
+      neutral: "chat-bubble-neutral",
     },
   },
 });

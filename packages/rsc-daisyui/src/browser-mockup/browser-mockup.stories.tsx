@@ -15,7 +15,7 @@ type Story = StoryObj<typeof BrowserMockup>;
 
 export const Default: Story = {
   args: {
-    className: "border-base-300 w-full",
+    className: "border-base-300 border w-full",
   },
   render: (args) => {
     return (
@@ -31,15 +31,13 @@ export const Default: Story = {
 
 export const WithBackgroundColor: Story = {
   args: {
-    className: "bg-base-300 w-full",
+    className: "bg-base-100 w-full",
   },
   render: (args) => {
     return (
       <BrowserMockup {...args}>
         <BrowserMockup.Toolbar>https://daisyui.com</BrowserMockup.Toolbar>
-        <BrowserMockup.Content className="bg-base-200">
-          Hello!
-        </BrowserMockup.Content>
+        <BrowserMockup.Content>Hello!</BrowserMockup.Content>
       </BrowserMockup>
     );
   },

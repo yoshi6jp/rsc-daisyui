@@ -1,13 +1,13 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, validatorVariant } from "../config";
 
 export const Select = classed("select", "select", {
   ...configWithThemeFn({
-    bordered: {
-      true: "select-bordered",
+    ghost: {
+      true: "select-ghost",
     },
     color: {
-      ghost: "select-ghost",
+      neutral: "select-neutral",
       primary: "select-primary",
       secondary: "select-secondary",
       accent: "select-accent",
@@ -17,14 +17,13 @@ export const Select = classed("select", "select", {
       error: "select-error",
     },
     size: {
+      xl: "select-xl",
       lg: "select-lg",
       md: "select-md",
       sm: "select-sm",
       xs: "select-xs",
     },
+    ...validatorVariant,
   }),
-  defaultVariants: {
-    bordered: true,
-  },
 });
 Select.displayName = "Select";

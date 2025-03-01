@@ -1,3 +1,4 @@
+import React from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
@@ -5,23 +6,7 @@ import { MenuItem } from "../menu/menu-item";
 import { DropdownButton, DropdownAvatar } from "./dropdown-button";
 import { DropdownMenu } from "./dropdown-menu";
 import { DropdownCard } from "./dropdown-card";
-
-const commonVariants = {
-  horizontal: {
-    left: "dropdown-left",
-    right: "dropdown-right",
-  },
-  vertical: {
-    top: "dropdown-top",
-    bottom: "dropdown-bottom",
-  },
-  hover: {
-    true: "dropdown-hover",
-  },
-  end: {
-    true: "dropdown-end",
-  },
-};
+import { DropdownPopover, commonVariants } from "./dropdown-popover";
 
 export const DropdownBase = classed(
   "div",
@@ -30,6 +15,9 @@ export const DropdownBase = classed(
     ...commonVariants,
     open: {
       true: "dropdown-open",
+    },
+    hover: {
+      true: "dropdown-hover",
     },
   })
 );
@@ -72,4 +60,5 @@ export default Object.assign(Dropdown, {
   Item: MenuItem,
   Card: DropdownCard,
   Avatar: DropdownAvatar,
+  Popover: DropdownPopover,
 });

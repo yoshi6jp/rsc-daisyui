@@ -25,30 +25,49 @@ export const Default: Story = {
   },
 };
 
-export const Bordered: Story = {
+export const Border: Story = {
   ...Default,
   args: {
-    decorate: "bordered",
+    decorate: "border",
   },
 };
 
-export const Lifted: Story = {
+export const Lift: Story = {
   ...Default,
   args: {
-    decorate: "lifted",
+    decorate: "lift",
   },
 };
 
-export const Boxed: Story = {
+export const Box: Story = {
   ...Default,
   args: {
-    decorate: "boxed",
+    decorate: "box",
   },
 };
-
+export const BoxUsingRadioInputs: Story = {
+  args: {
+    decorate: "box",
+  },
+  render: (args) => {
+    return (
+      <Tabs {...args}>
+        <Tabs.Tab aria-label="Tab 1" as="input" name="my_tabs_1" type="radio" />
+        <Tabs.Tab
+          aria-label="Tab 2"
+          as="input"
+          defaultChecked
+          name="my_tabs_1"
+          type="radio"
+        />
+        <Tabs.Tab aria-label="Tab 3" as="input" name="my_tabs_1" type="radio" />
+      </Tabs>
+    );
+  },
+};
 export const Sizes: Story = {
   args: {
-    decorate: "lifted",
+    decorate: "lift",
   },
   parameters: {
     controls: {
@@ -59,9 +78,9 @@ export const Sizes: Story = {
     return (
       <div className="flex flex-col items-center gap-6">
         <Tabs {...args} size="xs">
-          <Tabs.Tab>Tiny</Tabs.Tab>
-          <Tabs.Tab active>Tiny</Tabs.Tab>
-          <Tabs.Tab>Tiny</Tabs.Tab>
+          <Tabs.Tab>Xsmall</Tabs.Tab>
+          <Tabs.Tab active>Xsmall</Tabs.Tab>
+          <Tabs.Tab>Xsmall</Tabs.Tab>
         </Tabs>
 
         <Tabs {...args} size="sm">
@@ -71,9 +90,9 @@ export const Sizes: Story = {
         </Tabs>
 
         <Tabs {...args} size="md">
-          <Tabs.Tab>Normal</Tabs.Tab>
-          <Tabs.Tab active>Normal</Tabs.Tab>
-          <Tabs.Tab>Normal</Tabs.Tab>
+          <Tabs.Tab>Medium</Tabs.Tab>
+          <Tabs.Tab active>Medium</Tabs.Tab>
+          <Tabs.Tab>Medium</Tabs.Tab>
         </Tabs>
 
         <Tabs {...args} size="lg">
@@ -81,46 +100,27 @@ export const Sizes: Story = {
           <Tabs.Tab active>Large</Tabs.Tab>
           <Tabs.Tab>Large</Tabs.Tab>
         </Tabs>
+
+        <Tabs {...args} size="xl">
+          <Tabs.Tab>Xlarge</Tabs.Tab>
+          <Tabs.Tab active>Xlarge</Tabs.Tab>
+          <Tabs.Tab>Xlarge</Tabs.Tab>
+        </Tabs>
       </div>
     );
   },
 };
 
-export const RadioTabBorderedTabContent: Story = {
+export const RadioTabBorderTabContent: Story = {
   args: {
-    decorate: "bordered",
-    className: "w-full my-10 lg:mx-10",
-  },
-  render: (args) => {
-    return (
-      <Tabs {...args}>
-        <Tabs.Tab aria-label="Tab 1" as="input" name="my_tabs_1" type="radio" />
-        <Tabs.Content className="p-10">Tab content 1</Tabs.Content>
-        <Tabs.Tab
-          aria-label="Tab 2"
-          as="input"
-          defaultChecked
-          name="my_tabs_1"
-          type="radio"
-        />
-        <Tabs.Content className="p-10">Tab content 2</Tabs.Content>
-        <Tabs.Tab aria-label="Tab 3" as="input" name="my_tabs_1" type="radio" />
-        <Tabs.Content className="p-10">Tab content 3</Tabs.Content>
-      </Tabs>
-    );
-  },
-};
-
-export const RadioTabLiftedTabContent: Story = {
-  args: {
-    decorate: "lifted",
+    decorate: "border",
     className: "w-full my-10 lg:mx-10",
   },
   render: (args) => {
     return (
       <Tabs {...args}>
         <Tabs.Tab aria-label="Tab 1" as="input" name="my_tabs_2" type="radio" />
-        <Tabs.Content className="bg-base-100 border-base-300 rounded-box p-6">
+        <Tabs.Content className="p-10 border-base-300 bg-base-100">
           Tab content 1
         </Tabs.Content>
         <Tabs.Tab
@@ -130,11 +130,79 @@ export const RadioTabLiftedTabContent: Story = {
           name="my_tabs_2"
           type="radio"
         />
-        <Tabs.Content className="bg-base-100 border-base-300 rounded-box p-6">
+        <Tabs.Content className="p-10 border-base-300 bg-base-100">
           Tab content 2
         </Tabs.Content>
         <Tabs.Tab aria-label="Tab 3" as="input" name="my_tabs_2" type="radio" />
-        <Tabs.Content className="bg-base-100 border-base-300 rounded-box p-6">
+        <Tabs.Content className="p-10 border-base-300 bg-base-100">
+          Tab content 3
+        </Tabs.Content>
+      </Tabs>
+    );
+  },
+};
+
+export const RadioTabLiftTabContent: Story = {
+  args: {
+    decorate: "lift",
+    className: "w-full my-10 lg:mx-10",
+  },
+  render: (args) => {
+    return (
+      <Tabs {...args}>
+        <Tabs.Tab aria-label="Tab 1" as="input" name="my_tabs_3" type="radio" />
+        <Tabs.Content className="bg-base-100 border-base-300 p-6">
+          Tab content 1
+        </Tabs.Content>
+        <Tabs.Tab
+          aria-label="Tab 2"
+          as="input"
+          defaultChecked
+          name="my_tabs_3"
+          type="radio"
+        />
+        <Tabs.Content className="bg-base-100 border-base-300 p-6">
+          Tab content 2
+        </Tabs.Content>
+        <Tabs.Tab aria-label="Tab 3" as="input" name="my_tabs_3" type="radio" />
+        <Tabs.Content className="bg-base-100 border-base-300 p-6">
+          Tab content 3
+        </Tabs.Content>
+      </Tabs>
+    );
+  },
+};
+export const RadioTabLiftTabContentOnBottom: Story = {
+  ...RadioTabLiftTabContent,
+  args: {
+    ...RadioTabLiftTabContent.args,
+    placement: "bottom",
+  },
+};
+export const RadioTabBoxTabContent: Story = {
+  args: {
+    decorate: "box",
+    className: "w-full my-10 lg:mx-10",
+  },
+  render: (args) => {
+    return (
+      <Tabs {...args}>
+        <Tabs.Tab aria-label="Tab 1" as="input" name="my_tabs_3" type="radio" />
+        <Tabs.Content className="bg-base-100 border-base-300 p-6">
+          Tab content 1
+        </Tabs.Content>
+        <Tabs.Tab
+          aria-label="Tab 2"
+          as="input"
+          defaultChecked
+          name="my_tabs_3"
+          type="radio"
+        />
+        <Tabs.Content className="bg-base-100 border-base-300 p-6">
+          Tab content 2
+        </Tabs.Content>
+        <Tabs.Tab aria-label="Tab 3" as="input" name="my_tabs_3" type="radio" />
+        <Tabs.Content className="bg-base-100 border-base-300 p-6">
           Tab content 3
         </Tabs.Content>
       </Tabs>
@@ -144,7 +212,7 @@ export const RadioTabLiftedTabContent: Story = {
 
 export const CustomColor: Story = {
   args: {
-    decorate: "lifted",
+    decorate: "lift",
   },
   render: (args) => {
     return (
@@ -152,7 +220,7 @@ export const CustomColor: Story = {
         <Tabs.Tab>Tab 1</Tabs.Tab>
         <Tabs.Tab
           active
-          className="[--tab-bg:yellow] [--tab-border-color:orange] text-primary"
+          className="[--tab-bg:orange] [--tab-border-color:red] text-primary"
         >
           Tab 2
         </Tabs.Tab>

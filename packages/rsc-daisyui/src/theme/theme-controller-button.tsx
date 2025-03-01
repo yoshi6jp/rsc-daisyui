@@ -1,7 +1,7 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Button } from "../button";
-import type { ThemeType } from "./constants";
+import type { ThemeTypeWithDefault } from "./constants";
 
 export const ThemeControllerButtonBase = classed(
   "input",
@@ -13,7 +13,7 @@ export type ThemeControllerButtonProps = Omit<
   ComponentProps<typeof ThemeControllerButtonBase>,
   "type"
 > & {
-  value: ThemeType;
+  value: ThemeTypeWithDefault;
 };
 export const ThemeControllerButton = deriveClassed<
   typeof ThemeControllerButtonBase,

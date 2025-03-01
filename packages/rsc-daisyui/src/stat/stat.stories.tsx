@@ -216,7 +216,7 @@ export const CustomColorsAndButton: Story = {
     <Stats {...args}>
       <Stats.Stat
         actions={
-          <Button color="success" size="sm">
+          <Button color="success" size="xs">
             Add funds
           </Button>
         }
@@ -226,8 +226,8 @@ export const CustomColorsAndButton: Story = {
       <Stats.Stat
         actions={
           <>
-            <Button size="sm">Withdrawal</Button>{" "}
-            <Button size="sm">deposit</Button>
+            <Button size="xs">Withdrawal</Button>{" "}
+            <Button size="xs">deposit</Button>
           </>
         }
         title="Current balance"

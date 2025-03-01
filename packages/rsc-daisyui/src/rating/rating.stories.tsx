@@ -27,6 +27,16 @@ export const Default: Story = {
   },
 };
 
+export const Readonly: Story = {
+  render: (args) => {
+    return (
+      <Rating {...args}>
+        <Rating.Readonly.Items value={3} half={args.half === true} />
+      </Rating>
+    );
+  },
+};
+
 export const MaskStar2WithWarningColor: Story = {
   render: (args) => {
     return (
@@ -130,6 +140,16 @@ export const Sizes: Story = {
             shape="star-2"
           />
         </Rating>
+
+        <Rating {...args} size="xl">
+          <Rating.Items
+            className="bg-orange-400"
+            defaultValue={2}
+            half={args.half === true}
+            name="rating-9"
+            shape="star-2"
+          />
+        </Rating>
       </div>
     );
   },
@@ -143,7 +163,7 @@ export const Hidden: Story = {
           defaultValue={2}
           half={args.half === true}
           hidden
-          name="rating-9"
+          name="rating-10"
           shape="star-2"
         />
       </Rating>

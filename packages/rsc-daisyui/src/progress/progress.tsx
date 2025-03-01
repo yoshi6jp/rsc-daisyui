@@ -6,6 +6,7 @@ export const Progress = classed(
   "progress",
   configWithThemeFn({
     color: {
+      neutral: "progress-neutral",
       primary: "progress-primary",
       secondary: "progress-secondary",
       accent: "progress-accent",

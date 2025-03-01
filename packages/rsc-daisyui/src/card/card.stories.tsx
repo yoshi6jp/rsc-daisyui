@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   args: {
-    className: "w-96 shadow-xl",
+    className: "w-96 shadow-sm",
   },
   render: (args) => {
     return (
@@ -28,8 +28,11 @@ export const Default: Story = {
           />
         </figure>
         <Card.Body>
-          <Card.Title>Shoes!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <Card.Title>Card Title</Card.Title>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
           <Card.Actions>
             <Button className="btn btn-primary">Buy Now</Button>
           </Card.Actions>
@@ -39,17 +42,216 @@ export const Default: Story = {
   },
 };
 
-export const Compact: Story = {
-  ...Default,
+export const Pricing: Story = {
   args: {
-    className: "w-96 shadow-xl",
-    compact: true,
+    className: "w-96 shadow-sm",
+  },
+  render: (args) => {
+    return (
+      <Card {...args}>
+        <Card.Body>
+          <Badge size="xs" color="warning">
+            Most Popular
+          </Badge>
+          <div className="flex justify-between">
+            <h2 className="text-3xl font-bold">Premium</h2>
+            <span className="text-xl">$29/mo</span>
+          </div>
+          <ul className="mt-6 flex flex-col gap-2 text-xs">
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-4 me-2 inline-block text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>High-resolution image generation</span>
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-4 me-2 inline-block text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Customizable style templates</span>
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-4 me-2 inline-block text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Batch processing capabilities</span>
+            </li>
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-4 me-2 inline-block text-success"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>AI-driven image enhancements</span>
+            </li>
+            <li className="opacity-50">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-4 me-2 inline-block text-base-content/50"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span className="line-through">Seamless cloud integration</span>
+            </li>
+            <li className="opacity-50">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-4 me-2 inline-block text-base-content/50"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span className="line-through">
+                Real-time collaboration tools
+              </span>
+            </li>
+          </ul>
+          <div className="mt-6">
+            <Button color="primary" block>
+              Subscribe
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
+    );
   },
 };
-
+export const Sizes: Story = {
+  args: {
+    className: "w-96 shadow-sm",
+  },
+  parameters: {
+    controls: {
+      exclude: ["as", "children", "size"],
+    },
+  },
+  render: (args) => {
+    return (
+      <div className="grid gap-6">
+        <Card {...args} size="xs">
+          <Card.Body>
+            <Card.Title>Xsmall Card</Card.Title>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <Card.Actions>
+              <Button color="primary">Buy Now</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
+        <Card {...args} size="sm">
+          <Card.Body>
+            <Card.Title>Small Card</Card.Title>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <Card.Actions>
+              <Button color="primary">Buy Now</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
+        <Card {...args} size="md">
+          <Card.Body>
+            <Card.Title>Medium Card</Card.Title>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <Card.Actions>
+              <Button color="primary">Buy Now</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
+        <Card {...args} size="lg">
+          <Card.Body>
+            <Card.Title>Large Card</Card.Title>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <Card.Actions>
+              <Button color="primary">Buy Now</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
+        <Card {...args} size="xl">
+          <Card.Body>
+            <Card.Title>Xlarge Card</Card.Title>
+            <p>
+              A card component has a figure, a body part, and inside body there
+              are title and actions parts
+            </p>
+            <Card.Actions>
+              <Button color="primary">Buy Now</Button>
+            </Card.Actions>
+          </Card.Body>
+        </Card>
+      </div>
+    );
+  },
+};
 export const WithBadge: Story = {
   args: {
-    className: "w-96 shadow-xl",
+    className: "w-96 shadow-sm",
   },
   render: (args) => {
     return (
@@ -62,10 +264,13 @@ export const WithBadge: Story = {
         </figure>
         <Card.Body>
           <Card.Title>
-            Shoes!
+            Card Title
             <Badge color="secondary">NEW</Badge>
           </Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
           <Card.Actions>
             <Badge outline>Fashion</Badge>
             <Badge outline>Products</Badge>
@@ -78,14 +283,17 @@ export const WithBadge: Story = {
 
 export const WithBottomImage: Story = {
   args: {
-    className: "w-96 shadow-xl",
+    className: "w-96 shadow-sm",
   },
   render: (args) => {
     return (
       <Card {...args}>
         <Card.Body>
-          <Card.Title>Shoes!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <Card.Title>Card Title</Card.Title>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
         </Card.Body>
         <figure>
           <img
@@ -100,7 +308,7 @@ export const WithBottomImage: Story = {
 
 export const CenteredContentAndPaddings: Story = {
   args: {
-    className: "w-96 shadow-xl",
+    className: "w-96 shadow-sm",
   },
   render: (args) => {
     return (
@@ -113,8 +321,11 @@ export const CenteredContentAndPaddings: Story = {
           />
         </figure>
         <Card.Body className="items-center text-center">
-          <Card.Title>Shoes!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <Card.Title>Card Title</Card.Title>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
           <Card.Actions>
             <Button color="primary">Buy Now</Button>
           </Card.Actions>
@@ -126,7 +337,7 @@ export const CenteredContentAndPaddings: Story = {
 
 export const ImageOverlay: Story = {
   args: {
-    className: "w-96 image-full shadow-xl",
+    className: "w-96 image-full shadow-sm",
   },
   render: (args) => {
     return (
@@ -138,8 +349,11 @@ export const ImageOverlay: Story = {
           />
         </figure>
         <Card.Body>
-          <Card.Title>Shoes!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <Card.Title>Card Title</Card.Title>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
           <Card.Actions>
             <Button color="primary">Buy Now</Button>
           </Card.Actions>
@@ -151,14 +365,17 @@ export const ImageOverlay: Story = {
 
 export const NoImage: Story = {
   args: {
-    className: "w-96 shadow-xl",
+    className: "w-96 shadow-sm",
   },
   render: (args) => {
     return (
       <Card {...args}>
         <Card.Body>
           <Card.Title>Card title!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
           <Card.Actions>
             <Button color="primary">Buy Now</Button>
           </Card.Actions>
@@ -177,7 +394,10 @@ export const CustomColor: Story = {
       <Card {...args}>
         <Card.Body>
           <Card.Title>Card title!</Card.Title>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
           <Card.Actions>
             <Button>Buy Now</Button>
           </Card.Actions>
@@ -199,7 +419,7 @@ export const CenteredWithNeutralColor: Story = {
           <p>We are using cookies for no reason.</p>
           <Card.Actions>
             <Button color="primary">Accept</Button>
-            <Button color="ghost">Deny</Button>
+            <Button ghost={true}>Deny</Button>
           </Card.Actions>
         </Card.Body>
       </Card>
@@ -209,7 +429,7 @@ export const CenteredWithNeutralColor: Story = {
 
 export const ActionOnTop: Story = {
   args: {
-    className: "w-96 shadow-xl",
+    className: "w-96 shadow-sm",
   },
   render: (args) => {
     return (
@@ -240,45 +460,10 @@ export const ActionOnTop: Story = {
   },
 };
 
-export const Glass: Story = {
-  args: {
-    className: "w-96 glass",
-    vanilla: true,
-  },
-  render: (args) => {
-    return (
-      <div
-        className="no-container w-full h-full flex min-h-[6rem] p-4 item-center justify-center rounded-box"
-        style={{
-          backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1481026469463-66327c86e544.webp)",
-          backgroundSize: "cover",
-        }}
-      >
-        <Card {...args}>
-          <figure>
-            <img
-              alt="car!"
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            />
-          </figure>
-          <Card.Body>
-            <Card.Title>Life hack</Card.Title>
-            <p>How to park your car at your garage?</p>
-            <Card.Actions>
-              <Button color="primary">Learn now!</Button>
-            </Card.Actions>
-          </Card.Body>
-        </Card>
-      </div>
-    );
-  },
-};
-
 export const ImageOnSide: Story = {
   args: {
     side: true,
-    className: "shadow-xl",
+    className: "shadow-sm",
   },
   render: (args) => {
     return (
@@ -303,7 +488,7 @@ export const ImageOnSide: Story = {
 
 export const Responsive: Story = {
   args: {
-    className: "lg:card-side shadow-xl",
+    className: "lg:card-side shadow-sm",
   },
   render: (args) => {
     return (

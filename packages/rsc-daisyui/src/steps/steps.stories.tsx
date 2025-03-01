@@ -41,6 +41,23 @@ export const Responsive: Story = {
   },
 };
 
+export const CustomContentInStepIcon: Story = {
+  render: (args) => {
+    return (
+      <Steps {...args}>
+        <Steps.Step color="neutral">
+          <Steps.Icon>😕</Steps.Icon>Step 1
+        </Steps.Step>
+        <Steps.Step color="neutral">
+          <Steps.Icon>😃</Steps.Icon>Step 2
+        </Steps.Step>
+        <Steps.Step className="step">
+          <Steps.Icon>😍</Steps.Icon>Step 3
+        </Steps.Step>
+      </Steps>
+    );
+  },
+};
 export const DataContent: Story = {
   render: (args) => {
     return (

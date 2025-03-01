@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
-import { FormControl, Label } from "..";
+import { Fieldset } from "..";
 import { Select } from ".";
 
 const meta: Meta<typeof Select> = {
@@ -14,86 +14,52 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
-  args: {
-    bordered: false,
-    className: "w-full max-w-xs",
-  },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Pick your favorite Simpson
+          Pick a color
         </option>
-        <option>Homer</option>
-        <option>Marge</option>
-        <option>Bart</option>
-        <option>Lisa</option>
-        <option>Maggie</option>
-      </Select>
-    );
-  },
-};
-export const Border: Story = {
-  args: {
-    className: "w-full max-w-xs",
-  },
-  render: (args) => {
-    return (
-      <Select {...args}>
-        <option disabled selected>
-          Who shot first?
-        </option>
-        <option>Han Solo</option>
-        <option>Greedo</option>
+        <option>Crimson</option>
+        <option>Amber</option>
+        <option>Velvet</option>
       </Select>
     );
   },
 };
 export const Ghost: Story = {
   args: {
-    color: "ghost",
-    bordered: false,
-    className: "w-full max-w-xs",
+    ghost: true,
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Pick the best JS framework
+          Pick a font
         </option>
-        <option>Svelte</option>
-        <option>Vue</option>
-        <option>React</option>
+        <option>Inter</option>
+        <option>Poppins</option>
+        <option>Raleway</option>
       </Select>
     );
   },
 };
 
-export const FormControlAndLabels: Story = {
+export const FieldsetAndLabels: Story = {
   render: (args) => {
     return (
-      <FormControl className="w-full max-w-xs">
-        <Label>
-          <Label.Text>Pick the best fantasy franchise</Label.Text>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-        </Label>
-
+      <Fieldset className="w-xs">
+        <Fieldset.Legend>Browsers</Fieldset.Legend>
         <Select {...args}>
-          <option disabled selected>
-            Pick one
+          <option disabled={true} selected>
+            Pick a browser
           </option>
-          <option>Star Wars</option>
-          <option>Harry Potter</option>
-          <option>Lord of the Rings</option>
-          <option>Planet of the Apes</option>
-          <option>Star Trek</option>
+          <option>Chrome</option>
+          <option>FireFox</option>
+          <option>Safari</option>
         </Select>
-
-        <Label>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-          <Label.TextAlt>Alt label</Label.TextAlt>
-        </Label>
-      </FormControl>
+        <Fieldset.Label>Optional</Fieldset.Label>
+      </Fieldset>
     );
   },
 };
@@ -101,18 +67,16 @@ export const FormControlAndLabels: Story = {
 export const PrimaryColor: Story = {
   args: {
     color: "primary",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          What is the best TV show?
+          Pick a text editor
         </option>
-        <option>Game of Thrones</option>
-        <option>Lost</option>
-        <option>Breaking Bad</option>
-        <option>Walking Dead</option>
+        <option>VScode</option>
+        <option>VScode fork</option>
+        <option>Another VScode fork</option>
       </Select>
     );
   },
@@ -121,22 +85,16 @@ export const PrimaryColor: Story = {
 export const SecondaryColor: Story = {
   args: {
     color: "secondary",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Pick your favorite language
+          Pick a language
         </option>
-        <option>Java</option>
+        <option>Zig</option>
         <option>Go</option>
-        <option>C</option>
-        <option>C#</option>
-        <option>C++</option>
         <option>Rust</option>
-        <option>JavaScript</option>
-        <option>Python</option>
       </Select>
     );
   },
@@ -145,17 +103,34 @@ export const SecondaryColor: Story = {
 export const AccentColor: Story = {
   args: {
     color: "accent",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Dark mode or light mode?
+          Color scheme
         </option>
-        <option>Auto</option>
-        <option>Dark mode</option>
         <option>Light mode</option>
+        <option>Dark mode</option>
+        <option>System</option>
+      </Select>
+    );
+  },
+};
+
+export const NeutralColor: Story = {
+  args: {
+    color: "neutral",
+  },
+  render: (args) => {
+    return (
+      <Select {...args}>
+        <option disabled selected>
+          Server location
+        </option>
+        <option>North America</option>
+        <option>EU west</option>
+        <option>South Ease Asia</option>
       </Select>
     );
   },
@@ -163,17 +138,16 @@ export const AccentColor: Story = {
 export const InfoColor: Story = {
   args: {
     color: "info",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Select language
+          Pick a Framework
         </option>
-        <option>English</option>
-        <option>Japanese</option>
-        <option>Italian</option>
+        <option>React</option>
+        <option>Vue</option>
+        <option>Angular</option>
       </Select>
     );
   },
@@ -181,21 +155,16 @@ export const InfoColor: Story = {
 export const SuccessColor: Story = {
   args: {
     color: "success",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Pick your favorite anime
+          Pick a Runtime
         </option>
-        <option>One Piece</option>
-        <option>Naruto</option>
-        <option>Death Note</option>
-        <option>Attack on Titan</option>
-        <option>Bleach</option>
-        <option>Fullmetal Alchemist</option>
-        <option>Jojo&apos;s Bizarre Adventure</option>
+        <option>npm Piece</option>
+        <option>Bun</option>
+        <option>yarn</option>
       </Select>
     );
   },
@@ -203,19 +172,16 @@ export const SuccessColor: Story = {
 export const WarningColor: Story = {
   args: {
     color: "warning",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          Pick a pizza
+          Pick a OS
         </option>
-        <option>Cheese</option>
-        <option>Veggie</option>
-        <option>Pepperoni</option>
-        <option>Margherita</option>
-        <option>Hawaiian</option>
+        <option>Windows</option>
+        <option>MacOS</option>
+        <option>Linux</option>
       </Select>
     );
   },
@@ -223,18 +189,16 @@ export const WarningColor: Story = {
 export const ErrorColor: Story = {
   args: {
     color: "error",
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (
       <Select {...args}>
         <option disabled selected>
-          What is the best headless CMS
+          Pick an AI Model
         </option>
-        <option>Strapi</option>
-        <option>Ghost</option>
-        <option>Netlify CMS</option>
-        <option>Sanity</option>
+        <option>GPT-4</option>
+        <option>Claude</option>
+        <option>Llama</option>
       </Select>
     );
   },
@@ -248,23 +212,16 @@ export const Sizes: Story = {
   render: (args) => {
     return (
       <div className="flex flex-col items-center gap-4 w-full">
-        <Select {...args} className="w-full max-w-xs" size="lg">
+        <Select {...args} size="xs">
           <option disabled selected>
-            Large
+            Xsmall
           </option>
-          <option>Large Apple</option>
-          <option>Large Orange</option>
-          <option>Large Tomato</option>
+          <option>Xsmall Apple</option>
+          <option>Xsmall Orange</option>
+          <option>Xsmall Tomato</option>
         </Select>
-        <Select {...args} className="w-full max-w-xs" size="md">
-          <option disabled selected>
-            Normal
-          </option>
-          <option>Normal Apple</option>
-          <option>Normal Orange</option>
-          <option>Normal Tomato</option>
-        </Select>
-        <Select {...args} className="w-full max-w-xs" size="sm">
+
+        <Select {...args} size="sm">
           <option disabled selected>
             Small
           </option>
@@ -272,13 +229,32 @@ export const Sizes: Story = {
           <option>Small Orange</option>
           <option>Small Tomato</option>
         </Select>
-        <Select {...args} className="w-full max-w-xs" size="xs">
+
+        <Select {...args} size="md">
           <option disabled selected>
-            Tiny
+            Medium
           </option>
-          <option>Tiny Apple</option>
-          <option>Tiny Orange</option>
-          <option>Tiny Tomato</option>
+          <option>Medium Apple</option>
+          <option>Medium Orange</option>
+          <option>Medium Tomato</option>
+        </Select>
+
+        <Select {...args} size="lg">
+          <option disabled selected>
+            Large
+          </option>
+          <option>Large Apple</option>
+          <option>Large Orange</option>
+          <option>Large Tomato</option>
+        </Select>
+
+        <Select {...args} size="xl">
+          <option disabled selected>
+            Xlarge
+          </option>
+          <option>Xlarge Apple</option>
+          <option>Xlarge Orange</option>
+          <option>Xlarge Tomato</option>
         </Select>
       </div>
     );
@@ -287,8 +263,6 @@ export const Sizes: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true,
-    bordered: false,
-    className: "w-full max-w-xs",
   },
   render: (args) => {
     return (

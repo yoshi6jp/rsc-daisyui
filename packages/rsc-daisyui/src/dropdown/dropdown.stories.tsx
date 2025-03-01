@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
 export const DetailsAndSummary: Story = {
+  name: "Dropdown using details and summary",
   args: {
     className: "mb-32",
   },
@@ -28,8 +29,37 @@ export const DetailsAndSummary: Story = {
     </Dropdown>
   ),
 };
+export const PopoverAPIAndAnchorPositioning: StoryObj<typeof Dropdown.Popover> =
+  {
+    name: "Dropdown using popover API and anchor positioning",
+    render: (args) => (
+      <div className="mb-32">
+        <Button
+          popoverTarget="popover-1"
+          style={{ anchorName: "--anchor-1" } as React.CSSProperties}
+        >
+          Button
+        </Button>
+        <Dropdown.Popover
+          {...args}
+          className="w-52"
+          id="popover-1"
+          style={{ positionAnchor: "--anchor-1" } as React.CSSProperties}
+        >
+          <Dropdown.Item>Item 1</Dropdown.Item>
+          <Dropdown.Item>Item 2</Dropdown.Item>
+        </Dropdown.Popover>
+      </div>
+    ),
+    parameters: {
+      controls: {
+        exclude: ["as", "hover", "open", "theme", "className"],
+      },
+    },
+  };
 
 export const CssFocus: Story = {
+  name: "CSS focus",
   args: {
     className: "mb-32",
   },
@@ -38,7 +68,9 @@ export const CssFocus: Story = {
       <div className="text-sm text-center mb-4">Click outside to close</div>
       {/* @ts-expect-error: as */}
       <Dropdown {...args} as="div">
-        <Dropdown.Button as="div">Click to open</Dropdown.Button>
+        <Dropdown.Button as="div" tabIndex={0}>
+          Click to open
+        </Dropdown.Button>
         <Dropdown.Menu className="w-52">
           <Dropdown.Item>Item 1</Dropdown.Item>
           <Dropdown.Item>Item 2</Dropdown.Item>
@@ -48,82 +80,167 @@ export const CssFocus: Story = {
   ),
 };
 
-export const AlignsToEnd: Story = {
-  ...DetailsAndSummary,
+export const AlignsToStartHorizontally: Story = {
+  name: "Dropdown / aligns to start of button horizontally",
   args: {
-    ...DetailsAndSummary.args,
-    end: true,
+    className: "mb-32",
+  },
+  render: (args) => (
+    <Dropdown {...args}>
+      <Dropdown.Button>Click ⬇️</Dropdown.Button>
+      <Dropdown.Menu className="w-52">
+        <Dropdown.Item>Item 1</Dropdown.Item>
+        <Dropdown.Item>Item 2</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  ),
+};
+export const AlignsToEndHorizontally: Story = {
+  ...AlignsToStartHorizontally,
+  name: "Dropdown / aligns to end of button horizontally",
+  args: {
+    ...AlignsToStartHorizontally.args,
+    align: "end",
   },
 };
-
-export const PositionTop: Story = {
-  ...DetailsAndSummary,
+export const AlignsToCenterHorizontally: Story = {
+  ...AlignsToStartHorizontally,
+  name: "Dropdown / aligns to center of button horizontally",
+  args: {
+    ...AlignsToStartHorizontally.args,
+    align: "center",
+  },
+};
+export const PlacementTop: Story = {
+  name: "Dropdown top",
   args: {
     className: "mt-32",
-    vertical: "top",
+    placement: "top",
+  },
+  render: (args) => (
+    <Dropdown {...args}>
+      <Dropdown.Button>Click ⬆️️</Dropdown.Button>
+      <Dropdown.Menu className="w-52">
+        <Dropdown.Item>Item 1</Dropdown.Item>
+        <Dropdown.Item>Item 2</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  ),
+};
+export const PlacementTopAlignsToCenterHorizontally: Story = {
+  ...PlacementTop,
+  name: "Dropdown top / aligns to center of button horizontally",
+  args: {
+    ...PlacementTop.args,
+    align: "center",
   },
 };
-
-export const PositionTopAlignsToEnd: Story = {
-  ...PositionTop,
+export const PlacementTopAlignsToEndHorizontally: Story = {
+  ...PlacementTop,
+  name: "Dropdown top / aligns to end of button horizontally",
   args: {
-    ...PositionTop.args,
-    end: true,
+    ...PlacementTop.args,
+    align: "end",
   },
 };
-
-export const PositionBottom: Story = {
-  ...DetailsAndSummary,
+export const PlacementBottom: Story = {
+  name: "Dropdown bottom (default)",
   args: {
-    ...DetailsAndSummary.args,
-    vertical: "bottom",
+    className: "mb-32",
+    placement: "bottom",
+  },
+  render: (args) => (
+    <Dropdown {...args}>
+      <Dropdown.Button>Click ⬇️️</Dropdown.Button>
+      <Dropdown.Menu className="w-52">
+        <Dropdown.Item>Item 1</Dropdown.Item>
+        <Dropdown.Item>Item 2</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  ),
+};
+export const PlacementBottomAlignsToCenterHorizontally: Story = {
+  ...PlacementBottom,
+  name: "Dropdown bottom (default) / aligns to center of button horizontally",
+  args: {
+    ...PlacementBottom.args,
+    align: "center",
   },
 };
-
-export const PositionBottomAlignsToEnd: Story = {
-  ...PositionBottom,
+export const PlacementBottomAlignsToEndHorizontally: Story = {
+  ...PlacementBottom,
   args: {
-    ...PositionBottom.args,
-    end: true,
+    ...PlacementBottom.args,
+    align: "end",
   },
 };
-export const PositionLeft: Story = {
-  ...DetailsAndSummary,
+export const PlacementLeft: Story = {
   args: {
-    ...DetailsAndSummary.args,
-    horizontal: "left",
+    className: "mb-32",
+    placement: "left",
+  },
+  render: (args) => (
+    <Dropdown {...args}>
+      <Dropdown.Button>Click ⬅️️️</Dropdown.Button>
+      <Dropdown.Menu className="w-52">
+        <Dropdown.Item>Item 1</Dropdown.Item>
+        <Dropdown.Item>Item 2</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  ),
+};
+export const PlacementLeftAlignsToCenterVertically: Story = {
+  ...PlacementLeft,
+  args: {
+    ...PlacementLeft.args,
+    className: "my-16",
+    align: "center",
   },
 };
-
-export const PositionLeftAlignsToEnd: Story = {
-  ...AlignsToEnd,
+export const PlacementBottomAlignsToEndVertically: Story = {
+  ...PlacementLeft,
   args: {
-    ...AlignsToEnd.args,
+    ...PlacementLeft.args,
     className: "mt-32",
-    horizontal: "left",
+    align: "end",
   },
 };
-
-export const PositionRight: Story = {
-  ...DetailsAndSummary,
+export const PlacementRight: Story = {
   args: {
-    ...DetailsAndSummary.args,
-    horizontal: "right",
+    className: "mb-32",
+    placement: "right",
+  },
+  render: (args) => (
+    <Dropdown {...args}>
+      <Dropdown.Button>Click ️➡️️️</Dropdown.Button>
+      <Dropdown.Menu className="w-52">
+        <Dropdown.Item>Item 1</Dropdown.Item>
+        <Dropdown.Item>Item 2</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  ),
+};
+export const PlacementRightAlignsToCenterVertically: Story = {
+  ...PlacementRight,
+  args: {
+    ...PlacementRight.args,
+    className: "my-16",
+    align: "center",
   },
 };
-
-export const PositionRightAlignsToEnd: Story = {
-  ...AlignsToEnd,
+export const PlacementRightAlignsToEndVertically: Story = {
+  ...PlacementRight,
   args: {
-    ...AlignsToEnd.args,
+    ...PlacementRight.args,
     className: "mt-32",
-    horizontal: "right",
+    align: "end",
   },
 };
 
 export const OnHover: Story = {
   args: {
     className: "mb-32",
+    /* @ts-expect-error: as */
     hover: true,
   },
   render: (args) => (
@@ -154,14 +271,10 @@ export const CardAsDropdown: Story = {
   },
   render: (args) => (
     <Dropdown {...args}>
-      <Dropdown.Button>open or close</Dropdown.Button>
-      <Dropdown.Card
-        className="w-64 p-2 bg-primary text-primary-content"
-        compact
-      >
+      <Dropdown.Button>Click</Dropdown.Button>
+      <Dropdown.Card size="sm" className="w-64 bg-base-100 z-1 shadow-md">
         <Card.Body>
-          <Card.Title as="h3">Card title!</Card.Title>
-          <p>you can use any element as a dropdown.</p>
+          <p>This is a card. You can use any element as a dropdown.</p>
         </Card.Body>
       </Dropdown.Card>
     </Dropdown>
@@ -170,23 +283,23 @@ export const CardAsDropdown: Story = {
 
 export const InNavbar: Story = {
   args: {
-    end: true,
+    align: "end",
   },
   render: (args) => (
-    <Navbar className="bg-base-300 mb-40 rounded-box" vanilla>
-      <div className="flex-1 px-2 lg:flex-none">
+    <Navbar className="bg-base-200 mb-40" vanilla>
+      <div className="ps-4">
         <a className="text-lg font-bold">daisyUI</a>
       </div>
-      <div className="flex justify-end flex-1 px-2">
+      <div className="flex grow justify-end px-2">
         <div className="flex items-stretch">
-          <Button as="a" color="ghost">
+          <Button as="a" ghost={true} className="rounded-field">
             Button
           </Button>
           <Dropdown {...args}>
-            <Dropdown.Button color="ghost" vanilla>
+            <Dropdown.Button ghost={true} vanilla className="rounded-field">
               Dropdown
             </Dropdown.Button>
-            <Dropdown.Menu className="w-52 mt-4">
+            <Dropdown.Menu className="w-52 mt-4 bg-base-200">
               <Dropdown.Item>Item 1</Dropdown.Item>
               <Dropdown.Item>Item 2</Dropdown.Item>
             </Dropdown.Menu>
@@ -199,7 +312,7 @@ export const InNavbar: Story = {
 
 export const Helper: Story = {
   args: {
-    end: true,
+    align: "end",
   },
   render: (args) => (
     <div className="mb-28 mt-6 flex gap-1 items-center">
@@ -207,7 +320,7 @@ export const Helper: Story = {
       <Dropdown {...args}>
         <Dropdown.Button
           className="text-info"
-          color="ghost"
+          ghost={true}
           shape="circle"
           size="xs"
         >
@@ -226,7 +339,7 @@ export const Helper: Story = {
             />
           </svg>
         </Dropdown.Button>
-        <Dropdown.Card className="w-64" compact>
+        <Dropdown.Card className="w-64 card-sm shadow-sm">
           <Card.Body>
             <Card.Title>You needed more info?</Card.Title>
             <p>Here is a description!</p>

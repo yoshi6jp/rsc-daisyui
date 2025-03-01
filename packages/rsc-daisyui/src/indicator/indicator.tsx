@@ -2,7 +2,11 @@ import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { Tab } from "../tab/tab";
 import { Avatar } from "../avatar/avatar";
-import { IndicatorItem, IndicatorBadge } from "./indicator-item";
+import {
+  IndicatorItem,
+  IndicatorBadge,
+  IndicatorStatus,
+} from "./indicator-item";
 
 export const Indicator = classed("div", "indicator", configWithThemeFn({}));
 Indicator.displayName = "Indicator";
@@ -16,6 +20,7 @@ IndicatorAvatar.displayName = "IndicatorAvatar";
 export default Object.assign(Indicator, {
   Item: IndicatorItem,
   Badge: IndicatorBadge,
+  Status: IndicatorStatus,
   Tab: IndicatorTab,
   Avatar: IndicatorAvatar,
 });

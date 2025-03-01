@@ -1,13 +1,13 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, validatorVariant } from "../config";
 
 export const Textarea = classed("textarea", "textarea", {
   ...configWithThemeFn({
-    bordered: {
-      true: "textarea-bordered",
+    ghost: {
+      true: "textarea-ghost",
     },
     color: {
-      ghost: "textarea-ghost",
+      neutral: "textarea-neutral",
       primary: "textarea-primary",
       secondary: "textarea-secondary",
       accent: "textarea-accent",
@@ -17,13 +17,12 @@ export const Textarea = classed("textarea", "textarea", {
       error: "textarea-error",
     },
     size: {
+      xl: "textarea-xl",
       lg: "textarea-lg",
       md: "textarea-md",
       sm: "textarea-sm",
       xs: "textarea-xs",
     },
+    ...validatorVariant,
   }),
-  defaultVariants: {
-    bordered: true,
-  },
 });

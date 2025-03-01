@@ -1,47 +1,33 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import { getVariantConfig } from "@tw-classed/react";
+import { toArgTypes } from "../storybook-helpers";
 import { Card } from "..";
 import { Stack } from ".";
 
 const meta: Meta<typeof Stack> = {
   title: "Layout/Stack",
   component: Stack,
+  argTypes: toArgTypes(getVariantConfig(Stack)),
 };
 
 export default meta;
 type Story = StoryObj<typeof Stack>;
 
-export const WithoutStack: Story = {
-  render: () => {
-    return (
-      <div>
-        <div className="grid w-32 h-20 rounded bg-primary text-primary-content place-content-center">
-          1
-        </div>
-        <div className="grid w-32 h-20 rounded bg-accent text-accent-content place-content-center">
-          2
-        </div>
-        <div className="grid w-32 h-20 rounded bg-secondary text-secondary-content place-content-center">
-          3
-        </div>
-      </div>
-    );
-  },
-};
 export const Default: Story = {
   args: {
-    className: "mb-4",
+    className: "h-20 w-32",
   },
   render: (args) => {
     return (
       <Stack {...args}>
-        <div className="grid w-32 h-20 rounded bg-primary text-primary-content place-content-center">
+        <div className="bg-primary text-primary-content grid place-content-center rounded-box">
           1
         </div>
-        <div className="grid w-32 h-20 rounded bg-accent text-accent-content place-content-center">
+        <div className="bg-accent text-accent-content grid place-content-center rounded-box">
           2
         </div>
-        <div className="grid w-32 h-20 rounded bg-secondary text-secondary-content place-content-center">
+        <div className="bg-secondary text-secondary-content grid place-content-center rounded-box">
           3
         </div>
       </Stack>
@@ -50,25 +36,25 @@ export const Default: Story = {
 };
 export const StackedImages: Story = {
   args: {
-    className: "mb-4",
+    className: "w-48",
   },
   render: (args) => {
     return (
       <Stack {...args}>
         <img
-          alt="stack 1"
-          className="rounded w-28"
-          src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
-        />
-        <img
-          alt="stack 2"
-          className="rounded w-28"
-          src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
-        />
-        <img
-          alt="stack 3"
-          className="rounded w-28"
+          alt="img"
           src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+          className="rounded-box"
+        />
+        <img
+          alt="img"
+          src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+          className="rounded-box"
+        />
+        <img
+          alt="img"
+          src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
+          className="rounded-box"
         />
       </Stack>
     );
@@ -76,49 +62,57 @@ export const StackedImages: Story = {
 };
 export const StackedCards: Story = {
   args: {
-    className: "mb-4",
+    className: "size-28",
   },
   render: (args) => {
     return (
       <Stack {...args}>
-        <Card
-          className="text-center border border-base-content w-36 bg-base-100"
-          vanilla
-        >
+        <Card className="border text-center">
           <Card.Body>A</Card.Body>
         </Card>
-        <Card
-          className="text-center border border-base-content w-36 bg-base-100"
-          vanilla
-        >
+        <Card className="border text-center">
           <Card.Body>B</Card.Body>
         </Card>
-
-        <Card
-          className="text-center border border-base-content w-36 bg-base-100"
-          vanilla
-        >
+        <Card className="border text-center">
           <Card.Body>C</Card.Body>
         </Card>
       </Stack>
     );
+  },
+};
+export const TopDirection: Story = {
+  ...StackedCards,
+  args: {
+    ...StackedCards.args,
+    direction: "top",
+  },
+};
+export const StartDirection: Story = {
+  ...StackedCards,
+  args: {
+    ...StackedCards.args,
+    direction: "start",
+  },
+};
+export const EndDirection: Story = {
+  ...StackedCards,
+  args: {
+    ...StackedCards.args,
+    direction: "end",
   },
 };
 
 export const StackedCardsWithShadow: Story = {
-  args: {
-    className: "mb-4",
-  },
   render: (args) => {
     return (
       <Stack {...args}>
-        <Card className="text-center shadow-md w-36 bg-base-200" vanilla>
+        <Card className="bg-base-200 text-center shadow-md">
           <Card.Body>A</Card.Body>
         </Card>
-        <Card className="text-center shadow-md w-36 bg-base-200" vanilla>
+        <Card className="bg-base-200 text-center shadow-md">
           <Card.Body>B</Card.Body>
         </Card>
-        <Card className="text-center shadow-md w-36 bg-base-200" vanilla>
+        <Card className="bg-base-200 text-center shadow-md">
           <Card.Body>C</Card.Body>
         </Card>
       </Stack>
@@ -126,27 +120,23 @@ export const StackedCardsWithShadow: Story = {
   },
 };
 
-export const StackedColorfulCards: Story = {
-  args: {
-    className: "mb-4",
-  },
+export const StackedWideCards: Story = {
   render: (args) => {
     return (
       <Stack {...args}>
-        <Card className="shadow-md bg-primary text-primary-content" vanilla>
+        <Card className="shadow-md">
           <Card.Body>
             <Card.Title>Notification 1</Card.Title>
             <p>You have 3 unread messages. Tap here to see.</p>
           </Card.Body>
         </Card>
-        <Card className="shadow-md bg-primary text-primary-content" vanilla>
+        <Card className="shadow-md">
           <Card.Body>
             <Card.Title>Notification 2</Card.Title>
             <p>You have 3 unread messages. Tap here to see.</p>
           </Card.Body>
         </Card>
-
-        <Card className="shadow-md bg-primary text-primary-content" vanilla>
+        <Card className="shadow-md">
           <Card.Body>
             <Card.Title>Notification 3</Card.Title>
             <p>You have 3 unread messages. Tap here to see.</p>

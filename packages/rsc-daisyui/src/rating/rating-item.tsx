@@ -14,6 +14,13 @@ export const RatingItem = classed("input", Mask, {
 });
 RatingItem.displayName = "RatingItem";
 
+export const RatingReadonlyItem = classed("div", Mask, {
+  defaultVariants: {
+    shape: "star",
+  },
+});
+RatingReadonlyItem.displayName = "RatingReadonlyItem";
+
 export const RatingHidden = classed("input", "rating-hidden", {
   defaultProps: {
     type: "radio",
@@ -87,3 +94,47 @@ export const RatingItems = deriveClassed<typeof RatingItem, RatingItemsProps>(
   }
 );
 RatingItems.displayName = "RatingItems";
+
+export type RatingReadonlyItemsProps = Omit<
+  ComponentProps<typeof RatingReadonlyItem>,
+  "half"
+> & {
+  half?: boolean;
+  max?: number;
+  value?: number;
+};
+
+export const RatingReadonlyItems = deriveClassed<
+  typeof RatingReadonlyItem,
+  RatingReadonlyItemsProps
+>(({ shape, half, max, value, className }) => {
+  const count = Math.max(1, Math.min(10, Math.floor(max || 5)));
+  return (
+    <>
+      {times(count).map((idx) => {
+        const val = idx + 1;
+        const halfVal = val - 0.5;
+        return (
+          <Fragment key={idx}>
+            {half ? (
+              <RatingReadonlyItem
+                className={className}
+                half="first"
+                shape={shape}
+                aria-current={halfVal === value}
+              />
+            ) : null}
+
+            <RatingReadonlyItem
+              className={className}
+              half={half ? "second" : undefined}
+              shape={shape}
+              aria-current={val === value}
+            />
+          </Fragment>
+        );
+      })}
+    </>
+  );
+});
+RatingReadonlyItems.displayName = "RatingReadonlyItems";

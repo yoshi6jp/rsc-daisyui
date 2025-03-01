@@ -39,8 +39,8 @@ export function Welcome() {
                 />
               </a>
             </div>
-            <div className="prose">
-              <ul>
+            <div>
+              <ul className="list-disc">
                 <li>
                   <Link hover href="https://daisyui.com/">
                     daisyUI
@@ -58,8 +58,8 @@ export function Welcome() {
                   Simple components available in the React Server Component
                 </li>
                 <li>
-                  No <Badge className="my-0">useEffect</Badge>,{" "}
-                  <Badge className="my-0">useState</Badge>, etc and used.
+                  No <Badge color="warning">useEffect</Badge>{" "}
+                  <Badge color="warning">useState</Badge> etc and used.
                 </li>
               </ul>
             </div>

@@ -192,7 +192,7 @@ export const GroupWithCounter: Story = {
       </Avatar>
       <Avatar {...args} placeholder>
         <div className="w-12 bg-neutral text-neutral-content">
-          <span>99+</span>
+          <span>+99</span>
         </div>
       </Avatar>
     </Avatar.Group>

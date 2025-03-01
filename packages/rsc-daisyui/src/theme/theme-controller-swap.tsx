@@ -1,13 +1,13 @@
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { Swap } from "../swap";
-import type { ThemeType } from "./constants";
+import type { ThemeTypeWithDefault } from "./constants";
 
 export type ThemeControllerSwapProps = Omit<
   ComponentProps<typeof Swap>,
   "value"
 > & {
   active: boolean;
-  value: ThemeType;
+  value: ThemeTypeWithDefault;
 };
 
 export const ThemeControllerSwap = deriveClassed<

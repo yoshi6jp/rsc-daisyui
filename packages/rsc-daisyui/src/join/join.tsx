@@ -6,11 +6,9 @@ export const Join = classed(
   "div",
   "join",
   configWithThemeFn({
-    vertical: {
-      true: "join-vertical",
-    },
-    horizontal: {
-      true: "join-horizontal",
+    direction: {
+      vertical: "join-vertical",
+      horizontal: "join-horizontal",
     },
   })
 );

@@ -3,7 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
 import { Button } from "..";
-import { Tooltip, TooltipBase } from "./tooltip";
+import { TooltipBase } from "./tooltip";
+import { Tooltip } from ".";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Feedback/Tooltip",
@@ -26,7 +27,20 @@ export const Default: Story = {
     </div>
   ),
 };
-
+export const TooltipContent: Story = {
+  render: (args) => (
+    <div className="my-10">
+      <Tooltip {...args}>
+        <Tooltip.Content>
+          <div className="animate-bounce text-orange-400 -rotate-10 text-2xl font-black">
+            Wow!
+          </div>
+        </Tooltip.Content>
+        <Button>Hover me</Button>
+      </Tooltip>
+    </div>
+  ),
+};
 export const ForceOpen: Story = {
   args: {
     open: true,
@@ -75,11 +89,11 @@ export const Right: Story = {
   },
 };
 
-export const PrimaryColor: Story = {
+export const NeutralColor: Story = {
   args: {
     open: true,
-    color: "primary",
-    tip: "primary",
+    color: "neutral",
+    tip: "neutral",
   },
   render: (args) => (
     <div className="my-6">
@@ -89,8 +103,16 @@ export const PrimaryColor: Story = {
     </div>
   ),
 };
+export const PrimaryColor: Story = {
+  ...NeutralColor,
+  args: {
+    open: true,
+    color: "primary",
+    tip: "primary",
+  },
+};
 export const SecondaryColor: Story = {
-  ...PrimaryColor,
+  ...NeutralColor,
   args: {
     open: true,
     color: "secondary",
@@ -98,7 +120,7 @@ export const SecondaryColor: Story = {
   },
 };
 export const AccentColor: Story = {
-  ...PrimaryColor,
+  ...NeutralColor,
   args: {
     open: true,
     color: "accent",
@@ -106,7 +128,7 @@ export const AccentColor: Story = {
   },
 };
 export const InfoColor: Story = {
-  ...PrimaryColor,
+  ...NeutralColor,
   args: {
     open: true,
     color: "info",
@@ -114,7 +136,7 @@ export const InfoColor: Story = {
   },
 };
 export const SuccessColor: Story = {
-  ...PrimaryColor,
+  ...NeutralColor,
   args: {
     open: true,
     color: "success",
@@ -122,7 +144,7 @@ export const SuccessColor: Story = {
   },
 };
 export const WarningColor: Story = {
-  ...PrimaryColor,
+  ...NeutralColor,
   args: {
     open: true,
     color: "warning",
@@ -131,7 +153,7 @@ export const WarningColor: Story = {
 };
 
 export const ErrorColor: Story = {
-  ...PrimaryColor,
+  ...NeutralColor,
   args: {
     open: true,
     color: "error",
@@ -141,6 +163,7 @@ export const ErrorColor: Story = {
 
 export const Responsive: Story = {
   ...Default,
+  name: "Responsive tooltip. only show for large screen",
   args: {
     tip: "hello",
     disabled: true,

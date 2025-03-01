@@ -15,13 +15,11 @@ export const Divider = classed(
       info: "divider-info",
       error: "divider-error",
     },
-    vertical: {
-      true: "divider-vertical",
+    direction: {
+      vertical: "divider-vertical",
+      horizontal: "divider-horizontal",
     },
-    horizontal: {
-      true: "divider-horizontal",
-    },
-    position: {
+    placement: {
       start: "divider-start",
       end: "divider-end",
     },

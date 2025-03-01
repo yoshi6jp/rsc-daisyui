@@ -150,16 +150,19 @@ export const Colors: StoryObj<typeof Chat> = {
         </Chat.Bubble>
       </Chat>
       <Chat {...args}>
-        <Chat.Bubble className="chat-bubble chat-bubble-accent">
-          That&apos;s never been done in the history of the Jedi. It&apos;s
-          insulting!
+        <Chat.Bubble color="accent">
+          That&apos;s never been done in the history of the Jedi.{" "}
         </Chat.Bubble>
       </Chat>
+      <Chat {...args}>
+        <Chat.Bubble color="neutral">It&apos;s insulting!</Chat.Bubble>
+      </Chat>
+
       <Chat align="end">
         <Chat.Bubble color="info">Calm down, Anakin.</Chat.Bubble>
       </Chat>
       <Chat align="end">
-        <Chat.Bubble className="chat-bubble chat-bubble-success">
+        <Chat.Bubble color="success">
           You have been given a great honor.
         </Chat.Bubble>
       </Chat>

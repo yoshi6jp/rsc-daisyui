@@ -1,17 +1,16 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn, VanillaDefaultVariants } from "../config";
+import { configWithThemeFn } from "../config";
 
-export const Label = classed("label", "label", {
-  ...configWithThemeFn({ vanilla: { false: "cursor-pointer" } }),
-  ...VanillaDefaultVariants,
-});
+export const Label = classed("span", "label", configWithThemeFn({}));
+
 Label.displayName = "Label";
-export const LabelText = classed("span", "label-text");
-LabelText.displayName = "LabelText";
-export const LabelTextAlt = classed("span", "label-text-alt");
-LabelTextAlt.displayName = "LabelTextAlt";
+export const FloatingLabel = classed(
+  "label",
+  "floating-label",
+  configWithThemeFn({})
+);
+FloatingLabel.displayName = "FloatingLabel";
 
 export default Object.assign(Label, {
-  Text: LabelText,
-  TextAlt: LabelTextAlt,
+  Floating: FloatingLabel,
 });

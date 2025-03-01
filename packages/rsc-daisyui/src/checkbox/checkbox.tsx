@@ -1,10 +1,11 @@
 import { classed } from "../classed.config";
-import { configWithThemeFn } from "../config";
+import { configWithThemeFn, validatorVariant } from "../config";
 
 export const Checkbox = classed("input", "checkbox", {
   ...configWithThemeFn({
     color: {
       primary: "checkbox-primary",
+      neutral: "checkbox-neutral",
       secondary: "checkbox-secondary",
       accent: "checkbox-accent",
       success: "checkbox-success",
@@ -13,11 +14,13 @@ export const Checkbox = classed("input", "checkbox", {
       error: "checkbox-error",
     },
     size: {
+      xl: "checkbox-xl",
       lg: "checkbox-lg",
       md: "checkbox-md",
       sm: "checkbox-sm",
       xs: "checkbox-xs",
     },
+    ...validatorVariant,
   }),
   defaultProps: {
     type: "checkbox",

@@ -33,8 +33,12 @@ export const ThemeList = [
   "dim",
   "nord",
   "sunset",
+  "caramellatte",
+  "abyss",
+  "silk",
 ] as const;
 export type ThemeType = (typeof ThemeList)[number];
+export type ThemeTypeWithDefault = ThemeType | "default";
 export const ThemeVariants: Variant = ThemeList.reduce(
   (result, item) => ({ ...result, [item]: item }),
   {}
