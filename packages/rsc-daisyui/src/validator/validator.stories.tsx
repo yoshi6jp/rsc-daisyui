@@ -15,45 +15,48 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
-  render: ({ validator }) => {
-    return (
-      <Input
-        validator={validator}
-        type="email"
-        required
-        placeholder="main@site.com"
-      />
-    );
+  args: {
+    validator: true,
+    type: "email",
+    required: true,
+    placeholder: "main@site.com",
+  },
+  render: (args) => {
+    return <Input {...args} />;
   },
 };
 export const ValidatorHint: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    type: "email",
+    required: true,
+    placeholder: "main@site.com",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="email"
-          required
-          placeholder="main@site.com"
-        />
-        <Validator.Hint>Enter valid email address</Validator.Hint>
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
+        <Validator.Hint as="p">Enter valid email address</Validator.Hint>
       </form>
     );
   },
 };
 export const PasswordRequirement: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    type: "password",
+    required: true,
+    placeholder: "Password",
+    minLength: 8,
+    pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
+    title:
+      "Must be more than 8 characters, including number, lowercase letter, uppercase letter",
+  },
+
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="password"
-          required
-          placeholder="Password"
-          minLength={8}
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
-        />
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
         <Validator.Hint as="p">
           Must be more than 8 characters, including
           <br />
@@ -68,21 +71,20 @@ export const PasswordRequirement: Story = {
   },
 };
 export const UsernameRequirement: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    required: true,
+    placeholder: "Username",
+    pattern: "[A-Za-z][A-Za-z0-9\-]*",
+    minLength: 3,
+    maxLength: 30,
+    title: "Only letters, numbers or dash",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="input"
-          className="input validator"
-          required
-          placeholder="Username"
-          pattern="[A-Za-z][A-Za-z0-9\-]*"
-          minLength={3}
-          maxLength={30}
-          title="Only letters, numbers or dash"
-        />
-        <Validator.Hint>
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
+        <Validator.Hint as="p">
           Must be 3 to 30 characters
           <br />
           containing only letters, numbers or dash
@@ -93,19 +95,20 @@ export const UsernameRequirement: Story = {
 };
 
 export const PhoneNumberRequirement: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    type: "tel",
+    required: true,
+    placeholder: "Phone",
+    pattern: "[0-9]*",
+    minLength: 10,
+    maxLength: 10,
+    title: "Must be 10 digits",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="tel"
-          required
-          placeholder="Phone"
-          pattern="[0-9]*"
-          minLength={10}
-          maxLength={10}
-          title="Must be 10 digits"
-        />
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
         <Validator.Hint as="p" className="validator-hint">
           Must be 10 digits
         </Validator.Hint>
@@ -115,18 +118,20 @@ export const PhoneNumberRequirement: Story = {
 };
 
 export const URLInputRequirement: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    type: "url",
+    required: true,
+    placeholder: "https://",
+    defaultValue: "https://",
+    pattern:
+      "^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$",
+    title: "Must be valid URL",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="url"
-          required
-          placeholder="https://"
-          value="https://"
-          pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
-          title="Must be valid URL"
-        />
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
         <Validator.Hint as="p">Must be valid URL</Validator.Hint>
       </form>
     );
@@ -134,18 +139,19 @@ export const URLInputRequirement: Story = {
 };
 
 export const DateInputRequirement: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    type: "date",
+    required: true,
+    placeholder: "Pick a date in 2025",
+    min: "2025-01-01",
+    max: "2025-12-31",
+    title: "Must be 2025",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="date"
-          required
-          placeholder="Pick a date in 2025"
-          min="2025-01-01"
-          max="2025-12-31"
-          title="Must be 2025"
-        />
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
         <Validator.Hint className="validator-hint">Must be 2025</Validator.Hint>
       </form>
     );
@@ -153,64 +159,80 @@ export const DateInputRequirement: Story = {
 };
 
 export const NumberInputRequirement: Story = {
-  render: ({ validator }) => {
+  args: {
+    validator: true,
+    type: "number",
+    required: true,
+    placeholder: "Type a number between 1 to 10",
+    min: 1,
+    max: 10,
+    title: "Must be between be 1 to 10",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Input
-          validator={validator}
-          type="number"
-          required
-          placeholder="Type a number between 1 to 10"
-          min="1"
-          max="10"
-          title="Must be between be 1 to 10"
-        />
+      <form className="w-full max-w-xs h-36">
+        <Input {...args} />
         <Validator.Hint>Must be between be 1 to 10</Validator.Hint>
       </form>
     );
   },
 };
-export const TextareaRequirement: Story = {
-  render: ({ validator }) => {
+export const TextareaRequirement: StoryObj<typeof Textarea> = {
+  args: {
+    validator: true,
+    required: true,
+    placeholder: "Bio",
+    title: "Required",
+  },
+  render: (args) => {
     return (
-      <form className="w-full max-w-xs">
-        <Textarea
-          validator={validator}
-          required
-          placeholder="Bio"
-          title="Required"
-        />
+      <form className="w-full max-w-xs h-36">
+        <Textarea {...args} />
         <Validator.Hint as="p">Required</Validator.Hint>
       </form>
     );
   },
 };
-export const CheckboxRequirement: Story = {
-  render: ({ validator }) => {
+export const CheckboxRequirement: StoryObj<typeof Checkbox> = {
+  args: {
+    validator: true,
+    required: true,
+    title: "Required",
+  },
+  render: (args) => {
     return (
       <form>
-        <Checkbox validator={validator} required title="Required" />
+        <Checkbox {...args} />
         <Validator.Hint as="p">Required</Validator.Hint>
       </form>
     );
   },
 };
-export const ToggleRequirement: Story = {
-  render: ({ validator }) => {
+export const ToggleRequirement: StoryObj<typeof Toggle> = {
+  args: {
+    validator: true,
+    required: true,
+    title: "Required",
+  },
+  render: (args) => {
     return (
       <form>
-        <Toggle validator={validator} required title="Required" />
+        <Toggle {...args} />
         <Validator.Hint as="p">Required</Validator.Hint>
       </form>
     );
   },
 };
 
-export const SelectRequirement: Story = {
-  render: ({ validator }) => {
+export const SelectRequirement: StoryObj<typeof Select> = {
+  args: {
+    validator: true,
+    required: true,
+  },
+  render: (args) => {
     return (
       <form className="w-full max-w-xs">
-        <Select validator={validator} required>
+        <Select {...args}>
           <option disabled selected value="">
             Choose:
           </option>

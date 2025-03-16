@@ -26,7 +26,7 @@ export const CircleWithContent: Story = {
         <Skeleton {...args} className="w-16 h-16 rounded-full shrink-0" />
         <div className="flex flex-col gap-4">
           <Skeleton {...args} className="h-4 w-20" />
-          <Skeleton {...args} className="h-4 w-20" />
+          <Skeleton {...args} className="h-4 w-28" />
         </div>
       </div>
       <Skeleton {...args} className="h-32 w-full" />

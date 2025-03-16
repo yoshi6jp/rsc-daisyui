@@ -249,6 +249,35 @@ export const Sizes: Story = {
     );
   },
 };
+export const WithBorder: Story = {
+  args: {
+    className: "w-96",
+    border: true,
+  },
+  render: (args) => {
+    return (
+      <Card {...args}>
+        <Card.Body>
+          <Card.Title as="h2">Card Title</Card.Title>
+          <p>
+            A card component has a figure, a body part, and inside body there
+            are title and actions parts
+          </p>
+          <Card.Actions>
+            <Button color="primary">Buy Now</Button>
+          </Card.Actions>
+        </Card.Body>
+      </Card>
+    );
+  },
+};
+export const WithDashBorder: Story = {
+  ...WithBorder,
+  args: {
+    className: "w-96",
+    dash: true,
+  },
+};
 export const WithBadge: Story = {
   args: {
     className: "w-96 shadow-sm",

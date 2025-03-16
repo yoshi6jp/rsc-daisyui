@@ -259,6 +259,7 @@ export const OnHover: Story = {
 
 export const ForceOpen: Story = {
   ...DetailsAndSummary,
+  name: "Force open",
   args: {
     ...DetailsAndSummary.args,
     open: true,
