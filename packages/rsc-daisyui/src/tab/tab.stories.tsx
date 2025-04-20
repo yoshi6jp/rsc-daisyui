@@ -210,6 +210,62 @@ export const RadioTabBoxTabContent: Story = {
   },
 };
 
+export const HorizontalScrollWhenTheresNoSpace: Story = {
+  args: {
+    decorate: "lift",
+    className: "min-w-max",
+  },
+  render: (args) => {
+    return (
+      <div className="overflow-x-auto max-w-60">
+        <Tabs {...args}>
+          <Tabs.Tab
+            as="input"
+            type="radio"
+            name="my_tabs_7"
+            className="z-1"
+            aria-label="Tab title 1"
+          />
+          <Tabs.Content className="sticky start-0 max-w-60 border-base-300 bg-base-100 p-6">
+            Tab content 1
+          </Tabs.Content>
+          <Tabs.Tab
+            as="input"
+            type="radio"
+            name="my_tabs_7"
+            className="z-1"
+            aria-label="Tab title 2"
+            defaultChecked
+          />
+          <Tabs.Content className="sticky start-0 max-w-60 border-base-300 bg-base-100 p-6">
+            Tab content 2
+          </Tabs.Content>
+          <Tabs.Tab
+            as="input"
+            type="radio"
+            name="my_tabs_7"
+            className="z-1"
+            aria-label="Tab title 3"
+          />
+          <Tabs.Content className="sticky start-0  max-w-60 border-base-300 bg-base-100 p-6">
+            Tab content 3
+          </Tabs.Content>
+          <Tabs.Tab
+            as="input"
+            type="radio"
+            name="my_tabs_7"
+            className="z-1"
+            aria-label="Tab title 4"
+          />
+          <Tabs.Content className="sticky start-0 max-w-60 border-base-300 bg-base-100 p-6">
+            Tab content 4
+          </Tabs.Content>
+        </Tabs>
+      </div>
+    );
+  },
+};
+
 export const CustomColor: Story = {
   args: {
     decorate: "lift",

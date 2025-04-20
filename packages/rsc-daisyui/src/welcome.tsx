@@ -63,6 +63,10 @@ export function Welcome() {
                 </li>
               </ul>
             </div>
+            <Badge className="mt-2" size="sm">
+              This Storybook is an example with{" "}
+              <span className="font-bold">daisyUI 5.0.27.</span>
+            </Badge>
           </div>
         </Hero.Content>
       </Hero>

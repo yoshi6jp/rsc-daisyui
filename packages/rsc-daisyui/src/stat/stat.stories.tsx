@@ -209,7 +209,7 @@ export const Responsive: Story = {
 
 export const CustomColorsAndButton: Story = {
   args: {
-    className: "bg-primary text-primary-content",
+    className: "bg-base-100 border border-base-300",
     vanilla: true,
   },
   render: (args) => (
