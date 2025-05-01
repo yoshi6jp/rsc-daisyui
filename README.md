@@ -12,7 +12,7 @@
 
 [Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
 
-## rsc-daisyui 🌼
+## rsc-daisyui <img src="https://img.daisyui.com/images/daisyui/mark-rotating.svg" width="24" />
 
 ### Install
 

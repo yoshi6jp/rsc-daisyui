@@ -61,7 +61,7 @@
     "@tailwindcss/postcss": "^4.1.4",
     "@tw-classed/core": "^1.7.0",
     "@types/react": "^19.1.2",
-    "daisyui": "^5.0.27",
+    "daisyui": "^5.0.32",
     "eslint": "^8.57.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "^0.11.6",
