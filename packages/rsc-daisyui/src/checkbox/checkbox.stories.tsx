@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { getVariantConfig } from "@tw-classed/react";
 import { toArgTypes } from "../storybook-helpers";
 import { Fieldset } from "..";

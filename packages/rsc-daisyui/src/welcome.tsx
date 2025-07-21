@@ -1,5 +1,5 @@
 import React from "react";
-import { Unstyled } from "@storybook/blocks";
+import { Unstyled } from "@storybook/addon-docs/blocks";
 import GitHubButton from "react-github-btn";
 import { Hero, Badge, Link } from ".";
 
@@ -65,7 +65,7 @@ export function Welcome() {
             </div>
             <Badge className="mt-2" size="sm">
               This Storybook is an example with{" "}
-              <span className="font-bold">daisyUI 5.0.32.</span>
+              <span className="font-bold">daisyUI 5.0.46.</span>
             </Badge>
           </div>
         </Hero.Content>
