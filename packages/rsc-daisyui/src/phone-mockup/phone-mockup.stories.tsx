@@ -28,7 +28,7 @@ export const Default: Story = {
 
 export const ColorAndWallpaper: Story = {
   args: {
-    className: "border-primary",
+    className: "border-[#ff8938]",
   },
   render: (args) => {
     return (
@@ -37,7 +37,7 @@ export const ColorAndWallpaper: Story = {
         <PhoneMockup.Display>
           <img
             alt="wallpaper"
-            src="https://www.iclarified.com/images/news/94911/453966/453966.jpg"
+            src="https://img.daisyui.com/images/stock/453966.webp"
           />
         </PhoneMockup.Display>
       </PhoneMockup>

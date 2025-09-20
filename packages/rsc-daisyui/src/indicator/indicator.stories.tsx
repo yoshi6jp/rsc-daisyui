@@ -89,11 +89,11 @@ export const ForAvatar: StoryObj<typeof Indicator.Avatar> = {
   render: (args) => {
     return (
       <Indicator.Avatar {...args}>
-        <Indicator.Badge color="secondary">Online</Indicator.Badge>
+        <Indicator.Badge color="secondary">Justice</Indicator.Badge>
         <div className="w-20 h-20 rounded-lg">
           <img
             alt="Tailwind CSS examples"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
           />
         </div>
       </Indicator.Avatar>

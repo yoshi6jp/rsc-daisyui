@@ -22,7 +22,7 @@ export const DetailsAndSummary: Story = {
   render: (args) => (
     <Dropdown {...args}>
       <Dropdown.Button>open or close</Dropdown.Button>
-      <Dropdown.Menu className="w-52">
+      <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
         <Dropdown.Item>Item 1</Dropdown.Item>
         <Dropdown.Item>Item 2</Dropdown.Item>
       </Dropdown.Menu>
@@ -71,7 +71,7 @@ export const CssFocus: Story = {
         <Dropdown.Button as="div" tabIndex={0}>
           Click to open
         </Dropdown.Button>
-        <Dropdown.Menu className="w-52">
+        <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
           <Dropdown.Item>Item 1</Dropdown.Item>
           <Dropdown.Item>Item 2</Dropdown.Item>
         </Dropdown.Menu>
@@ -88,7 +88,7 @@ export const AlignsToStartHorizontally: Story = {
   render: (args) => (
     <Dropdown {...args}>
       <Dropdown.Button>Click ⬇️</Dropdown.Button>
-      <Dropdown.Menu className="w-52">
+      <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
         <Dropdown.Item>Item 1</Dropdown.Item>
         <Dropdown.Item>Item 2</Dropdown.Item>
       </Dropdown.Menu>
@@ -120,7 +120,7 @@ export const PlacementTop: Story = {
   render: (args) => (
     <Dropdown {...args}>
       <Dropdown.Button>Click ⬆️️</Dropdown.Button>
-      <Dropdown.Menu className="w-52">
+      <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
         <Dropdown.Item>Item 1</Dropdown.Item>
         <Dropdown.Item>Item 2</Dropdown.Item>
       </Dropdown.Menu>
@@ -152,7 +152,7 @@ export const PlacementBottom: Story = {
   render: (args) => (
     <Dropdown {...args}>
       <Dropdown.Button>Click ⬇️️</Dropdown.Button>
-      <Dropdown.Menu className="w-52">
+      <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
         <Dropdown.Item>Item 1</Dropdown.Item>
         <Dropdown.Item>Item 2</Dropdown.Item>
       </Dropdown.Menu>
@@ -182,7 +182,7 @@ export const PlacementLeft: Story = {
   render: (args) => (
     <Dropdown {...args}>
       <Dropdown.Button>Click ⬅️️️</Dropdown.Button>
-      <Dropdown.Menu className="w-52">
+      <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
         <Dropdown.Item>Item 1</Dropdown.Item>
         <Dropdown.Item>Item 2</Dropdown.Item>
       </Dropdown.Menu>
@@ -213,7 +213,7 @@ export const PlacementRight: Story = {
   render: (args) => (
     <Dropdown {...args}>
       <Dropdown.Button>Click ️➡️️️</Dropdown.Button>
-      <Dropdown.Menu className="w-52">
+      <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
         <Dropdown.Item>Item 1</Dropdown.Item>
         <Dropdown.Item>Item 2</Dropdown.Item>
       </Dropdown.Menu>
@@ -248,7 +248,7 @@ export const OnHover: Story = {
       {/* @ts-expect-error: as */}
       <Dropdown {...args} as="div">
         <Dropdown.Button as="div">Hover</Dropdown.Button>
-        <Dropdown.Menu className="w-52">
+        <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">
           <Dropdown.Item>Item 1</Dropdown.Item>
           <Dropdown.Item>Item 2</Dropdown.Item>
         </Dropdown.Menu>

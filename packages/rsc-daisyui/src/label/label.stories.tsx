@@ -34,7 +34,7 @@ export const InputAndTheEnd: Story = {
 export const LabelForSelect: Story = {
   render: (args) => (
     <Select as="label">
-      <Label {...args}>type</Label>
+      <Label {...args}>Type</Label>
       <select>
         <option>Personal</option>
         <option>Business</option>
@@ -56,8 +56,8 @@ export const FloatingLabel: StoryObj<typeof Label.Floating> = {
   },
   render: (args) => (
     <Label.Floating {...args}>
-      <span>Your name</span>
-      <Input placeholder="Your name" size="md" />
+      <span>Your Email</span>
+      <Input placeholder="mail@site.com" size="md" />
     </Label.Floating>
   ),
 };

@@ -12,7 +12,7 @@
 
 [Next.js (Kitchen Sink) ](https://rsc-daisyui-web.vercel.app/)
 
-## rsc-daisyui 🌼
+## rsc-daisyui <img src="https://img.daisyui.com/images/daisyui/mark-rotating.svg" width="24" />
 
 ### Install
 
@@ -65,29 +65,31 @@ export default (props) => {
 | ---------------- | --- | --- |
 | Button           | ✅  | ✅  |
 | Dropdown         | ✅  | ✅  |
+| FAB / Speed Dial | -   | ✅  |
 | Modal            | ✅  | ✅  |
 | Swap             | ✅  | ✅  |
 | Theme Controller | ✅  | ✅  |
 
 #### Data display
 
-| Name        | v1  | v2  |
-| ----------- | --- | --- |
-| Accordion   | ✅  | ✅  |
-| Avatar      | ✅  | ✅  |
-| Badge       | ✅  | ✅  |
-| Card        | ✅  | ✅  |
-| Carousel    | ✅  | ✅  |
-| Chat bubble | ✅  | ✅  |
-| Collapse    | ✅  | ✅  |
-| Countdown   | ✅  | ✅  |
-| Diff        | ✅  | ✅  |
-| Kbd         | ✅  | ✅  |
-| List        | -   | ✅  |
-| Stat        | ✅  | ✅  |
-| Status      | -   | ✅  |
-| Table       | ✅  | ✅  |
-| Timeline    | ✅  | ✅  |
+| Name          | v1  | v2  |
+| ------------- | --- | --- |
+| Accordion     | ✅  | ✅  |
+| Avatar        | ✅  | ✅  |
+| Badge         | ✅  | ✅  |
+| Card          | ✅  | ✅  |
+| Carousel      | ✅  | ✅  |
+| Chat bubble   | ✅  | ✅  |
+| Collapse      | ✅  | ✅  |
+| Countdown     | ✅  | ✅  |
+| Diff          | ✅  | ✅  |
+| Hover Gallery | -   | ✅  |
+| Kbd           | ✅  | ✅  |
+| List          | -   | ✅  |
+| Stat          | ✅  | ✅  |
+| Status        | -   | ✅  |
+| Table         | ✅  | ✅  |
+| Timeline      | ✅  | ✅  |
 
 #### Navigation
 

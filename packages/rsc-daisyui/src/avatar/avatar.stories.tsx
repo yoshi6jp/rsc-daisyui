@@ -19,7 +19,7 @@ export const Default: Story = {
       <div className="w-24 rounded">
         <img
           alt="avatar"
-          src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
         />
       </div>
     </Avatar>
@@ -32,32 +32,32 @@ export const CustomSizes: Story = {
       <Avatar {...args}>
         <div className="w-24 rounded">
           <img
-            alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            alt="Tailwind-CSS-Avatar-component"
+            src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
           />
         </div>
       </Avatar>
       <Avatar {...args}>
         <div className="w-16 rounded">
           <img
-            alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            alt="Tailwind-CSS-Avatar-component"
+            src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
           />
         </div>
       </Avatar>
       <Avatar {...args}>
         <div className="w-12 rounded">
           <img
-            alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            alt="Tailwind-CSS-Avatar-component"
+            src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
           />
         </div>
       </Avatar>
       <Avatar {...args}>
         <div className="w-8 rounded">
           <img
-            alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            alt="Tailwind-CSS-Avatar-component"
+            src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
           />
         </div>
       </Avatar>
@@ -72,7 +72,7 @@ export const Rounded: Story = {
         <div className="w-24 rounded-xl">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/yellingwoman@192.webp"
           />
         </div>
       </Avatar>
@@ -80,7 +80,7 @@ export const Rounded: Story = {
         <div className="w-24 rounded-full">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp"
           />
         </div>
       </Avatar>
@@ -92,26 +92,26 @@ export const WithMask: Story = {
   render: (args) => (
     <>
       <Avatar {...args}>
+        <Mask as="div" className="w-24" shape="heart">
+          <img
+            alt="avatar"
+            src="https://img.daisyui.com/images/profile/demo/distracted3@192.webp"
+          />
+        </Mask>
+      </Avatar>
+      <Avatar {...args}>
         <Mask as="div" className="w-24" shape="squircle">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/distracted1@192.webp"
           />
         </Mask>
       </Avatar>
       <Avatar {...args}>
-        <Mask as="div" className="w-24" shape="hexagon">
+        <Mask as="div" className="w-24" shape="hexagon-2">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-          />
-        </Mask>
-      </Avatar>
-      <Avatar {...args}>
-        <Mask as="div" className="w-24" shape="triangle">
-          <img
-            alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/distracted2@192.webp"
           />
         </Mask>
       </Avatar>
@@ -126,7 +126,7 @@ export const Group: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
           />
         </div>
       </Avatar>
@@ -134,7 +134,7 @@ export const Group: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
           />
         </div>
       </Avatar>
@@ -142,7 +142,7 @@ export const Group: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/averagebulk@192.webp"
           />
         </div>
       </Avatar>
@@ -150,7 +150,7 @@ export const Group: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/wonderperson@192.webp"
           />
         </div>
       </Avatar>
@@ -170,7 +170,7 @@ export const GroupWithCounter: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
           />
         </div>
       </Avatar>
@@ -178,7 +178,7 @@ export const GroupWithCounter: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
           />
         </div>
       </Avatar>
@@ -186,7 +186,7 @@ export const GroupWithCounter: Story = {
         <div className="w-12">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/averagebulk@192.webp"
           />
         </div>
       </Avatar>
@@ -207,7 +207,7 @@ export const WithRing: Story = {
       >
         <img
           alt="avatar"
-          src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
         />
       </div>
     </Avatar>
@@ -226,7 +226,7 @@ export const PresenceIndicator: Story = {
         <div className="w-24 rounded-full">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/gordon@192.webp"
           />
         </div>
       </Avatar>
@@ -234,7 +234,7 @@ export const PresenceIndicator: Story = {
         <div className="w-24 rounded-full">
           <img
             alt="avatar"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            src="https://img.daisyui.com/images/profile/demo/idiotsandwich@192.webp"
           />
         </div>
       </Avatar>

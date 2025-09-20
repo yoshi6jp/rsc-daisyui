@@ -13,8 +13,8 @@ export function Welcome() {
               <div>
                 <img
                   alt="logo"
-                  className="h-16 inline-block"
-                  src="https://img.daisyui.com/images/daisyui-logo/daisyui-logomark.svg"
+                  className="h-16 inline-block m-2"
+                  src="https://img.daisyui.com/images/daisyui/mark-rotating.svg"
                 />
                 rsc-daisyUI
               </div>
@@ -63,6 +63,10 @@ export function Welcome() {
                 </li>
               </ul>
             </div>
+            <Badge className="mt-2" size="sm">
+              This Storybook is an example with{" "}
+              <span className="font-bold">daisyUI 5.1.13.</span>
+            </Badge>
           </div>
         </Hero.Content>
       </Hero>

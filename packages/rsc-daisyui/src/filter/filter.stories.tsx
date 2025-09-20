@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { getVariantConfig } from "@tw-classed/core";
 import { toArgTypes } from "../storybook-helpers";
 import { Filter } from ".";
+import { Button } from "../";
 
 const meta: Meta<typeof Filter> = {
   title: "Data Input/Filter",
@@ -35,5 +36,21 @@ export const WithoutHtmlForm: Story = {
         <Filter.Button name="metaframeworks" aria-label="Next.js" />
       </Filter>
     </>
+  ),
+};
+
+export const ResetButton: Story = {
+  render: (args) => (
+    <form>
+      <Button
+        as="input"
+        type="checkbox"
+        name="frameworks"
+        aria-label="Svelte"
+      />{" "}
+      <Button as="input" type="checkbox" name="frameworks" aria-label="Vue" />{" "}
+      <Button as="input" type="checkbox" name="frameworks" aria-label="React" />{" "}
+      <Button as="input" shape="square" type="reset" value="×" />
+    </form>
   ),
 };

@@ -81,7 +81,7 @@ export const IconsOrImage: Story = {
             <div className="w-16 rounded-full">
               <img
                 alt="avatar"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                src="https://img.daisyui.com/images/profile/demo/anakeen@192.webp"
               />
             </div>
           </Avatar>
@@ -209,7 +209,7 @@ export const Responsive: Story = {
 
 export const CustomColorsAndButton: Story = {
   args: {
-    className: "bg-primary text-primary-content",
+    className: "bg-base-100 border border-base-300",
     vanilla: true,
   },
   render: (args) => (
