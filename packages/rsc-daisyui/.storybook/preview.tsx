@@ -1,5 +1,5 @@
 import React from "react";
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import { ThemeList } from "../src";
 import { PreviewLayout } from "../src/storybook-helpers";
 import "../src/styles.css";
@@ -25,6 +25,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+
     options: {
       storySort: {
         order: [
@@ -39,6 +40,10 @@ const preview: Preview = {
         ],
       },
     },
+
+    docs: {
+      codePanel: true
+    }
   },
 
   decorators: [

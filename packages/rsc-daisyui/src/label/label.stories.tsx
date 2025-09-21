@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { getVariantConfig } from "@tw-classed/core";
 import { toArgTypes } from "../storybook-helpers";
 import { Input, Select } from "..";

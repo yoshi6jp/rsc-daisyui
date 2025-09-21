@@ -1,5 +1,5 @@
 import React from "react";
-import { Unstyled } from "@storybook/blocks";
+import { Unstyled } from "@storybook/addon-docs/blocks";
 import GitHubButton from "react-github-btn";
 import { Hero, Badge, Link } from ".";
 
