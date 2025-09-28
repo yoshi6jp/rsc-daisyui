@@ -49,13 +49,14 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
     "@chromatic-com/storybook": "^4.1.1",
+    "@storybook/addon-docs": "^9.1.7",
     "@storybook/addon-links": "^9.1.7",
     "@storybook/addon-onboarding": "^9.1.7",
     "@storybook/react-vite": "^9.1.7",
     "@tailwindcss/postcss": "^4.1.13",
     "@tw-classed/core": "^1.7.0",
     "@types/react": "^19.0.10",
-    "daisyui": "^5.1.13",
+    "daisyui": "^5.1.25",
     "eslint": "^8.57.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "^9.1.7",
@@ -67,8 +68,7 @@
     "tailwindcss": "^4.1.13",
     "tsconfig": "workspace:*",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.2",
-    "@storybook/addon-docs": "^9.1.7"
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@tw-classed/react": "^1.8.1",
