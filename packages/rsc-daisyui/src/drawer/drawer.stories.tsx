@@ -23,7 +23,7 @@ export const Default: Story = {
     return (
       <Drawer {...args}>
         <Drawer.Content className="flex flex-col items-center justify-center">
-          <Button as="label" color="primary" htmlFor={args.id}>
+          <Button as="label" htmlFor={args.id}>
             Open drawer
           </Button>
         </Drawer.Content>
@@ -94,12 +94,12 @@ export const NavbarMenuForDesktopSidebarDrawerForMobile: Story = {
 export const Responsive: Story = {
   args: {
     id: "my-drawer-2",
-    className: "lg:drawer-open",
+    className: "lg:drawer-open h-56 overflow-hidden",
   },
   render: (args) => {
     return (
       <Drawer {...args}>
-        <Drawer.Content className="flex flex-col items-center justify-center">
+        <Drawer.Content className="flex flex-col items-center justify-center h-56 overflow-hidden">
           <Button
             as="label"
             className="lg:hidden"
@@ -117,6 +117,108 @@ export const Responsive: Story = {
             <Menu.Item>Sidebar Item 1</Menu.Item>
             <Menu.Item>Sidebar Item 2</Menu.Item>
           </Menu>
+        </Drawer.Side>
+      </Drawer>
+    );
+  },
+};
+export const IconOnly: Story = {
+  args: {
+    id: "my-drawer-6",
+    open: true,
+    className: "h-56 overflow-hidden",
+  },
+  render: (args) => {
+    return (
+      <Drawer {...args}>
+        <Drawer.Content className="h-56">
+          {/* Page content here */}
+        </Drawer.Content>
+
+        <Drawer.Side
+          drawerId={args.id}
+          className="is-drawer-close:overflow-visible h-full"
+        >
+          <div className="is-drawer-close:w-17 is-drawer-open:w-64 bg-base-200 flex flex-col items-start min-h-full">
+            {/* Sidebar content here */}
+            <Menu className="w-full grow p-4">
+              {/* list item */}
+              <Menu.Li>
+                <button
+                  className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                  data-tip="Homepage"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    strokeWidth="2"
+                    fill="none"
+                    stroke="currentColor"
+                    className="inline-block size-4 my-1.5"
+                  >
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                    <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  </svg>
+                  <span className="is-drawer-close:hidden">Homepage</span>
+                </button>
+              </Menu.Li>
+
+              {/* list item */}
+              <Menu.Li>
+                <button
+                  className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                  data-tip="Settings"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    strokeWidth="2"
+                    fill="none"
+                    stroke="currentColor"
+                    className="inline-block size-4 my-1.5"
+                  >
+                    <path d="M20 7h-9"></path>
+                    <path d="M14 17H5"></path>
+                    <circle cx="17" cy="17" r="3"></circle>
+                    <circle cx="7" cy="7" r="3"></circle>
+                  </svg>
+                  <span className="is-drawer-close:hidden">Settings</span>
+                </button>
+              </Menu.Li>
+            </Menu>
+
+            {/* button to open/close drawer */}
+            <div
+              className="m-3.5 is-drawer-close:tooltip is-drawer-close:tooltip-right"
+              data-tip="Open"
+            >
+              <Drawer.Button
+                ghost
+                shape="circle"
+                drawerId={args.id}
+                className="is-drawer-open:rotate-y-180"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                  fill="none"
+                  stroke="currentColor"
+                  className="inline-block size-4 my-1.5"
+                >
+                  <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                  <path d="M9 4v16"></path>
+                  <path d="M14 10l2 2l-2 2"></path>
+                </svg>
+              </Drawer.Button>
+            </div>
+          </div>
         </Drawer.Side>
       </Drawer>
     );

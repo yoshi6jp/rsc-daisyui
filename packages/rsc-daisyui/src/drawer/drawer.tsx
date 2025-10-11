@@ -1,9 +1,11 @@
+import type { FC } from "react";
 import { type ComponentProps, deriveClassed } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { DrawerToggle } from "./drawer-toggle";
 import { DrawerContent } from "./drawer-content";
 import { DrawerSide } from "./drawer-side";
+import { DrawerButton } from "./drawer-button";
 
 export const DrawerBase = classed(
   "div",
@@ -38,4 +40,5 @@ Drawer.displayName = "Drawer";
 export default Object.assign(Drawer, {
   Content: DrawerContent,
   Side: DrawerSide,
+  Button: DrawerButton as FC<ComponentProps<typeof DrawerButton>>,
 });

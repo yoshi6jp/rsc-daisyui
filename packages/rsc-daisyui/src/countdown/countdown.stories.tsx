@@ -37,6 +37,19 @@ export const Default: Story = {
   },
 };
 
+export const MaxValue: Story = {
+  ...Default,
+  args: {
+    className: "font-mono text-6xl",
+  },
+  render: (args) => {
+    return (
+      <Countdown {...args}>
+        <Countdown.Item value={999} />
+      </Countdown>
+    );
+  },
+};
 export const LargeText: Story = {
   ...Default,
   args: {

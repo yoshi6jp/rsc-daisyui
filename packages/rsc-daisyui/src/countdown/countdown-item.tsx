@@ -17,7 +17,7 @@ export const CountdownItem: DerivedComponentType<
   CountdownItemProps
 > = deriveClassed<typeof CountdownItemBase, CountdownItemProps>(
   ({ value, ...rest }, ref) => {
-    const countdownValue = Math.min(99, Math.max(0, value));
+    const countdownValue = Math.min(999, Math.max(0, value));
     const countdownStyle: Record<string, number> = {
       "--value": countdownValue,
     };
