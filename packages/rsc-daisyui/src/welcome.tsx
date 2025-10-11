@@ -3,6 +3,27 @@ import { Unstyled } from "@storybook/addon-docs/blocks";
 import GitHubButton from "react-github-btn";
 import { Hero, Badge, Link } from ".";
 
+// Read package.json to display the daisyUI version in the UI
+import pkg from "../package.json";
+
+// raw spec might be '^5.2.0' or '~5.2.0' etc. Extract plain semver like '5.2.0'
+const rawDaisySpec: string | undefined =
+  (pkg as any).dependencies?.daisyui ||
+  (pkg as any).devDependencies?.daisyui ||
+  (pkg as any).peerDependencies?.daisyui ||
+  undefined;
+
+function extractSemver(spec?: string): string | undefined {
+  if (!spec) return undefined;
+  const m = spec.match(/(\d+\.\d+\.\d+)/);
+  if (m) return m[1];
+  const m2 = spec.match(/(\d+\.\d+)/);
+  if (m2) return m2[1] + ".0";
+  return undefined;
+}
+
+const daisyVersion = extractSemver(rawDaisySpec) ?? "(unknown)";
+
 export function Welcome() {
   return (
     <Unstyled>
@@ -65,7 +86,7 @@ export function Welcome() {
             </div>
             <Badge className="mt-2" size="sm">
               This Storybook is an example with{" "}
-              <span className="font-bold">daisyUI 5.1.25.</span>
+              <span className="font-bold">daisyUI {daisyVersion}.</span>
             </Badge>
           </div>
         </Hero.Content>

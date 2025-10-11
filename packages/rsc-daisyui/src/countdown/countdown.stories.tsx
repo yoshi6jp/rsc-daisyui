@@ -17,18 +17,18 @@ function useTimer(startValue: number): number {
   const [value, setValue] = useState(startValue);
   useEffect(() => {
     const timer = setInterval(() => {
-      setValue((v) => (v > 0 ? v - 1 : 59));
+      setValue((v) => (v > 0 ? v - 1 : startValue));
     }, 1000);
     return () => {
       clearTimeout(timer);
     };
-  }, [setValue]);
+  }, [setValue, startValue]);
   return value;
 }
 
 export const Default: Story = {
   render: (args) => {
-    const value = useTimer(59);
+    const value = useTimer(999);
     return (
       <Countdown {...args}>
         <Countdown.Item value={value} />
@@ -37,19 +37,6 @@ export const Default: Story = {
   },
 };
 
-export const MaxValue: Story = {
-  ...Default,
-  args: {
-    className: "font-mono text-6xl",
-  },
-  render: (args) => {
-    return (
-      <Countdown {...args}>
-        <Countdown.Item value={999} />
-      </Countdown>
-    );
-  },
-};
 export const LargeText: Story = {
   ...Default,
   args: {
