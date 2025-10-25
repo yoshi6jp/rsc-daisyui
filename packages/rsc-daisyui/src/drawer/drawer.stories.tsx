@@ -6,7 +6,7 @@ import { toArgTypes } from "../storybook-helpers";
 import { default as Drawer, DrawerBase } from "./drawer";
 
 const meta: Meta<typeof Drawer> = {
-  title: "Layout/Drawer",
+  title: "Layout/Drawer sidebar",
   component: Drawer,
   argTypes: toArgTypes(getVariantConfig(DrawerBase)),
 };

@@ -6,7 +6,7 @@ import { Kbd, Badge, Fieldset, Join, Validator } from "..";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {
-  title: "Data Input/Input Field",
+  title: "Data Input/Input field",
   component: Input,
   argTypes: toArgTypes(getVariantConfig(Input)),
 };
