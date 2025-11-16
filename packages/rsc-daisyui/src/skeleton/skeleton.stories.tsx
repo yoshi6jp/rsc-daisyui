@@ -44,3 +44,14 @@ export const RectangleWithContent: Story = {
     </div>
   ),
 };
+
+export const AnimatedGradientText: Story = {
+  args: {
+    text: true,
+  },
+  render: (args) => (
+    <div>
+      <Skeleton {...args}>AI is thinking harder...</Skeleton>
+    </div>
+  ),
+};

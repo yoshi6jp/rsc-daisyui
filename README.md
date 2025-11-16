@@ -83,12 +83,14 @@ export default (props) => {
 | Collapse      | ✅  | ✅  |
 | Countdown     | ✅  | ✅  |
 | Diff          | ✅  | ✅  |
+| Hover 3D Card | -   | ✅  |
 | Hover Gallery | -   | ✅  |
 | Kbd           | ✅  | ✅  |
 | List          | -   | ✅  |
 | Stat          | ✅  | ✅  |
 | Status        | -   | ✅  |
 | Table         | ✅  | ✅  |
+| Text Rotate   | -   | ✅  |
 | Timeline      | ✅  | ✅  |
 
 #### Navigation

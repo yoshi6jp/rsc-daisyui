@@ -16,7 +16,7 @@
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tsconfig": "workspace:*",
-    "turbo": "^2.5.8"
+    "turbo": "^2.6.1"
   },
   "packageManager": "pnpm@9.2.0",
   "name": "rsc-daisyui"

@@ -1,7 +1,7 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "keywords": [
@@ -48,30 +48,30 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
-    "@chromatic-com/storybook": "^4.1.1",
-    "@storybook/addon-docs": "^9.1.10",
-    "@storybook/addon-links": "^9.1.10",
-    "@storybook/addon-onboarding": "^9.1.10",
-    "@storybook/react-vite": "^9.1.10",
-    "@tailwindcss/postcss": "^4.1.14",
+    "@chromatic-com/storybook": "^4.1.2",
+    "@storybook/addon-docs": "^10.0.7",
+    "@storybook/addon-links": "^10.0.7",
+    "@storybook/addon-onboarding": "^10.0.7",
+    "@storybook/react-vite": "^10.0.7",
+    "@tailwindcss/postcss": "^4.1.17",
     "@tw-classed/core": "^1.7.0",
     "@types/react": "^19.0.10",
-    "daisyui": "^5.3.9",
+    "daisyui": "^5.5.5",
     "eslint": "^8.57.1",
     "eslint-config-custom": "workspace:*",
-    "eslint-plugin-storybook": "^9.1.10",
+    "eslint-plugin-storybook": "^10.0.7",
     "postcss": "^8.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-github-btn": "^1.4.0",
-    "storybook": "^9.1.10",
-    "tailwindcss": "^4.1.14",
+    "storybook": "^10.0.7",
+    "tailwindcss": "^4.1.17",
     "tsconfig": "workspace:*",
-    "tsup": "^8.5.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "@tw-classed/react": "^1.8.1",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.4.0"
   }
 }
