@@ -76,6 +76,7 @@ export default (props) => {
 | ------------- | --- | --- |
 | Accordion     | ✅  | ✅  |
 | Avatar        | ✅  | ✅  |
+| Aura          | -   | ✅  |
 | Badge         | ✅  | ✅  |
 | Card          | ✅  | ✅  |
 | Carousel      | ✅  | ✅  |
@@ -100,6 +101,7 @@ export default (props) => {
 | Breadcrumbs              | ✅  | ✅  |
 | Dock (Bottom navigation) |     | ✅  |
 | Link                     | ✅  | ✅  |
+| Megamenu                 | -   | ✅  |
 | Menu                     | ✅  | ✅  |
 | Navbar                   | ✅  | ✅  |
 | Pagination               | ✅  | ✅  |
@@ -135,6 +137,7 @@ export default (props) => {
 | Textarea   | ✅  | ✅  |
 | Toggle     | ✅  | ✅  |
 | Validator  | -   | ✅  |
+| OTP        | -   | ✅  |
 
 #### Layout
 

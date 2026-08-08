@@ -132,3 +132,10 @@ export const CustomColor: Story = {
       "text-blue-300 [--range-bg:orange] [--range-thumb:blue] [--range-fill:0]",
   },
 };
+export const Vertical: Story = {
+  ...Default,
+  args: {
+    ...Default.args,
+    vertical: true,
+  },
+};

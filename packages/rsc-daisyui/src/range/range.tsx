@@ -21,6 +21,9 @@ export const Range = classed("input", "range", {
       sm: "range-sm",
       xs: "range-xs",
     },
+    vertical: {
+      true: "range-vertical",
+    },
   }),
   defaultProps: {
     type: "range",
