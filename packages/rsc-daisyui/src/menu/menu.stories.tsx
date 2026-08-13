@@ -35,6 +35,37 @@ export const Responsive: Story = {
   },
 };
 
+export const Paged: Story = {
+  name: "Paged menu with nested submenus",
+  args: {
+    className: "w-56 lg:w-auto",
+    paged: true,
+    vertical: true,
+  },
+  render: (args) => (
+    <Menu {...args}>
+      <Menu.Item>Home</Menu.Item>
+      <Menu.Item>About</Menu.Item>
+      <Menu.Li>
+        <details>
+          <summary>Products</summary>
+          <ul>
+            <li>
+              <a>All products</a>
+            </li>
+            <li>
+              <a>Electronics</a>
+            </li>
+            <li>
+              <a>Clothing</a>
+            </li>
+          </ul>
+        </details>
+      </Menu.Li>
+    </Menu>
+  ),
+};
+
 export const IconOnly: Story = {
   render: (args) => (
     <Menu {...args}>
