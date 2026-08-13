@@ -1,10 +1,11 @@
-import {
-  deriveClassed,
-  type ComponentProps,
-  type DerivedComponentType,
-} from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn, VanillaDefaultVariants } from "../config";
+
+export type BreadcrumbsComponent = React.ForwardRefExoticComponent<
+  BreadcrumbsProps & React.RefAttributes<HTMLDivElement>
+>;
 
 export const BreadcrumbsBase = classed("div", "breadcrumbs", {
   ...configWithThemeFn({
@@ -15,16 +16,14 @@ export const BreadcrumbsBase = classed("div", "breadcrumbs", {
   ...VanillaDefaultVariants,
 });
 type BreadcrumbsProps = ComponentProps<typeof BreadcrumbsBase>;
-export const Breadcrumbs: DerivedComponentType<
-  typeof BreadcrumbsBase,
+export const Breadcrumbs: BreadcrumbsComponent = forwardRef<
+  HTMLDivElement,
   BreadcrumbsProps
-> = deriveClassed<typeof BreadcrumbsBase, BreadcrumbsProps>(
-  ({ children, ...rest }, ref) => {
-    return (
-      <BreadcrumbsBase {...rest} ref={ref}>
-        <ul>{children}</ul>
-      </BreadcrumbsBase>
-    );
-  }
-);
+>(({ children, ...rest }, ref) => {
+  return (
+    <BreadcrumbsBase {...rest} ref={ref}>
+      <ul>{children}</ul>
+    </BreadcrumbsBase>
+  );
+});
 Breadcrumbs.displayName = "Breadcrumbs";

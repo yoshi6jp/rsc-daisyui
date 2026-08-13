@@ -66,7 +66,6 @@ export const CssFocus: Story = {
   render: (args) => (
     <div>
       <div className="text-sm text-center mb-4">Click outside to close</div>
-      {/* @ts-expect-error: as */}
       <Dropdown {...args} as="div">
         <Dropdown.Button as="div" tabIndex={0}>
           Click to open
@@ -245,7 +244,6 @@ export const OnHover: Story = {
   },
   render: (args) => (
     <>
-      {/* @ts-expect-error: as */}
       <Dropdown {...args} as="div">
         <Dropdown.Button as="div">Hover</Dropdown.Button>
         <Dropdown.Menu className="w-52 bg-base-100 shadow-sm p-2">

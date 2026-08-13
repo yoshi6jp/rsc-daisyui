@@ -1,4 +1,5 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Toggle } from "../toggle/toggle";
 import type { ThemeTypeWithDefault } from "./constants";
@@ -12,10 +13,11 @@ export type ThemeControllerProps = Omit<
   ComponentProps<typeof ThemeControllerBase>,
   "type"
 > & {
+  type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
   value: ThemeTypeWithDefault;
 };
-export const ThemeController = deriveClassed<
-  typeof ThemeControllerBase,
+export const ThemeController = forwardRef<
+  HTMLInputElement,
   ThemeControllerProps
 >(({ value, ...rest }, ref) => {
   return (

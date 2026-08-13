@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef, type ReactNode } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { MenuLi } from "./menu-item";
 
@@ -24,15 +24,14 @@ export type MenuDropdownProps = ComponentProps<typeof MenuDropdownToggle> & {
   label: ReactNode;
 };
 
-export const MenuDropdown = deriveClassed<
-  typeof MenuDropdownToggle,
-  MenuDropdownProps
->(({ children, open, label, ...rest }, ref) => (
-  <MenuLi>
-    <MenuDropdownToggle {...rest} open={open} ref={ref}>
-      {label}
-    </MenuDropdownToggle>
-    <MenuDropdownBase open={open}>{children}</MenuDropdownBase>
-  </MenuLi>
-));
+export const MenuDropdown = forwardRef<HTMLSpanElement, MenuDropdownProps>(
+  ({ children, open, label, ...rest }, ref) => (
+    <MenuLi>
+      <MenuDropdownToggle {...rest} open={open} ref={ref}>
+        {label}
+      </MenuDropdownToggle>
+      <MenuDropdownBase open={open}>{children}</MenuDropdownBase>
+    </MenuLi>
+  ),
+);
 MenuDropdown.displayName = "MenuDropdown";

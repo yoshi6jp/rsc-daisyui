@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef, type ReactNode } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn, VanillaDefaultVariants } from "../config";
 
@@ -33,7 +33,7 @@ export type DiffProps = ComponentProps<typeof DiffBase> & {
   secondChild?: ReactNode;
 };
 
-export const Diff = deriveClassed<typeof DiffBase, DiffProps>(
+export const Diff = forwardRef<HTMLElement, DiffProps>(
   ({ children, secondItem, secondChild, ...rest }, ref) => {
     if (secondChild) {
       return (
@@ -51,7 +51,7 @@ export const Diff = deriveClassed<typeof DiffBase, DiffProps>(
         <DiffResizer />
       </DiffBase>
     );
-  }
+  },
 );
 Diff.displayName = "Diff";
 export default Object.assign(Diff, {

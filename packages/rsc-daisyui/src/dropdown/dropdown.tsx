@@ -1,5 +1,5 @@
-import React from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import React, { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { MenuItem } from "../menu/menu-item";
@@ -19,39 +19,49 @@ export const DropdownBase = classed(
     hover: {
       true: "dropdown-hover",
     },
-  })
+  }),
 );
 export const DropdownDetails = classed(
   "details",
   "dropdown",
-  configWithThemeFn(commonVariants)
+  configWithThemeFn(commonVariants),
 );
 
-type DropdownBaseProps = ComponentProps<typeof DropdownBase>;
-export type DropdownProps = ComponentProps<typeof DropdownDetails> & {
+type DropdownBaseProps = Omit<ComponentProps<typeof DropdownBase>, "as">;
+export type DropdownProps = Omit<
+  ComponentProps<typeof DropdownDetails>,
+  "as"
+> & {
+  as?: "details" | "div" | (string & {});
   open?: boolean;
 };
 
-export const Dropdown = deriveClassed<typeof DropdownDetails, DropdownProps>(
-  ({ children, open, ...rest }, ref) => {
-    const as = rest.as as unknown as string | undefined;
-    if (as === "details" || as === undefined) {
+export const Dropdown = forwardRef<HTMLElement, DropdownProps>(
+  ({ children, open, as, ...rest }, ref) => {
+    const useDetails = as === "details" || as === undefined;
+    if (useDetails) {
       return (
-        <DropdownDetails {...rest} open={open} ref={ref}>
+        <DropdownDetails
+          {...(rest as any)}
+          as={as ?? ("details" as any)}
+          open={open}
+          ref={ref as React.ForwardedRef<HTMLDetailsElement>}
+        >
           {children}
         </DropdownDetails>
       );
     }
     return (
       <DropdownBase
-        {...(rest as unknown as DropdownBaseProps)}
+        {...(rest as any)}
+        as={as as any}
         open={open}
         ref={ref as unknown as React.ForwardedRef<HTMLDivElement>}
       >
         {children}
       </DropdownBase>
     );
-  }
+  },
 );
 Dropdown.displayName = "Dropdown";
 export default Object.assign(Dropdown, {

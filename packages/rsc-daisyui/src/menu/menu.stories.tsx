@@ -35,6 +35,37 @@ export const Responsive: Story = {
   },
 };
 
+export const Paged: Story = {
+  name: "Paged menu with nested submenus",
+  args: {
+    className: "w-56 lg:w-auto",
+    paged: true,
+    vertical: true,
+  },
+  render: (args) => (
+    <Menu {...args}>
+      <Menu.Item>Home</Menu.Item>
+      <Menu.Item>About</Menu.Item>
+      <Menu.Li>
+        <details>
+          <summary>Products</summary>
+          <ul>
+            <li>
+              <a>All products</a>
+            </li>
+            <li>
+              <a>Electronics</a>
+            </li>
+            <li>
+              <a>Clothing</a>
+            </li>
+          </ul>
+        </details>
+      </Menu.Li>
+    </Menu>
+  ),
+};
+
 export const IconOnly: Story = {
   render: (args) => (
     <Menu {...args}>
@@ -100,7 +131,7 @@ export const IconOnlyWithTooltip: Story = {
   render: (args) => (
     <Menu {...args}>
       <Menu.Li>
-        <Tooltip as="a" position="right" tip="Home">
+        <Tooltip render={<a />} position="right" tip="Home">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -118,7 +149,7 @@ export const IconOnlyWithTooltip: Story = {
         </Tooltip>
       </Menu.Li>
       <Menu.Li>
-        <Tooltip as="a" position="right" tip="Details">
+        <Tooltip render={<a />} position="right" tip="Details">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -136,7 +167,7 @@ export const IconOnlyWithTooltip: Story = {
         </Tooltip>
       </Menu.Li>
       <Menu.Li>
-        <Tooltip as="a" position="right" tip="Stats">
+        <Tooltip render={<a />} position="right" tip="Stats">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -164,7 +195,7 @@ export const IconOnlyHorizontalWithTooltip: Story = {
   render: (args) => (
     <Menu {...args}>
       <Menu.Li>
-        <Tooltip as="a" tip="Home">
+        <Tooltip render={<a />} tip="Home">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -182,7 +213,7 @@ export const IconOnlyHorizontalWithTooltip: Story = {
         </Tooltip>
       </Menu.Li>
       <Menu.Li>
-        <Tooltip as="a" tip="Details">
+        <Tooltip render={<a />} tip="Details">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -200,7 +231,7 @@ export const IconOnlyHorizontalWithTooltip: Story = {
         </Tooltip>
       </Menu.Li>
       <Menu.Li>
-        <Tooltip as="a" tip="Stats">
+        <Tooltip render={<a />} tip="Stats">
           <svg
             className="h-5 w-5"
             fill="none"

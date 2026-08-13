@@ -13,6 +13,9 @@ export const Menu = classed("ul", "menu", {
     horizontal: {
       true: "menu-horizontal",
     },
+    paged: {
+      true: "menu-paged",
+    },
     size: {
       xl: "menu-xl",
       lg: "menu-lg",

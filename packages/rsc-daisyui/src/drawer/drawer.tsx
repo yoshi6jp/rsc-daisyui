@@ -1,5 +1,5 @@
-import type { FC } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef, type FC } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 import { DrawerToggle } from "./drawer-toggle";
@@ -17,7 +17,7 @@ export const DrawerBase = classed(
     open: {
       true: "drawer-open",
     },
-  })
+  }),
 );
 
 export type DrawerProps = Omit<ComponentProps<typeof DrawerToggle>, "id"> &
@@ -25,7 +25,7 @@ export type DrawerProps = Omit<ComponentProps<typeof DrawerToggle>, "id"> &
     id: string;
     theme: ComponentProps<typeof DrawerBase>["theme"];
   };
-export const Drawer = deriveClassed<typeof DrawerToggle, DrawerProps>(
+export const Drawer = forwardRef<HTMLInputElement, DrawerProps>(
   ({ children, className, end, id, theme, open, ...rest }, ref) => {
     return (
       <DrawerBase className={className} end={end} open={open} theme={theme}>
@@ -33,7 +33,7 @@ export const Drawer = deriveClassed<typeof DrawerToggle, DrawerProps>(
         {children}
       </DrawerBase>
     );
-  }
+  },
 );
 Drawer.displayName = "Drawer";
 

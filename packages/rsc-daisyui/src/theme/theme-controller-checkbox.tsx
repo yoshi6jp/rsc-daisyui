@@ -1,4 +1,5 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Checkbox } from "../checkbox";
 import type { ThemeTypeWithDefault } from "./constants";
@@ -6,16 +7,17 @@ import type { ThemeTypeWithDefault } from "./constants";
 export const ThemeControllerCheckboxBase = classed(
   "input",
   "theme-controller",
-  Checkbox
+  Checkbox,
 );
 export type ThemeControllerCheckboxProps = Omit<
   ComponentProps<typeof ThemeControllerCheckboxBase>,
   "type"
 > & {
+  type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
   value: ThemeTypeWithDefault;
 };
-export const ThemeControllerCheckbox = deriveClassed<
-  typeof ThemeControllerCheckboxBase,
+export const ThemeControllerCheckbox = forwardRef<
+  HTMLInputElement,
   ThemeControllerCheckboxProps
 >(({ value, ...rest }, ref) => {
   return (

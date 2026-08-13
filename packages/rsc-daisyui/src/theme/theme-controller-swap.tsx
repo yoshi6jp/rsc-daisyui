@@ -1,4 +1,5 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { Swap } from "../swap";
 import type { ThemeTypeWithDefault } from "./constants";
 
@@ -10,8 +11,8 @@ export type ThemeControllerSwapProps = Omit<
   value: ThemeTypeWithDefault;
 };
 
-export const ThemeControllerSwap = deriveClassed<
-  typeof Swap,
+export const ThemeControllerSwap = forwardRef<
+  HTMLLabelElement,
   ThemeControllerSwapProps
 >(({ children, active, value, ...args }, ref) => {
   return (

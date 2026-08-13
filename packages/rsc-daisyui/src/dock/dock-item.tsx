@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef, type ReactNode } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 
 export const DockLabel = classed("span", "dock-label");
@@ -16,12 +16,12 @@ export type DockItemProps = ComponentProps<typeof DockItemBase> & {
   label?: ReactNode;
 };
 
-export const DockItem = deriveClassed<typeof DockItemBase, DockItemProps>(
+export const DockItem = forwardRef<HTMLButtonElement, DockItemProps>(
   ({ children, label, ...rest }, ref) => (
     <DockItemBase {...rest} ref={ref}>
       {children}
       {label ? <DockLabel>{label}</DockLabel> : null}
     </DockItemBase>
-  )
+  ),
 );
 DockItem.displayName = "DockItem";
