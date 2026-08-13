@@ -1,28 +1,26 @@
-import {
-  type ComponentProps,
-  deriveClassed,
-  type DerivedComponentType,
-} from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
-import { Input } from "../input";
+
+export type BrowserMockupToolbarComponent = React.ForwardRefExoticComponent<
+  BrowserMockupToolbarProps & React.RefAttributes<HTMLDivElement>
+>;
 
 export const BrowserMockupToolbarBase = classed(
   "div",
-  "mockup-browser-toolbar"
+  "mockup-browser-toolbar",
 );
-type BrowserMockupToolbarProps = ComponentProps<typeof Input>;
-export const BrowserMockupToolbar: DerivedComponentType<
-  typeof BrowserMockupToolbarBase,
+type BrowserMockupToolbarProps = ComponentProps<
+  typeof BrowserMockupToolbarBase
+>;
+export const BrowserMockupToolbar: BrowserMockupToolbarComponent = forwardRef<
+  HTMLDivElement,
   BrowserMockupToolbarProps
-> = deriveClassed<typeof BrowserMockupToolbarBase, BrowserMockupToolbarProps>(
-  ({ children, ...rest }) => {
-    return (
-      <BrowserMockupToolbarBase>
-        <Input as="div" {...rest}>
-          {children}
-        </Input>
-      </BrowserMockupToolbarBase>
-    );
-  }
-);
+>(({ children, ...rest }, ref) => {
+  return (
+    <BrowserMockupToolbarBase ref={ref} {...rest}>
+      {children}
+    </BrowserMockupToolbarBase>
+  );
+});
 BrowserMockupToolbar.displayName = "BrowserMockupToolbar";

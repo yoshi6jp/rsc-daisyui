@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef, type ReactNode } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { MenuLi, MenuAnchor } from "./menu-item";
 
@@ -8,7 +8,7 @@ export type MenuSubmenuProps = ComponentProps<typeof MenuAnchor> & {
   ulClassName?: string;
 };
 
-export const MenuSubmenu = deriveClassed<typeof MenuAnchor, MenuSubmenuProps>(
+export const MenuSubmenu = forwardRef<HTMLAnchorElement, MenuSubmenuProps>(
   ({ children, label, ulClassName, ...rest }, ref) => (
     <MenuLi>
       <MenuAnchor {...rest} ref={ref}>
@@ -16,7 +16,7 @@ export const MenuSubmenu = deriveClassed<typeof MenuAnchor, MenuSubmenuProps>(
       </MenuAnchor>
       <ul className={ulClassName}>{children}</ul>
     </MenuLi>
-  )
+  ),
 );
 MenuSubmenu.displayName = "MenuSubmenu";
 
@@ -26,15 +26,14 @@ export type MenuCollapseProps = ComponentProps<typeof MenuDetails> & {
   label: ReactNode;
   ulClassName?: string;
 };
-export const MenuCollapse = deriveClassed<
-  typeof MenuDetails,
-  MenuCollapseProps
->(({ children, label, ulClassName, ...rest }, ref) => (
-  <MenuLi>
-    <MenuDetails {...rest} ref={ref}>
-      <summary>{label}</summary>
-      <ul className={ulClassName}>{children}</ul>
-    </MenuDetails>
-  </MenuLi>
-));
+export const MenuCollapse = forwardRef<HTMLDetailsElement, MenuCollapseProps>(
+  ({ children, label, ulClassName, ...rest }, ref) => (
+    <MenuLi>
+      <MenuDetails {...rest} ref={ref}>
+        <summary>{label}</summary>
+        <ul className={ulClassName}>{children}</ul>
+      </MenuDetails>
+    </MenuLi>
+  ),
+);
 MenuCollapse.displayName = "MenuCollapse";

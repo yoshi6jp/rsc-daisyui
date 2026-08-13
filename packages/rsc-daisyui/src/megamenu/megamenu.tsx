@@ -1,4 +1,4 @@
-import { ComponentProps } from "@tw-classed/react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 

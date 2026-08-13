@@ -1,4 +1,5 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 
 export const MenuLi = classed("li", {
@@ -14,7 +15,7 @@ export type MenuItemProps = ComponentProps<typeof MenuAnchor> & {
   disabled?: boolean;
 };
 
-export const MenuItem = deriveClassed<typeof MenuAnchor, MenuItemProps>(
+export const MenuItem = forwardRef<HTMLAnchorElement, MenuItemProps>(
   ({ children, disabled, ...rest }, ref) => {
     return (
       <MenuLi disabled={disabled}>
@@ -23,6 +24,6 @@ export const MenuItem = deriveClassed<typeof MenuAnchor, MenuItemProps>(
         </MenuAnchor>
       </MenuLi>
     );
-  }
+  },
 );
 MenuItem.displayName = "MenuItem";

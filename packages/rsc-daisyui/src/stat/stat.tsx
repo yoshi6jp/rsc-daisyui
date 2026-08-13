@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef, type ReactNode } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { StatActions } from "./stat-actions";
 import { StatDesc } from "./stat-desc";
@@ -16,7 +16,7 @@ export type StatProps = ComponentProps<typeof StatBase> & {
   actions?: ReactNode;
 };
 
-export const Stat = deriveClassed<typeof StatBase, StatProps>(
+export const Stat = forwardRef<HTMLDivElement, StatProps>(
   ({ children, title, value, figure, desc, actions, ...rest }, ref) => (
     <StatBase {...rest} ref={ref}>
       {figure ? <StatFigure>{figure}</StatFigure> : null}
@@ -26,5 +26,5 @@ export const Stat = deriveClassed<typeof StatBase, StatProps>(
       {actions ? <StatActions>{actions}</StatActions> : null}
       {children}
     </StatBase>
-  )
+  ),
 );

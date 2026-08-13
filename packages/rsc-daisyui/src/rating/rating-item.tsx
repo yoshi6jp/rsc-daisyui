@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Mask } from "../mask";
 import { times } from "../utils";
@@ -40,59 +40,57 @@ export type RatingItemsProps = Omit<
   name: string;
 };
 
-export const RatingItems = deriveClassed<typeof RatingItem, RatingItemsProps>(
-  ({
-    shape,
-    hidden,
-    half,
-    max,
-    onChange,
-    name,
-    value,
-    defaultValue,
-    className,
-  }) => {
-    const count = Math.max(1, Math.min(10, Math.floor(max || 5)));
-    return (
-      <>
-        {hidden ? (
-          <RatingHidden name={name} onChange={onChange} value={0} />
-        ) : null}
-        {times(count).map((idx) => {
-          const val = idx + 1;
-          const halfVal = val - 0.5;
-          return (
-            <Fragment key={idx}>
-              {half ? (
-                <RatingItem
-                  checked={value === halfVal ? true : undefined}
-                  className={className}
-                  defaultChecked={defaultValue === halfVal ? true : undefined}
-                  half="first"
-                  name={name}
-                  onChange={onChange}
-                  shape={shape}
-                  value={halfVal}
-                />
-              ) : null}
-
+export function RatingItems({
+  shape,
+  hidden,
+  half,
+  max,
+  onChange,
+  name,
+  value,
+  defaultValue,
+  className,
+}: RatingItemsProps) {
+  const count = Math.max(1, Math.min(10, Math.floor(max || 5)));
+  return (
+    <>
+      {hidden ? (
+        <RatingHidden name={name} onChange={onChange} value={0} />
+      ) : null}
+      {times(count).map((idx) => {
+        const val = idx + 1;
+        const halfVal = val - 0.5;
+        return (
+          <Fragment key={idx}>
+            {half ? (
               <RatingItem
-                checked={value === val ? true : undefined}
+                checked={value === halfVal ? true : undefined}
                 className={className}
-                defaultChecked={defaultValue === val ? true : undefined}
-                half={half ? "second" : undefined}
+                defaultChecked={defaultValue === halfVal ? true : undefined}
+                half="first"
                 name={name}
                 onChange={onChange}
                 shape={shape}
-                value={val}
+                value={halfVal}
               />
-            </Fragment>
-          );
-        })}
-      </>
-    );
-  }
-);
+            ) : null}
+
+            <RatingItem
+              checked={value === val ? true : undefined}
+              className={className}
+              defaultChecked={defaultValue === val ? true : undefined}
+              half={half ? "second" : undefined}
+              name={name}
+              onChange={onChange}
+              shape={shape}
+              value={val}
+            />
+          </Fragment>
+        );
+      })}
+    </>
+  );
+}
 RatingItems.displayName = "RatingItems";
 
 export type RatingReadonlyItemsProps = Omit<
@@ -104,10 +102,13 @@ export type RatingReadonlyItemsProps = Omit<
   value?: number;
 };
 
-export const RatingReadonlyItems = deriveClassed<
-  typeof RatingReadonlyItem,
-  RatingReadonlyItemsProps
->(({ shape, half, max, value, className }) => {
+export function RatingReadonlyItems({
+  shape,
+  half,
+  max,
+  value,
+  className,
+}: RatingReadonlyItemsProps) {
   const count = Math.max(1, Math.min(10, Math.floor(max || 5)));
   return (
     <>
@@ -136,5 +137,5 @@ export const RatingReadonlyItems = deriveClassed<
       })}
     </>
   );
-});
+}
 RatingReadonlyItems.displayName = "RatingReadonlyItems";

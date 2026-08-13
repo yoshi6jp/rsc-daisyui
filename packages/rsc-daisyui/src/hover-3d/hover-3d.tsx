@@ -1,10 +1,11 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { configWithThemeFn } from "../config";
 
 export const Hover3DBase = classed("div", "hover-3d", configWithThemeFn({}));
 type Hover3DProps = ComponentProps<typeof Hover3DBase> & {};
-export const Hover3D = deriveClassed<typeof Hover3DBase, Hover3DProps>(
+export const Hover3D = forwardRef<HTMLDivElement, Hover3DProps>(
   ({ children, ...props }, ref) => {
     return (
       <Hover3DBase {...props} ref={ref}>
@@ -19,6 +20,6 @@ export const Hover3D = deriveClassed<typeof Hover3DBase, Hover3DProps>(
         <div />
       </Hover3DBase>
     );
-  }
+  },
 );
 Hover3D.displayName = "Hover3D";

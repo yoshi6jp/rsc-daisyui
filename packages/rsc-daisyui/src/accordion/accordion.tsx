@@ -1,4 +1,5 @@
-import { type ComponentProps, deriveClassed } from "@tw-classed/react";
+import { forwardRef } from "react";
+import type { ComponentProps } from "@tw-classed/react";
 import { classed } from "../classed.config";
 import { Collapse } from "../collapse";
 
@@ -7,7 +8,7 @@ export type AccordionProps = Omit<
   ComponentProps<typeof AccordionBase>,
   "as" | "type" | "open"
 >;
-export const Accordion = deriveClassed<typeof AccordionBase, AccordionProps>(
+export const Accordion = forwardRef<HTMLInputElement, AccordionProps>(
   ({ children, icon, theme, className, vanilla, ...rest }, ref) => {
     return (
       <Collapse
@@ -20,7 +21,7 @@ export const Accordion = deriveClassed<typeof AccordionBase, AccordionProps>(
         {children}
       </Collapse>
     );
-  }
+  },
 );
 Accordion.displayName = "Accordion";
 
