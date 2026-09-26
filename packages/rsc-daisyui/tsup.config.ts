@@ -6,7 +6,7 @@ export default defineConfig((options: Options) => ({
   splitting: true,
   entry: ["src/index.tsx"],
   format: ["cjs", "esm"],
-  dts: true,
+  dts: false,
   minify: true,
   clean: true,
   external: ["react"],

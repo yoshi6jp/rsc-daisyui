@@ -19,5 +19,13 @@
     "turbo": "^2.10.9"
   },
   "packageManager": "pnpm@9.2.0",
+  "pnpm": {
+    "overrides": {
+      "react": "19.0.0",
+      "react-dom": "19.0.0",
+      "@types/react": "19.0.8",
+      "@types/react-dom": "19.0.3"
+    }
+  },
   "name": "rsc-daisyui"
 }
