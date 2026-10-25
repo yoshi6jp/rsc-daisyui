@@ -1,7 +1,7 @@
 {
   "name": "rsc-daisyui",
   "main": "./dist/index.js",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "daisyUI for React Server Component",
   "homepage": "https://yoshi6jp.github.io/rsc-daisyui/",
   "keywords": [
@@ -23,6 +23,7 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     }
@@ -57,7 +58,7 @@
     "@tailwindcss/postcss": "^4.3.2",
     "@tw-classed/core": "^1.7.0",
     "@types/react": "^19.0.10",
-    "daisyui": "^5.7.46",
+    "daisyui": "^5.7.50",
     "eslint": "^8.57.1",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-storybook": "^10.4.6",
